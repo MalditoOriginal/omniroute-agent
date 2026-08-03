@@ -1,0 +1,22 @@
+{
+    "stocks": [
+        "акци", "дивиденд", "brent", "мосбирж", "насдак", "nasdaq", "отчетн",
+        "фундаментальн", "тикер", "портфел", "stock", "stocks", "earnings"
+    ],
+    "vision": [
+        "график", "скрин", "pdf", "паттерн", "картин", "изображен", "визуал",
+        ".png", ".jpg", ".jpeg", ".webp", "image", "picture", "chart", "screenshot"
+    ],
+    "terminal": [
+        "лог", "логи", "терминал", "команд", "bash", "powershell", "убить процесс", "ping",
+        "logs", "log", "error log", "errors", "search logs", "find in logs",
+        "stderr", "stdout", "traceback", "exception", "crash", "stack trace",
+        "folder", "directory", "pwd", "current dir", "current directory", "папка", "директория"
+    ],
+    "coding": [
+        "скрипт", "код", "исправ", "рефактор", "bug", "json", "парсер", "падае",
+        "python", "javascript", "function", "refactor", "fix code", "router architecture"
+    ],
+    "complex_error": ["ошибк", "сбой", "падае", "error", "failed", "failure"],
+    "complex_code": ["код", "скрипт", "code", "script", "router", "module"]
+}
