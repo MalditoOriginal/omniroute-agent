@@ -3848,3 +3848,29 @@
 {"timestamp":"2026-08-04T00:07:18.213Z","level":"info","component":"app","message":"🧹 [RATE-LIMIT] Evicting idle limiter: openrouter:cc673b94-b765-4309-a662-a1538d3e7158 (inactive for 612s)"}
 {"timestamp":"2026-08-04T00:07:18.213Z","level":"info","component":"app","message":"🧹 [RATE-LIMIT] Evicting idle limiter: tokenrouter:92b8662d-8560-492b-bf00-69db59386b05 (inactive for 626s)"}
 {"timestamp":"2026-08-04T00:07:50.547Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-04T00:12:51.947Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-04T00:17:53.271Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-04T00:19:22.390Z","level":"warn","component":"app","message":"00:19:22.390 [AUTO] auto/zai matched no connected models; returning an empty pool."}
+{"timestamp":"2026-08-04T00:19:22.391Z","level":"warn","component":"app","message":"00:19:22.391 [AUTO] auto/llama matched no connected models; returning an empty pool."}
+{"level":40,"time":"2026-08-04T00:19:22.545Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for serper-search"}
+{"level":40,"time":"2026-08-04T00:19:22.545Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for brave-search"}
+{"level":40,"time":"2026-08-04T00:19:22.545Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for perplexity-search"}
+{"level":40,"time":"2026-08-04T00:19:22.545Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for exa-search"}
+{"level":40,"time":"2026-08-04T00:19:22.545Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for tavily-search"}
+{"level":40,"time":"2026-08-04T00:19:22.545Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for firecrawl"}
+{"level":40,"time":"2026-08-04T00:19:22.545Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for google-pse-search"}
+{"level":40,"time":"2026-08-04T00:19:22.545Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for linkup-search"}
+{"level":40,"time":"2026-08-04T00:19:22.545Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for searchapi-search"}
+{"level":40,"time":"2026-08-04T00:19:22.545Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for youcom-search"}
+{"level":40,"time":"2026-08-04T00:19:22.545Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for searxng-search"}
+{"level":40,"time":"2026-08-04T00:19:22.545Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for ollama-search"}
+{"level":40,"time":"2026-08-04T00:19:22.545Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for zai-search"}
+{"level":40,"time":"2026-08-04T00:19:22.545Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for duckduckgo-free"}
+{"level":40,"time":"2026-08-04T00:19:22.546Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for perplexity"}
+{"level":40,"time":"2026-08-04T00:19:22.546Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for ollama-cloud"}
+{"level":40,"time":"2026-08-04T00:19:22.546Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for zai"}
+{"level":40,"time":"2026-08-04T00:19:22.547Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for firecrawl"}
+{"level":40,"time":"2026-08-04T00:19:22.547Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for tavily-search"}
+{"level":40,"time":"2026-08-04T00:19:22.547Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for jina-reader"}
+{"level":40,"time":"2026-08-04T00:19:22.547Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for tinyfish"}
+{"timestamp":"2026-08-04T00:22:54.537Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
