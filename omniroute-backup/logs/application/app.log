@@ -3874,3 +3874,706 @@
 {"level":40,"time":"2026-08-04T00:19:22.547Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for jina-reader"}
 {"level":40,"time":"2026-08-04T00:19:22.547Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for tinyfish"}
 {"timestamp":"2026-08-04T00:22:54.537Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-04T00:27:55.803Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-04T00:32:57.252Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-04T03:35:04.324Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-04T03:35:04.546Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/0 synced in 2ms"}
+{"timestamp":"2026-08-04T03:35:04.585Z","level":"info","component":"ReasoningCache","message":"[ReasoningCache] periodic cleanup removed 5 expired entries"}
+{"timestamp":"2026-08-04T16:56:57.227Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-04T16:56:57.628Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/0 synced in 23ms"}
+{"timestamp":"2026-08-04T17:07:28.907Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-04T17:12:31.993Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-04T19:58:53.659Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-04T19:58:53.726Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/0 synced in 7ms"}
+{"timestamp":"2026-08-04T19:58:53.726Z","level":"info","component":"ModelSync","message":"[ModelSync] No connections with autoSync enabled — skipping cycle"}
+{"timestamp":"2026-08-04T19:58:54.564Z","level":"warn","component":"ARENA_ELO_SYNC","message":"[ARENA_ELO_SYNC] Failed to fetch \"text\" leaderboard: Arena API fetch failed for \"text\" [429]: "}
+{"timestamp":"2026-08-04T19:58:54.575Z","level":"warn","component":"ARENA_ELO_SYNC","message":"[ARENA_ELO_SYNC] Failed to fetch \"code\" leaderboard: Arena API fetch failed for \"code\" [429]: "}
+{"timestamp":"2026-08-04T19:58:54.575Z","level":"warn","component":"ARENA_ELO_SYNC","message":"[ARENA_ELO_SYNC] Sync failed: All Arena leaderboard fetches failed: Arena API fetch failed for \"text\" [429]: ; Arena API fetch failed for \"code\" [429]: "}
+{"timestamp":"2026-08-04T23:10:14.045Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-04T23:10:14.214Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/0 synced in 26ms"}
+{"timestamp":"2026-08-04T23:15:17.636Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-04T23:20:19.251Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-04T23:25:21.048Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-04T23:30:22.396Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-04T23:35:23.796Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-04T23:40:25.066Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-04T23:45:26.390Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-04T23:50:27.722Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-04T23:55:29.065Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T00:00:30.363Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T00:05:31.602Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T00:10:33.002Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T00:15:34.269Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T00:20:14.201Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/0 synced in 3ms"}
+{"timestamp":"2026-08-05T00:20:35.576Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T00:25:36.866Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T00:30:38.106Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T00:35:39.287Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T00:40:40.647Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T00:45:42.033Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T00:50:43.292Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T00:55:44.445Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T01:00:45.850Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T01:05:47.189Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T01:10:48.465Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T01:15:49.817Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T01:20:51.151Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T01:25:52.475Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T01:30:14.215Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/0 synced in 3ms"}
+{"timestamp":"2026-08-05T01:30:53.836Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T01:35:55.653Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T01:40:57.162Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T01:45:58.775Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T01:51:00.022Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T01:56:01.294Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T02:01:02.622Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T02:06:03.773Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T02:11:05.378Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T02:16:06.668Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T02:21:08.400Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T02:26:09.677Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T02:31:10.991Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T02:36:12.284Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T02:40:14.226Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/0 synced in 4ms"}
+{"timestamp":"2026-08-05T02:41:13.549Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T02:46:14.967Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T02:51:16.238Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T02:56:17.498Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T03:01:18.790Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T03:06:19.993Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T03:11:21.235Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T03:16:22.618Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T03:21:23.968Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T03:26:25.423Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T03:31:26.891Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T03:36:28.186Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T03:41:29.611Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T03:46:31.031Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T03:50:14.230Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/0 synced in 2ms"}
+{"timestamp":"2026-08-05T03:51:32.546Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T03:56:33.847Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T04:01:35.149Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T04:06:36.449Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T04:11:37.783Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T04:16:39.104Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T04:21:40.544Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T04:26:41.793Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T04:31:43.103Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T05:34:18.712Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T05:34:18.864Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/0 synced in 44ms"}
+{"timestamp":"2026-08-05T06:10:57.121Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T07:33:26.462Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-05T07:33:26.555Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/0 synced in 14ms"}
+{"timestamp":"2026-08-06T14:01:52.956Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-06T14:01:53.429Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/0 synced in 22ms"}
+{"timestamp":"2026-08-06T14:01:53.508Z","level":"info","component":"ModelSync","message":"[ModelSync] No connections with autoSync enabled — skipping cycle"}
+{"timestamp":"2026-08-06T14:01:59.040Z","level":"info","component":"ARENA_ELO_SYNC","message":"[ARENA_ELO_SYNC] synced 150 model intelligence entries from Arena leaderboards"}
+{"timestamp":"2026-08-06T14:01:59.040Z","level":"info","component":"ARENA_ELO_SYNC","message":"[ARENA_ELO_SYNC] Periodic sync complete: 150 entries"}
+{"timestamp":"2026-08-06T14:07:00.261Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-06T14:12:01.949Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-06T14:17:03.457Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-06T14:22:05.054Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-06T14:27:06.489Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-06T14:32:07.756Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-06T14:37:09.003Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-06T14:42:10.488Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-06T14:47:11.819Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-06T14:52:13.237Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-06T14:57:14.532Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-06T15:02:15.784Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-06T15:07:17.081Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-06T15:11:53.416Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/0 synced in 3ms"}
+{"timestamp":"2026-08-06T15:12:18.412Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-06T15:34:47.337Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-06T16:39:51.566Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-06T16:39:51.674Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/0 synced in 1ms"}
+{"timestamp":"2026-08-06T16:44:53.582Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-06T16:49:54.849Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-06T16:54:56.270Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-06T16:59:57.526Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-06T17:04:59.070Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-06T18:38:54.355Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-06T18:38:54.415Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/0 synced in 1ms"}
+{"timestamp":"2026-08-07T23:00:23.137Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-07T23:00:23.373Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/0 synced in 19ms"}
+{"timestamp":"2026-08-07T23:00:23.779Z","level":"info","component":"ModelSync","message":"[ModelSync] No connections with autoSync enabled — skipping cycle"}
+{"timestamp":"2026-08-07T23:00:27.603Z","level":"warn","component":"ARENA_ELO_SYNC","message":"[ARENA_ELO_SYNC] Failed to fetch \"code\" leaderboard: Arena API fetch failed for \"code\" [429]: "}
+{"timestamp":"2026-08-07T23:00:27.608Z","level":"warn","component":"ARENA_ELO_SYNC","message":"[ARENA_ELO_SYNC] Failed to fetch \"text\" leaderboard: Arena API fetch failed for \"text\" [429]: "}
+{"timestamp":"2026-08-07T23:00:27.609Z","level":"warn","component":"ARENA_ELO_SYNC","message":"[ARENA_ELO_SYNC] Sync failed: All Arena leaderboard fetches failed: Arena API fetch failed for \"code\" [429]: ; Arena API fetch failed for \"text\" [429]: "}
+{"timestamp":"2026-08-07T23:05:30.001Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-07T23:10:31.439Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-07T23:15:32.860Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-07T23:20:34.171Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-07T23:25:35.599Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-07T23:30:36.867Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-07T23:35:38.124Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-07T23:40:39.304Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-07T23:45:40.824Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-07T23:50:42.007Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-07T23:55:43.195Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-08T00:00:44.357Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-08T00:05:45.683Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-08T00:10:23.359Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/0 synced in 4ms"}
+{"timestamp":"2026-08-08T00:10:46.814Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-08T00:15:52.080Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-08T00:20:53.611Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-08T00:25:54.853Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-08T00:30:56.120Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-08T00:35:57.348Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-08T00:40:58.573Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-08T00:45:59.738Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-08T00:51:00.972Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-08T00:56:02.360Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-08T01:01:03.586Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-08T01:06:04.798Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-08T01:11:06.035Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-08T01:16:07.285Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-08T01:20:23.362Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/0 synced in 2ms"}
+{"timestamp":"2026-08-08T01:21:08.494Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-08T01:26:09.864Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-08T01:31:11.221Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-08T01:36:12.516Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-08T01:41:13.803Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"timestamp":"2026-08-08T01:45:26.614Z","level":"warn","component":"app","message":"01:45:26.614 [AUTO] auto/zai matched no connected models; returning an empty pool."}
+{"timestamp":"2026-08-08T01:45:26.615Z","level":"warn","component":"app","message":"01:45:26.615 [AUTO] auto/llama matched no connected models; returning an empty pool."}
+{"level":40,"time":"2026-08-08T01:45:45.557Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for serper-search"}
+{"level":40,"time":"2026-08-08T01:45:45.557Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for brave-search"}
+{"level":40,"time":"2026-08-08T01:45:45.557Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for perplexity-search"}
+{"level":40,"time":"2026-08-08T01:45:45.557Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for exa-search"}
+{"level":40,"time":"2026-08-08T01:45:45.557Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for tavily-search"}
+{"level":40,"time":"2026-08-08T01:45:45.557Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for firecrawl"}
+{"level":40,"time":"2026-08-08T01:45:45.557Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for google-pse-search"}
+{"level":40,"time":"2026-08-08T01:45:45.557Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for linkup-search"}
+{"level":40,"time":"2026-08-08T01:45:45.557Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for searchapi-search"}
+{"level":40,"time":"2026-08-08T01:45:45.557Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for youcom-search"}
+{"level":40,"time":"2026-08-08T01:45:45.557Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for searxng-search"}
+{"level":40,"time":"2026-08-08T01:45:45.557Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for ollama-search"}
+{"level":40,"time":"2026-08-08T01:45:45.558Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for zai-search"}
+{"level":40,"time":"2026-08-08T01:45:45.558Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for duckduckgo-free"}
+{"level":40,"time":"2026-08-08T01:45:45.559Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for perplexity"}
+{"level":40,"time":"2026-08-08T01:45:45.559Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for ollama-cloud"}
+{"level":40,"time":"2026-08-08T01:45:45.559Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for zai"}
+{"level":40,"time":"2026-08-08T01:45:45.559Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for firecrawl"}
+{"level":40,"time":"2026-08-08T01:45:45.559Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for tavily-search"}
+{"level":40,"time":"2026-08-08T01:45:45.560Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for jina-reader"}
+{"level":40,"time":"2026-08-08T01:45:45.560Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for tinyfish"}
+{"timestamp":"2026-08-08T01:46:15.026Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 3/3 connections..."}
+{"level":30,"time":"2026-08-08T01:46:28.894Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | gemini/gemini-3.1-pro-preview | 1 msgs","msg":"📥 POST /v1/chat/completions | gemini/gemini-3.1-pro-preview | 1 msgs"}
+{"level":30,"time":"2026-08-08T01:46:28.896Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: gemini, Model: gemini-3.1-pro-preview"}
+{"level":40,"time":"2026-08-08T01:46:28.897Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for gemini"}
+{"level":40,"time":"2026-08-08T01:46:28.897Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No active credentials for provider: gemini"}
+{"timestamp":"2026-08-08T01:46:49.992Z","level":"info","component":"ModelSync","message":"[ModelSync] Codex profile auto-sync skipped for gemini: disabled"}
+{"timestamp":"2026-08-08T01:46:49.993Z","level":"info","component":"ModelSync","message":"[ModelSync] Claude profile auto-sync skipped for gemini: disabled"}
+{"timestamp":"2026-08-08T01:46:50.000Z","level":"info","component":"ModelSync","message":"[ModelSync] Codex profile auto-sync skipped for gemini: disabled"}
+{"timestamp":"2026-08-08T01:46:50.000Z","level":"info","component":"ModelSync","message":"[ModelSync] Claude profile auto-sync skipped for gemini: disabled"}
+{"timestamp":"2026-08-08T01:47:09.340Z","level":"info","component":"ModelSync","message":"[ModelSync] Codex profile auto-sync skipped for gemini: disabled"}
+{"timestamp":"2026-08-08T01:47:09.341Z","level":"info","component":"ModelSync","message":"[ModelSync] Claude profile auto-sync skipped for gemini: disabled"}
+{"timestamp":"2026-08-08T01:47:09.353Z","level":"info","component":"ModelSync","message":"[ModelSync] Codex profile auto-sync skipped for gemini: disabled"}
+{"timestamp":"2026-08-08T01:47:09.354Z","level":"info","component":"ModelSync","message":"[ModelSync] Claude profile auto-sync skipped for gemini: disabled"}
+{"timestamp":"2026-08-08T01:47:46.615Z","level":"warn","component":"app","message":"01:47:46.615 [AUTO] auto/zai matched no connected models; returning an empty pool."}
+{"timestamp":"2026-08-08T01:47:46.617Z","level":"warn","component":"app","message":"01:47:46.616 [AUTO] auto/llama matched no connected models; returning an empty pool."}
+{"timestamp":"2026-08-08T01:48:18.018Z","level":"info","component":"ModelSync","message":"[ModelSync] Codex profile auto-sync skipped for groq: disabled"}
+{"timestamp":"2026-08-08T01:48:18.018Z","level":"info","component":"ModelSync","message":"[ModelSync] Claude profile auto-sync skipped for groq: disabled"}
+{"timestamp":"2026-08-08T01:48:18.028Z","level":"info","component":"ModelSync","message":"[ModelSync] Codex profile auto-sync skipped for groq: disabled"}
+{"timestamp":"2026-08-08T01:48:18.028Z","level":"info","component":"ModelSync","message":"[ModelSync] Claude profile auto-sync skipped for groq: disabled"}
+{"timestamp":"2026-08-08T01:48:31.001Z","level":"warn","component":"app","message":"01:48:31.001 [AUTO] auto/zai matched no connected models; returning an empty pool."}
+{"timestamp":"2026-08-08T01:51:16.227Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 6/6 connections..."}
+{"timestamp":"2026-08-08T01:56:17.788Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 6/6 connections..."}
+{"timestamp":"2026-08-08T02:01:19.387Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 6/6 connections..."}
+{"timestamp":"2026-08-08T02:03:30.418Z","level":"info","component":"ModelSync","message":"[ModelSync] Codex profile auto-sync skipped for mistral: disabled"}
+{"timestamp":"2026-08-08T02:03:30.419Z","level":"info","component":"ModelSync","message":"[ModelSync] Claude profile auto-sync skipped for mistral: disabled"}
+{"timestamp":"2026-08-08T02:03:30.631Z","level":"info","component":"ModelSync","message":"[ModelSync] Codex profile auto-sync skipped for mistral: disabled"}
+{"timestamp":"2026-08-08T02:03:30.631Z","level":"info","component":"ModelSync","message":"[ModelSync] Claude profile auto-sync skipped for mistral: disabled"}
+{"timestamp":"2026-08-08T02:03:59.815Z","level":"warn","component":"app","message":"02:03:59.815 [AUTO] auto/zai matched no connected models; returning an empty pool."}
+{"timestamp":"2026-08-08T02:04:20.937Z","level":"info","component":"ModelSync","message":"[ModelSync] Codex profile auto-sync skipped for zai: disabled"}
+{"timestamp":"2026-08-08T02:04:20.937Z","level":"info","component":"ModelSync","message":"[ModelSync] Claude profile auto-sync skipped for zai: disabled"}
+{"timestamp":"2026-08-08T02:06:20.896Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"level":30,"time":"2026-08-08T02:08:11.715Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | moonshot/kimi-k3 | 1 msgs","msg":"📥 POST /v1/chat/completions | moonshot/kimi-k3 | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:08:11.716Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: moonshot, Model: kimi-k3"}
+{"level":40,"time":"2026-08-08T02:08:11.717Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for moonshot"}
+{"level":40,"time":"2026-08-08T02:08:11.717Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No active credentials for provider: moonshot"}
+{"level":30,"time":"2026-08-08T02:08:11.720Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | kimi-coding/k3 | 1 msgs","msg":"📥 POST /v1/chat/completions | kimi-coding/k3 | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:08:11.721Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: kimi-coding, Model: k3"}
+{"level":40,"time":"2026-08-08T02:08:11.721Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for kimi-coding"}
+{"level":40,"time":"2026-08-08T02:08:11.721Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No active credentials for provider: kimi-coding"}
+{"level":30,"time":"2026-08-08T02:08:11.723Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | kimi-web/k3 | 1 msgs","msg":"📥 POST /v1/chat/completions | kimi-web/k3 | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:08:11.723Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: kimi-web, Model: k3"}
+{"level":40,"time":"2026-08-08T02:08:11.724Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for kimi-web"}
+{"level":40,"time":"2026-08-08T02:08:11.724Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No active credentials for provider: kimi-web"}
+{"timestamp":"2026-08-08T02:11:16.840Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-08T02:11:16.846Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-08T02:11:16.853Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"level":30,"time":"2026-08-08T02:11:16.837Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | duckduckgo-web/tinfoil/gpt-oss-120b | 1 msgs","msg":"📥 POST /v1/chat/completions | duckduckgo-web/tinfoil/gpt-oss-120b | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:11:16.838Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: duckduckgo-web, Model: tinfoil/gpt-oss-120b"}
+{"level":30,"time":"2026-08-08T02:11:16.839Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using duckduckgo-web account: noauth..."}
+{"level":30,"time":"2026-08-08T02:11:16.844Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | g4f-groq/llama-3.3-70b-versatile | 1 msgs","msg":"📥 POST /v1/chat/completions | g4f-groq/llama-3.3-70b-versatile | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:11:16.845Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: g4f-groq, Model: llama-3.3-70b-versatile"}
+{"level":30,"time":"2026-08-08T02:11:16.845Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:dccdb... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:11:16.845Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using g4f-groq account: 5c346277..."}
+{"level":30,"time":"2026-08-08T02:11:16.851Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | g4f-groq/llama-3.1-8b-instant | 1 msgs","msg":"📥 POST /v1/chat/completions | g4f-groq/llama-3.1-8b-instant | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:11:16.852Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: g4f-groq, Model: llama-3.1-8b-instant"}
+{"level":30,"time":"2026-08-08T02:11:16.852Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:a7bb6... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:11:16.852Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using g4f-groq account: 5c346277..."}
+{"timestamp":"2026-08-08T02:11:17.267Z","level":"warn","component":"provider","message":"[provider] Node 5c346277-2fd1-4ad9-b9ab-32eaef4ff0ff model-only quota exhausted (402) for llama-3.1-8b-instant - 120s (cooldown_scope=model, ttl_source=inferred, connection stays active)"}
+{"timestamp":"2026-08-08T02:11:17.268Z","level":"info","component":"app","message":"\u001b[31m[ERROR] [402]: No cake credits. Bake proof-of-work cakes at g4f.dev/chat to earn anonymous usage, or sign up at g4f.dev/members.html.\u001b[0m"}
+{"timestamp":"2026-08-08T02:11:17.276Z","level":"error","component":"app","message":"❌ g4f-groq [402]: [402]: No cake credits. Bake proof-of-work cakes at g4f.dev/chat to earn anonymous usage, or sign up"}
+{"level":40,"time":"2026-08-08T02:11:17.269Z","service":"omniroute","module":"sse","tag":"EMERGENCY_FALLBACK","msg":"g4f-groq/llama-3.1-8b-instant -> nvidia/openai/gpt-oss-120b | reason=HTTP 402 → emergency fallback to nvidia/openai/gpt-oss-120b"}
+{"level":30,"time":"2026-08-08T02:11:17.270Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: nvidia, Model: openai/gpt-oss-120b"}
+{"level":40,"time":"2026-08-08T02:11:17.272Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for nvidia"}
+{"level":40,"time":"2026-08-08T02:11:17.273Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No active credentials for provider: nvidia"}
+{"level":40,"time":"2026-08-08T02:11:17.273Z","service":"omniroute","module":"sse","tag":"EMERGENCY_FALLBACK","msg":"Emergency fallback to nvidia/openai/gpt-oss-120b failed with status 404. Resuming original provider account fallback."}
+{"level":40,"time":"2026-08-08T02:11:17.277Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account 5c346277... unavailable (402), trying fallback"}
+{"level":40,"time":"2026-08-08T02:11:17.277Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"g4f-groq | all 1 active accounts cooling down for model llama-3.1-8b-instant (reset after 2m) | lastErrorCode=402.0, lastError=[402]: No cake credits. Bake proof-of-work cakes a"}
+{"level":40,"time":"2026-08-08T02:11:17.277Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"[g4f-groq/llama-3.1-8b-instant] [402]: No cake credits. Bake proof-of-work cakes at g4f.dev/chat to earn anonymous usage, or sign up at g4f.dev/members.html. (reset after 2m)"}
+{"timestamp":"2026-08-08T02:11:17.281Z","level":"warn","component":"provider","message":"[provider] Node 5c346277-2fd1-4ad9-b9ab-32eaef4ff0ff model-only quota exhausted (402) for llama-3.3-70b-versatile - 120s (cooldown_scope=model, ttl_source=inferred, connection stays active)"}
+{"timestamp":"2026-08-08T02:11:17.281Z","level":"info","component":"app","message":"\u001b[31m[ERROR] [402]: No cake credits. Bake proof-of-work cakes at g4f.dev/chat to earn anonymous usage, or sign up at g4f.dev/members.html.\u001b[0m"}
+{"timestamp":"2026-08-08T02:11:17.285Z","level":"info","component":"app","message":"\u001b[31m[ERROR] [418]: DuckDuckGo AI Chat anti-abuse challenge failed: ERR_CHALLENGE (6b56). Retry later or from a less rate-limited IP; DuckDuckGo is rejecting this anonymous session.\u001b[0m"}
+{"timestamp":"2026-08-08T02:11:17.287Z","level":"error","component":"app","message":"❌ duckduckgo-web [418]: [418]: DuckDuckGo AI Chat anti-abuse challenge failed: ERR_CHALLENGE (6b56). Retry later or from a l"}
+{"level":40,"time":"2026-08-08T02:11:17.282Z","service":"omniroute","module":"sse","tag":"EMERGENCY_FALLBACK","msg":"g4f-groq/llama-3.3-70b-versatile -> nvidia/openai/gpt-oss-120b | reason=HTTP 402 → emergency fallback to nvidia/openai/gpt-oss-120b"}
+{"level":30,"time":"2026-08-08T02:11:17.282Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: nvidia, Model: openai/gpt-oss-120b"}
+{"level":40,"time":"2026-08-08T02:11:17.284Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for nvidia"}
+{"level":40,"time":"2026-08-08T02:11:17.284Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No active credentials for provider: nvidia"}
+{"level":40,"time":"2026-08-08T02:11:17.284Z","service":"omniroute","module":"sse","tag":"EMERGENCY_FALLBACK","msg":"Emergency fallback to nvidia/openai/gpt-oss-120b failed with status 404. Resuming original provider account fallback."}
+{"level":30,"time":"2026-08-08T02:11:17.284Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"5c346277 terminal status=credits_exhausted, skipping cooldown overwrite"}
+{"level":40,"time":"2026-08-08T02:11:17.284Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account 5c346277... unavailable (402), trying fallback"}
+{"level":40,"time":"2026-08-08T02:11:17.284Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"g4f-groq | all 1 active accounts cooling down for model llama-3.3-70b-versatile (reset after 2m) | lastErrorCode=402.0, lastError=[402]: No cake credits. Bake proof-of-work cakes a"}
+{"level":40,"time":"2026-08-08T02:11:17.284Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"[g4f-groq/llama-3.3-70b-versatile] [402]: No cake credits. Bake proof-of-work cakes at g4f.dev/chat to earn anonymous usage, or sign up at g4f.dev/members.html. (reset after 2m)"}
+{"level":40,"time":"2026-08-08T02:11:17.287Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account noauth... unavailable (418), trying fallback"}
+{"level":40,"time":"2026-08-08T02:11:17.287Z","service":"omniroute","module":"sse","tag":"CHAT","provider":"duckduckgo-web","model":"tinfoil/gpt-oss-120b","lastStatus":418,"msg":"Preserving last upstream error after credential exhaustion"}
+{"timestamp":"2026-08-08T02:11:23.797Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-08T02:11:23.813Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-08T02:11:23.820Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"level":30,"time":"2026-08-08T02:11:23.795Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | tokenrouter/qwen/qwen3.8-max | 1 msgs","msg":"📥 POST /v1/chat/completions | tokenrouter/qwen/qwen3.8-max | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:11:23.796Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: tokenrouter, Model: qwen/qwen3.8-max"}
+{"level":30,"time":"2026-08-08T02:11:23.797Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:5c09b... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:11:23.797Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using tokenrouter account: 92b8662d..."}
+{"level":30,"time":"2026-08-08T02:11:23.811Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | tokenrouter/moonshotai/kimi-k3-free | 1 msgs","msg":"📥 POST /v1/chat/completions | tokenrouter/moonshotai/kimi-k3-free | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:11:23.812Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: tokenrouter, Model: moonshotai/kimi-k3-free"}
+{"level":30,"time":"2026-08-08T02:11:23.812Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:4d46c... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:11:23.812Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using tokenrouter account: 92b8662d..."}
+{"level":30,"time":"2026-08-08T02:11:23.817Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | tokenrouter/minimax-3 | 1 msgs","msg":"📥 POST /v1/chat/completions | tokenrouter/minimax-3 | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:11:23.818Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: tokenrouter, Model: minimax-3"}
+{"level":30,"time":"2026-08-08T02:11:23.819Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:7bfc4... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:11:23.819Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using tokenrouter account: 92b8662d..."}
+{"timestamp":"2026-08-08T02:11:23.906Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T02:11:25.397Z","level":"info","component":"app","message":"\u001b[31m[ERROR] [503]: No available channel for model minimax-3 under group default (distributor) (request id: 20260808020914564278703TX3L8Oyv)\u001b[0m"}
+{"timestamp":"2026-08-08T02:11:25.399Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] tokenrouter/92b8662d in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=error"}
+{"timestamp":"2026-08-08T02:11:25.400Z","level":"error","component":"app","message":"❌ tokenrouter [503]: [503]: No available channel for model minimax-3 under group default (distributor) (request id: 20260"}
+{"level":40,"time":"2026-08-08T02:11:25.401Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account 92b8662d... unavailable (503), trying fallback"}
+{"level":40,"time":"2026-08-08T02:11:25.401Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"tokenrouter | all 1 active accounts rate limited (reset after 3s) | lastErrorCode=503.0, lastError=[503]: No available channel for model minimax-3 un"}
+{"level":40,"time":"2026-08-08T02:11:25.401Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"[tokenrouter/minimax-3] [503]: No available channel for model minimax-3 under group default (distributor) (request id: 20260808020914564278703TX3L8Oyv) (reset after 3s)"}
+{"timestamp":"2026-08-08T02:11:28.732Z","level":"info","component":"app","message":"\u001b[31m[ERROR] [403]: User's credit limit is insufficient, remaining credit limit: ＄0.000000 (request id: 20260808020914891637908n9nkk9jC)\u001b[0m"}
+{"timestamp":"2026-08-08T02:11:28.740Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] tokenrouter/92b8662d in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=error"}
+{"timestamp":"2026-08-08T02:11:28.749Z","level":"error","component":"app","message":"❌ tokenrouter [403]: [403]: User's credit limit is insufficient, remaining credit limit: ＄0.000000 (request id: 202608080"}
+{"level":50,"time":"2026-08-08T02:11:28.732Z","service":"omniroute","module":"sse","tag":"TOKEN_REFRESH","msg":"All 3 retry attempts failed for tokenrouter"}
+{"level":40,"time":"2026-08-08T02:11:28.732Z","service":"omniroute","module":"sse","tag":"TOKEN","msg":"TOKENROUTER | refresh failed"}
+{"level":40,"time":"2026-08-08T02:11:28.736Z","service":"omniroute","module":"sse","tag":"EMERGENCY_FALLBACK","msg":"tokenrouter/qwen/qwen3.8-max -> nvidia/openai/gpt-oss-120b | reason=Budget error detected ('credit limit') → emergency fallback to nvidia/openai/gpt-oss-120b"}
+{"level":30,"time":"2026-08-08T02:11:28.737Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: nvidia, Model: openai/gpt-oss-120b"}
+{"level":40,"time":"2026-08-08T02:11:28.743Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for nvidia"}
+{"level":40,"time":"2026-08-08T02:11:28.743Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No active credentials for provider: nvidia"}
+{"level":40,"time":"2026-08-08T02:11:28.744Z","service":"omniroute","module":"sse","tag":"EMERGENCY_FALLBACK","msg":"Emergency fallback to nvidia/openai/gpt-oss-120b failed with status 404. Resuming original provider account fallback."}
+{"level":40,"time":"2026-08-08T02:11:28.749Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account 92b8662d... unavailable (403), trying fallback"}
+{"level":40,"time":"2026-08-08T02:11:28.751Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"tokenrouter | all 1 active accounts rate limited (reset after 6s) | lastErrorCode=403.0, lastError=[403]: User's credit limit is insufficient, remain"}
+{"level":40,"time":"2026-08-08T02:11:28.751Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"[tokenrouter/qwen/qwen3.8-max] [403]: User's credit limit is insufficient, remaining credit limit: ＄0.000000 (request id: 20260808020914891637908n9nkk9jC) (reset after 6s)"}
+{"timestamp":"2026-08-08T02:11:38.874Z","level":"info","component":"app","message":"⏰ [RATE-LIMIT] tokenrouter:92b8662d-8560-492b-bf00-69db59386b05 — job expired after 15s in queue, dropping"}
+{"timestamp":"2026-08-08T02:11:38.877Z","level":"info","component":"app","message":"\u001b[31m[ERROR] [503]: Request dropped after exceeding the local rate-limit queue budget maxWaitMs (15000ms) for tokenrouter/moonshotai/kimi-k3-free — this is OmniRoute's request queue (resilienceSettings.requestQueue.maxWaitMs), not an upstream timeout. Raise it in Settings → Resilience if this is queue saturation rather than a slow provider. (cause: This job timed out after 15000 ms.)\u001b[0m"}
+{"timestamp":"2026-08-08T02:11:38.879Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] tokenrouter/92b8662d in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=error"}
+{"timestamp":"2026-08-08T02:11:38.880Z","level":"error","component":"app","message":"❌ tokenrouter [503]: [503]: Request dropped after exceeding the local rate-limit queue budget maxWaitMs (15000ms) for tok"}
+{"level":40,"time":"2026-08-08T02:11:38.880Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account 92b8662d... unavailable (503), trying fallback"}
+{"level":40,"time":"2026-08-08T02:11:38.881Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"tokenrouter | all 1 active accounts rate limited (reset after 12s) | lastErrorCode=503.0, lastError=[503]: Request dropped after exceeding the local r"}
+{"level":40,"time":"2026-08-08T02:11:38.881Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"[tokenrouter/moonshotai/kimi-k3-free] [503]: Request dropped after exceeding the local rate-limit queue budget maxWaitMs (15000ms) for tokenrouter/moonshotai/kimi-k3-free — this is OmniRoute's request queue (resilienceSettings.requestQueue.maxWaitMs), not an upstream timeout. Raise it in Settings → Resilience if this is queue saturation rather than a slow provider. (cause: This job timed out after 15000 ms.) (reset after 12s)"}
+{"timestamp":"2026-08-08T02:12:14.974Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-08T02:12:14.980Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-08T02:12:14.987Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"level":30,"time":"2026-08-08T02:12:14.971Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | tokenrouter/moonshotai/kimi-k3-free | 1 msgs","msg":"📥 POST /v1/chat/completions | tokenrouter/moonshotai/kimi-k3-free | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:12:14.972Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: tokenrouter, Model: moonshotai/kimi-k3-free"}
+{"level":30,"time":"2026-08-08T02:12:14.973Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:aec0a... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:12:14.973Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using tokenrouter account: 92b8662d..."}
+{"level":30,"time":"2026-08-08T02:12:14.977Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | tokenrouter/qwen/qwen3.8-max | 1 msgs","msg":"📥 POST /v1/chat/completions | tokenrouter/qwen/qwen3.8-max | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:12:14.978Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: tokenrouter, Model: qwen/qwen3.8-max"}
+{"level":30,"time":"2026-08-08T02:12:14.979Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:8ef31... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:12:14.979Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using tokenrouter account: 92b8662d..."}
+{"level":30,"time":"2026-08-08T02:12:14.985Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | tokenrouter/minimax-3 | 1 msgs","msg":"📥 POST /v1/chat/completions | tokenrouter/minimax-3 | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:12:14.986Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: tokenrouter, Model: minimax-3"}
+{"level":30,"time":"2026-08-08T02:12:14.986Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:2f310... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:12:14.986Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using tokenrouter account: 92b8662d..."}
+{"timestamp":"2026-08-08T02:12:16.558Z","level":"info","component":"app","message":"\u001b[31m[ERROR] [503]: No available channel for model minimax-3 under group default (distributor) (request id: 20260808021005679430754U9IVeM3C)\u001b[0m"}
+{"timestamp":"2026-08-08T02:12:16.562Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] tokenrouter/92b8662d in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=error"}
+{"timestamp":"2026-08-08T02:12:16.564Z","level":"error","component":"app","message":"❌ tokenrouter [503]: [503]: No available channel for model minimax-3 under group default (distributor) (request id: 20260"}
+{"level":40,"time":"2026-08-08T02:12:16.564Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account 92b8662d... unavailable (503), trying fallback"}
+{"level":40,"time":"2026-08-08T02:12:16.565Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"tokenrouter | all 1 active accounts rate limited (reset after 3s) | lastErrorCode=503.0, lastError=[503]: No available channel for model minimax-3 un"}
+{"level":40,"time":"2026-08-08T02:12:16.565Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"[tokenrouter/minimax-3] [503]: No available channel for model minimax-3 under group default (distributor) (request id: 20260808021005679430754U9IVeM3C) (reset after 3s)"}
+{"timestamp":"2026-08-08T02:12:19.276Z","level":"info","component":"app","message":"\u001b[31m[ERROR] [403]: User's credit limit is insufficient, remaining credit limit: ＄0.000000 (request id: 20260808021005349318221jRW52Ynu)\u001b[0m"}
+{"timestamp":"2026-08-08T02:12:19.279Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] tokenrouter/92b8662d in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=error"}
+{"level":50,"time":"2026-08-08T02:12:19.276Z","service":"omniroute","module":"sse","tag":"TOKEN_REFRESH","msg":"All 3 retry attempts failed for tokenrouter"}
+{"level":40,"time":"2026-08-08T02:12:19.276Z","service":"omniroute","module":"sse","tag":"TOKEN","msg":"TOKENROUTER | refresh failed"}
+{"level":40,"time":"2026-08-08T02:12:19.278Z","service":"omniroute","module":"sse","tag":"EMERGENCY_FALLBACK","msg":"tokenrouter/qwen/qwen3.8-max -> nvidia/openai/gpt-oss-120b | reason=Budget error detected ('credit limit') → emergency fallback to nvidia/openai/gpt-oss-120b"}
+{"level":30,"time":"2026-08-08T02:12:19.278Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: nvidia, Model: openai/gpt-oss-120b"}
+{"level":40,"time":"2026-08-08T02:12:19.280Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for nvidia"}
+{"level":40,"time":"2026-08-08T02:12:19.280Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No active credentials for provider: nvidia"}
+{"level":40,"time":"2026-08-08T02:12:19.280Z","service":"omniroute","module":"sse","tag":"EMERGENCY_FALLBACK","msg":"Emergency fallback to nvidia/openai/gpt-oss-120b failed with status 404. Resuming original provider account fallback."}
+{"level":30,"time":"2026-08-08T02:12:19.280Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"92b8662d already marked unavailable (until 2026-08-08T02:12:19.563Z), skipping duplicate mark"}
+{"level":40,"time":"2026-08-08T02:12:19.280Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account 92b8662d... unavailable (403), trying fallback"}
+{"level":40,"time":"2026-08-08T02:12:19.280Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"tokenrouter | all 1 active accounts rate limited (reset after 1s) | lastErrorCode=503.0, lastError=[503]: No available channel for model minimax-3 un"}
+{"level":40,"time":"2026-08-08T02:12:19.280Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"[tokenrouter/qwen/qwen3.8-max] [403]: User's credit limit is insufficient, remaining credit limit: ＄0.000000 (request id: 20260808021005349318221jRW52Ynu) (reset after 1s)"}
+{"timestamp":"2026-08-08T02:12:24.646Z","level":"info","component":"ConnectionRecovery","message":"[ConnectionRecovery] proactively restored 1 connection(s) with elapsed cooldown"}
+{"level":30,"time":"2026-08-08T02:12:24.646Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account 92b8662d error cleared"}
+{"timestamp":"2026-08-08T02:12:30.733Z","level":"info","component":"app","message":"⏰ [RATE-LIMIT] tokenrouter:92b8662d-8560-492b-bf00-69db59386b05 — job expired after 15s in queue, dropping"}
+{"timestamp":"2026-08-08T02:12:30.733Z","level":"info","component":"app","message":"🔄 [RATE-LIMIT] tokenrouter:92b8662d-8560-492b-bf00-69db59386b05 — recovering idle limiter after queue expiry"}
+{"timestamp":"2026-08-08T02:12:34.990Z","level":"info","component":"23:12:34","message":"[23:12:34] 🌊 [STREAM] TOKENROUTER | moonshotai/kimi-k3-free | 20013ms | disconnect: request_signal_aborted"}
+{"timestamp":"2026-08-08T02:12:34.994Z","level":"info","component":"23:12:34","message":"[23:12:34] 🌊 [STREAM] TOKENROUTER | moonshotai/kimi-k3-free | 20018ms | client_disconnect (post-abort)"}
+{"timestamp":"2026-08-08T02:12:35.000Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] tokenrouter/92b8662d in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=error"}
+{"level":30,"time":"2026-08-08T02:13:26.656Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | trk/moonshotai/kimi-k3-free | 1 msgs","msg":"📥 POST /v1/chat/completions | trk/moonshotai/kimi-k3-free | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:13:26.657Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"trk/moonshotai/kimi-k3-free → tokenrouter/moonshotai/kimi-k3-free"}
+{"level":30,"time":"2026-08-08T02:13:26.658Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:a0923... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:13:26.658Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using tokenrouter account: 92b8662d..."}
+{"timestamp":"2026-08-08T02:13:28.292Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] tokenrouter/92b8662d in=? out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=success"}
+{"timestamp":"2026-08-08T02:13:29.059Z","level":"info","component":"23:13:29","message":"[23:13:29] 📊 \u001b[32m[USAGE] TOKENROUTER | in=103 | out=64 | account=92b8662d...\u001b[0m | reasoning=64"}
+{"timestamp":"2026-08-08T02:13:29.070Z","level":"info","component":"23:13:29","message":"[23:13:29] 🌊 [STREAM] TOKENROUTER | moonshotai/kimi-k3-free | 2410ms | complete"}
+{"level":30,"time":"2026-08-08T02:13:54.902Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | trk/minimax-3 | 1 msgs","msg":"📥 POST /v1/chat/completions | trk/minimax-3 | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:13:54.903Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"trk/minimax-3 → tokenrouter/minimax-3"}
+{"level":30,"time":"2026-08-08T02:13:54.904Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:6b0c1... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:13:54.904Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using tokenrouter account: 92b8662d..."}
+{"timestamp":"2026-08-08T02:13:56.183Z","level":"info","component":"app","message":"\u001b[31m[ERROR] [503]: No available channel for model minimax-3 under group default (distributor) (request id: 20260808021145301737805ElDN2zdk)\u001b[0m"}
+{"timestamp":"2026-08-08T02:13:56.189Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] tokenrouter/92b8662d in=? out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=error"}
+{"timestamp":"2026-08-08T02:13:56.191Z","level":"error","component":"app","message":"❌ tokenrouter [503]: [503]: No available channel for model minimax-3 under group default (distributor) (request id: 20260"}
+{"level":40,"time":"2026-08-08T02:13:56.191Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account 92b8662d... unavailable (503), trying fallback"}
+{"level":40,"time":"2026-08-08T02:13:56.191Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"tokenrouter | all 1 active accounts rate limited (reset after 3s) | lastErrorCode=503.0, lastError=[503]: No available channel for model minimax-3 un"}
+{"level":40,"time":"2026-08-08T02:13:56.192Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"[tokenrouter/minimax-3] [503]: No available channel for model minimax-3 under group default (distributor) (request id: 20260808021145301737805ElDN2zdk) (reset after 3s)"}
+{"level":30,"time":"2026-08-08T02:13:59.110Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | trk/deepseek-v4-pro | 1 msgs","msg":"📥 POST /v1/chat/completions | trk/deepseek-v4-pro | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:13:59.111Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"trk/deepseek-v4-pro → tokenrouter/deepseek-v4-pro"}
+{"level":30,"time":"2026-08-08T02:13:59.111Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:9cbe2... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:13:59.111Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using tokenrouter account: 92b8662d..."}
+{"timestamp":"2026-08-08T02:14:00.420Z","level":"info","component":"app","message":"\u001b[31m[ERROR] [503]: No available channel for model deepseek-v4-pro under group default (distributor) (request id: 20260808021149544511586ULLkArIE)\u001b[0m"}
+{"timestamp":"2026-08-08T02:14:00.427Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] tokenrouter/92b8662d in=? out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=error"}
+{"timestamp":"2026-08-08T02:14:00.427Z","level":"error","component":"app","message":"❌ tokenrouter [503]: [503]: No available channel for model deepseek-v4-pro under group default (distributor) (request id:"}
+{"level":40,"time":"2026-08-08T02:14:00.428Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account 92b8662d... unavailable (503), trying fallback"}
+{"level":40,"time":"2026-08-08T02:14:00.428Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"tokenrouter | all 1 active accounts rate limited (reset after 6s) | lastErrorCode=503.0, lastError=[503]: No available channel for model deepseek-v4-"}
+{"level":40,"time":"2026-08-08T02:14:00.428Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"[tokenrouter/deepseek-v4-pro] [503]: No available channel for model deepseek-v4-pro under group default (distributor) (request id: 20260808021149544511586ULLkArIE) (reset after 6s)"}
+{"timestamp":"2026-08-08T02:14:24.656Z","level":"info","component":"ConnectionRecovery","message":"[ConnectionRecovery] proactively restored 1 connection(s) with elapsed cooldown"}
+{"level":30,"time":"2026-08-08T02:14:24.656Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account 92b8662d error cleared"}
+{"timestamp":"2026-08-08T02:15:04.852Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"level":30,"time":"2026-08-08T02:15:04.848Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | tokenrouter/moonshotai/kimi-k3-free | 1 msgs","msg":"📥 POST /v1/chat/completions | tokenrouter/moonshotai/kimi-k3-free | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:15:04.849Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: tokenrouter, Model: moonshotai/kimi-k3-free"}
+{"level":30,"time":"2026-08-08T02:15:04.850Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:d2f7d... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:15:04.851Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using tokenrouter account: 92b8662d..."}
+{"timestamp":"2026-08-08T02:15:08.890Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] tokenrouter/92b8662d in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=success"}
+{"timestamp":"2026-08-08T02:16:03.435Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-08T02:16:03.440Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"level":30,"time":"2026-08-08T02:16:03.433Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | tokenrouter/moonshotai/kimi-k3-free | 1 msgs","msg":"📥 POST /v1/chat/completions | tokenrouter/moonshotai/kimi-k3-free | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:16:03.434Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: tokenrouter, Model: moonshotai/kimi-k3-free"}
+{"level":30,"time":"2026-08-08T02:16:03.434Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:9e233... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:16:03.434Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using tokenrouter account: 92b8662d..."}
+{"level":30,"time":"2026-08-08T02:16:03.438Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | mistral/codestral-2508 | 1 msgs","msg":"📥 POST /v1/chat/completions | mistral/codestral-2508 | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:16:03.438Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: mistral, Model: codestral-2508"}
+{"level":30,"time":"2026-08-08T02:16:03.439Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:de6bc... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:16:03.439Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using mistral account: 5acf1d59..."}
+{"timestamp":"2026-08-08T02:16:03.961Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] mistral/5acf1d59 in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=success"}
+{"timestamp":"2026-08-08T02:16:18.500Z","level":"info","component":"app","message":"⏰ [RATE-LIMIT] tokenrouter:92b8662d-8560-492b-bf00-69db59386b05 — job expired after 15s in queue, dropping"}
+{"timestamp":"2026-08-08T02:16:18.501Z","level":"info","component":"app","message":"🔄 [RATE-LIMIT] tokenrouter:92b8662d-8560-492b-bf00-69db59386b05 — recovering idle limiter after queue expiry"}
+{"timestamp":"2026-08-08T02:16:23.432Z","level":"info","component":"23:16:23","message":"[23:16:23] 🌊 [STREAM] TOKENROUTER | moonshotai/kimi-k3-free | 19996ms | disconnect: request_signal_aborted"}
+{"timestamp":"2026-08-08T02:16:23.434Z","level":"info","component":"23:16:23","message":"[23:16:23] 🌊 [STREAM] TOKENROUTER | moonshotai/kimi-k3-free | 19997ms | client_disconnect (post-abort)"}
+{"timestamp":"2026-08-08T02:16:30.082Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T02:17:03.968Z","level":"info","component":"SpendWriter","message":"[SpendWriter] Flushed 1 cost entry across 1 key(s)"}
+{"timestamp":"2026-08-08T02:18:01.642Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"level":30,"time":"2026-08-08T02:18:01.637Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | openrouter/auto | 1 msgs","msg":"📥 POST /v1/chat/completions | openrouter/auto | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:18:01.640Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: openrouter, Model: auto"}
+{"level":30,"time":"2026-08-08T02:18:01.641Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:5b6e8... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:18:01.641Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using openrouter account: cc673b94..."}
+{"timestamp":"2026-08-08T02:18:04.511Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] openrouter/cc673b94 in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=success"}
+{"timestamp":"2026-08-08T02:18:43.686Z","level":"warn","component":"clientApiPolicy","message":"[clientApiPolicy] invalid bearer presented to /api/v1/chat/completions but REQUIRE_API_KEY=false — falling through to anonymous (key_id=key__KEY)"}
+{"timestamp":"2026-08-08T02:18:43.755Z","level":"debug","component":"MODEL","message":"[MODEL] Cross-proxy alias applied: \"anthropic/claude-opus-4.5\" → \"claude-opus-4-5-20251101\""}
+{"level":30,"time":"2026-08-08T02:18:43.705Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | MediaAgent | 2 msgs","msg":"📥 POST /v1/chat/completions | MediaAgent | 2 msgs"}
+{"timestamp":"2026-08-08T02:18:45.883Z","level":"warn","component":"clientApiPolicy","message":"[clientApiPolicy] invalid bearer presented to /api/v1/chat/completions but REQUIRE_API_KEY=false — falling through to anonymous (key_id=key__KEY)"}
+{"timestamp":"2026-08-08T02:18:45.904Z","level":"warn","component":"clientApiPolicy","message":"[clientApiPolicy] invalid bearer presented to /api/v1/chat/completions but REQUIRE_API_KEY=false — falling through to anonymous (key_id=key__KEY)"}
+{"level":40,"time":"2026-08-08T02:18:45.916Z","service":"omniroute","module":"sse","tag":"VISION-BRIDGE","msg":"Failed to get description for image 1: Vision API error 503: {\"error\":{\"message\":\"Chat admission capacity is temporarily unavailable. Retry shortly.\",\"type\":\"server_error\",\"code\":\"chat_admission_busy\"}}"}
+{"level":30,"time":"2026-08-08T02:18:45.943Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"Combo \"MediaAgent\" [priority] with 3 models"}
+{"level":30,"time":"2026-08-08T02:18:45.948Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"priority with nested resolution: 3 total targets"}
+{"level":30,"time":"2026-08-08T02:18:45.950Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"Context-aware fallback: kept 2/3 targets for request requirements"}
+{"level":30,"time":"2026-08-08T02:18:45.957Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:d1433... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:18:45.958Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:d1433... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:18:45.965Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:d1433... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:18:45.965Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"Trying model 1/2: gemini/gemini-2.5-flash-lite"}
+{"level":30,"time":"2026-08-08T02:18:45.966Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: gemini, Model: gemini-2.5-flash-lite"}
+{"level":30,"time":"2026-08-08T02:18:45.967Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using gemini account: 8f5c6041..."}
+{"level":30,"time":"2026-08-08T02:18:46.003Z","service":"omniroute","module":"sse","tag":"CONTEXT","msg":"Attempting to resolve combo limits for comboName=MediaAgent"}
+{"level":30,"time":"2026-08-08T02:18:46.005Z","service":"omniroute","module":"sse","tag":"CONTEXT","msg":"Combo context limit: 1048576 (source=target)"}
+{"timestamp":"2026-08-08T02:18:47.398Z","level":"warn","component":"provider","message":"[provider] Node 8f5c6041-bb33-47fb-a40f-7409087c5553 model not found (404) for gemini-2.5-flash-lite - locking model for 120s (connection stays active)"}
+{"timestamp":"2026-08-08T02:18:47.399Z","level":"info","component":"app","message":"\u001b[31m[ERROR] [404]: This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\u001b[0m"}
+{"timestamp":"2026-08-08T02:18:47.417Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] gemini/8f5c6041 in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=error"}
+{"level":30,"time":"2026-08-08T02:18:47.421Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Model-only lockout for gemini:gemini-2.5-flash-lite — 404 not_found 3s (failureCount=1, connection stays active)"}
+{"level":40,"time":"2026-08-08T02:18:47.421Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account 8f5c6041... unavailable (404), trying fallback"}
+{"level":40,"time":"2026-08-08T02:18:47.422Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"gemini | all 1 active accounts cooling down for model gemini-2.5-flash-lite (reset after 2m) | lastErrorCode=404.0, lastError=Model gemini-2.5-flash-lite not_found"}
+{"level":40,"time":"2026-08-08T02:18:47.423Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"[gemini/gemini-2.5-flash-lite] [404]: This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements. (reset after 2m)"}
+{"level":40,"time":"2026-08-08T02:18:47.425Z","service":"omniroute","module":"sse","tag":"COMBO","status":404,"msg":"Model gemini/gemini-2.5-flash-lite failed, trying next"}
+{"level":30,"time":"2026-08-08T02:18:47.428Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:d1433... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:18:47.428Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"Trying model 2/2: gemini/gemini-2.5-flash-lite"}
+{"level":30,"time":"2026-08-08T02:18:47.429Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: gemini, Model: gemini-2.5-flash-lite"}
+{"level":30,"time":"2026-08-08T02:18:47.430Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using gemini account: dd1584c3..."}
+{"level":30,"time":"2026-08-08T02:18:47.466Z","service":"omniroute","module":"sse","tag":"CONTEXT","msg":"Attempting to resolve combo limits for comboName=MediaAgent"}
+{"level":30,"time":"2026-08-08T02:18:47.470Z","service":"omniroute","module":"sse","tag":"CONTEXT","msg":"Combo context limit: 1048576 (source=target)"}
+{"timestamp":"2026-08-08T02:18:49.592Z","level":"warn","component":"provider","message":"[provider] Node dd1584c3-fbe1-4205-84a3-1e1c3e6b8c37 model not found (404) for gemini-2.5-flash-lite - locking model for 120s (connection stays active)"}
+{"timestamp":"2026-08-08T02:18:49.594Z","level":"info","component":"app","message":"\u001b[31m[ERROR] [404]: This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\u001b[0m"}
+{"timestamp":"2026-08-08T02:18:49.610Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] gemini/dd1584c3 in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=error"}
+{"level":30,"time":"2026-08-08T02:18:49.612Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Model-only lockout for gemini:gemini-2.5-flash-lite — 404 not_found 3s (failureCount=1, connection stays active)"}
+{"level":40,"time":"2026-08-08T02:18:49.612Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account dd1584c3... unavailable (404), trying fallback"}
+{"level":40,"time":"2026-08-08T02:18:49.612Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"gemini | all 1 active accounts cooling down for model gemini-2.5-flash-lite (reset after 2m) | lastErrorCode=404.0, lastError=Model gemini-2.5-flash-lite not_found"}
+{"level":40,"time":"2026-08-08T02:18:49.612Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"[gemini/gemini-2.5-flash-lite] [404]: This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements. (reset after 2m)"}
+{"level":40,"time":"2026-08-08T02:18:49.613Z","service":"omniroute","module":"sse","tag":"COMBO","status":404,"msg":"Model gemini/gemini-2.5-flash-lite failed, trying next"}
+{"level":40,"time":"2026-08-08T02:18:49.613Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"All models failed | [gemini/gemini-2.5-flash-lite] [404]: This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements. (reset after 2m) [gemini/gemini-2.5-flash-lite (404), gemini/gemini-2.5-flash-lite (404)]"}
+{"timestamp":"2026-08-08T02:19:03.980Z","level":"info","component":"SpendWriter","message":"[SpendWriter] Flushed 1 cost entry across 1 key(s)"}
+{"timestamp":"2026-08-08T02:21:32.487Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T02:26:26.369Z","level":"info","component":"app","message":"🧹 [RATE-LIMIT] Evicting idle limiter: tokenrouter:92b8662d-8560-492b-bf00-69db59386b05 (inactive for 608s)"}
+{"timestamp":"2026-08-08T02:26:35.335Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T02:28:26.400Z","level":"info","component":"app","message":"🧹 [RATE-LIMIT] Evicting idle limiter: openrouter:cc673b94-b765-4309-a662-a1538d3e7158 (inactive for 622s)"}
+{"timestamp":"2026-08-08T02:29:17.551Z","level":"warn","component":"clientApiPolicy","message":"[clientApiPolicy] invalid bearer presented to /api/v1/chat/completions but REQUIRE_API_KEY=false — falling through to anonymous (key_id=key__KEY)"}
+{"level":30,"time":"2026-08-08T02:29:17.562Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | CodingAgent | 8 msgs","msg":"📥 POST /v1/chat/completions | CodingAgent | 8 msgs"}
+{"level":30,"time":"2026-08-08T02:29:17.567Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"Combo \"CodingAgent\" [priority] with 2 models"}
+{"level":30,"time":"2026-08-08T02:29:17.570Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"priority with nested resolution: 2 total targets"}
+{"level":30,"time":"2026-08-08T02:29:17.577Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:22b1e... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:29:17.577Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:22b1e... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:29:17.580Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:22b1e... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:29:17.580Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"Trying model 1/2: tokenrouter/moonshotai/kimi-k3-free"}
+{"level":30,"time":"2026-08-08T02:29:17.581Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: tokenrouter, Model: moonshotai/kimi-k3-free"}
+{"level":30,"time":"2026-08-08T02:29:17.582Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using tokenrouter account: 92b8662d..."}
+{"level":30,"time":"2026-08-08T02:29:17.592Z","service":"omniroute","module":"sse","tag":"CONTEXT","msg":"Attempting to resolve combo limits for comboName=CodingAgent"}
+{"level":30,"time":"2026-08-08T02:29:17.595Z","service":"omniroute","module":"sse","tag":"CONTEXT","msg":"Combo context limit: 128000 (source=target)"}
+{"timestamp":"2026-08-08T02:29:32.658Z","level":"info","component":"app","message":"⏰ [RATE-LIMIT] tokenrouter:92b8662d-8560-492b-bf00-69db59386b05 — job expired after 15s in queue, dropping"}
+{"timestamp":"2026-08-08T02:29:32.660Z","level":"info","component":"app","message":"🔄 [RATE-LIMIT] tokenrouter:92b8662d-8560-492b-bf00-69db59386b05 — recovering idle limiter after queue expiry"}
+{"timestamp":"2026-08-08T02:29:47.736Z","level":"info","component":"app","message":"⏰ [RATE-LIMIT] tokenrouter:92b8662d-8560-492b-bf00-69db59386b05 — job expired after 15s in queue, dropping"}
+{"timestamp":"2026-08-08T02:29:47.740Z","level":"info","component":"app","message":"\u001b[31m[ERROR] [503]: Request dropped after exceeding the local rate-limit queue budget maxWaitMs (15000ms) for tokenrouter/moonshotai/kimi-k3-free — this is OmniRoute's request queue (resilienceSettings.requestQueue.maxWaitMs), not an upstream timeout. Raise it in Settings → Resilience if this is queue saturation rather than a slow provider. (cause: This job timed out after 15000 ms.)\u001b[0m"}
+{"timestamp":"2026-08-08T02:29:47.769Z","level":"error","component":"app","message":"❌ tokenrouter [503]: [503]: Request dropped after exceeding the local rate-limit queue budget maxWaitMs (15000ms) for tok"}
+{"timestamp":"2026-08-08T02:29:47.785Z","level":"error","component":"app","message":"Request dropped after exceeding the local rate-limit queue budget maxWaitMs (15000ms) for tokenrouter/moonshotai/kimi-k3-free — this is OmniRoute's request queue (resilienceSettings.requestQueue.maxWaitMs), not an upstream timeout. Raise it in Settings → Resilience if this is queue saturation rather than a slow provider.\nError: Request dropped after exceeding the local rate-limit queue budget maxWaitMs (15000ms) for tokenrouter/moonshotai/kimi-k3-free — this is OmniRoute's request queue (resilienceSettings.requestQueue.maxWaitMs), not an upstream timeout. Raise it in Settings → Resilience if this is queue saturation rather than a slow provider.\n    at K (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_0foeli3._.js:1:69701)\n    at async D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_18pf97p._.js:30:37563\n    at async o (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_18pf97p._.js:30:36835)\n    at async n (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\open-sse_services_requestDedup_ts_11lgl7x._.js:1:483)\n    at async od (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_18pf97p._.js:30:42831)\n    at async Module.t6 [as handleChatCore] (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_18pf97p._.js:30:44472)\n    at async O (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_18pf97p._.js:30:79303)\n    at async eI (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_1u2fevo._.js:1:43785)\n    at async D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_187fx28._.js:1:5129\n    at async ei (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_187fx28._.js:63:61975)"}
+{"timestamp":"2026-08-08T02:29:47.807Z","level":"error","component":"app","message":"⨯ unhandledRejection:  Request dropped after exceeding the local rate-limit queue budget maxWaitMs (15000ms) for tokenrouter/moonshotai/kimi-k3-free — this is OmniRoute's request queue (resilienceSettings.requestQueue.maxWaitMs), not an upstream timeout. Raise it in Settings → Resilience if this is queue saturation rather than a slow provider.\nError: Request dropped after exceeding the local rate-limit queue budget maxWaitMs (15000ms) for tokenrouter/moonshotai/kimi-k3-free — this is OmniRoute's request queue (resilienceSettings.requestQueue.maxWaitMs), not an upstream timeout. Raise it in Settings → Resilience if this is queue saturation rather than a slow provider.\n    at K (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_0foeli3._.js:1:69701)\n    at async D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_18pf97p._.js:30:37563\n    at async o (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_18pf97p._.js:30:36835)\n    at async n (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\open-sse_services_requestDedup_ts_11lgl7x._.js:1:483)\n    at async od (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_18pf97p._.js:30:42831)\n    at async Module.t6 [as handleChatCore] (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_18pf97p._.js:30:44472)\n    at async O (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_18pf97p._.js:30:79303)\n    at async eI (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_1u2fevo._.js:1:43785)\n    at async D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_187fx28._.js:1:5129\n    at async ei (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_187fx28._.js:63:61975)"}
+{"level":40,"time":"2026-08-08T02:29:47.770Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account 92b8662d... unavailable (503), trying fallback"}
+{"level":40,"time":"2026-08-08T02:29:47.771Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"tokenrouter | all 1 active accounts rate limited (reset after 3s) | lastErrorCode=503.0, lastError=[503]: Request dropped after exceeding the local r"}
+{"level":40,"time":"2026-08-08T02:29:47.772Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"[tokenrouter/moonshotai/kimi-k3-free] [503]: Request dropped after exceeding the local rate-limit queue budget maxWaitMs (15000ms) for tokenrouter/moonshotai/kimi-k3-free — this is OmniRoute's request queue (resilienceSettings.requestQueue.maxWaitMs), not an upstream timeout. Raise it in Settings → Resilience if this is queue saturation rather than a slow provider. (cause: This job timed out after 15000 ms.) (reset after 3s)"}
+{"level":30,"time":"2026-08-08T02:29:47.773Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"Provider tokenrouter connection 92b8662d-8560-492b-bf00-69db59386b05 error (503) — marking for skip on remaining targets (#1731v2)"}
+{"level":30,"time":"2026-08-08T02:29:47.774Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"Retrying tokenrouter/moonshotai/kimi-k3-free in 2000ms (attempt 2/2)"}
+{"level":30,"time":"2026-08-08T02:29:49.779Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"Trying model 1/2: tokenrouter/moonshotai/kimi-k3-free (retry 1)"}
+{"level":30,"time":"2026-08-08T02:29:49.786Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: tokenrouter, Model: moonshotai/kimi-k3-free"}
+{"level":30,"time":"2026-08-08T02:29:49.787Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using tokenrouter account: 92b8662d..."}
+{"level":30,"time":"2026-08-08T02:29:49.795Z","service":"omniroute","module":"sse","tag":"CONTEXT","msg":"Attempting to resolve combo limits for comboName=CodingAgent"}
+{"level":30,"time":"2026-08-08T02:29:49.799Z","service":"omniroute","module":"sse","tag":"CONTEXT","msg":"Combo context limit: 128000 (source=target)"}
+{"timestamp":"2026-08-08T02:30:04.830Z","level":"info","component":"app","message":"⏰ [RATE-LIMIT] tokenrouter:92b8662d-8560-492b-bf00-69db59386b05 — job expired after 15s in queue, dropping"}
+{"timestamp":"2026-08-08T02:30:04.830Z","level":"info","component":"app","message":"🔄 [RATE-LIMIT] tokenrouter:92b8662d-8560-492b-bf00-69db59386b05 — recovering idle limiter after queue expiry"}
+{"timestamp":"2026-08-08T02:30:19.902Z","level":"info","component":"app","message":"⏰ [RATE-LIMIT] tokenrouter:92b8662d-8560-492b-bf00-69db59386b05 — job expired after 15s in queue, dropping"}
+{"timestamp":"2026-08-08T02:30:19.904Z","level":"info","component":"app","message":"\u001b[31m[ERROR] [503]: Request dropped after exceeding the local rate-limit queue budget maxWaitMs (15000ms) for tokenrouter/moonshotai/kimi-k3-free — this is OmniRoute's request queue (resilienceSettings.requestQueue.maxWaitMs), not an upstream timeout. Raise it in Settings → Resilience if this is queue saturation rather than a slow provider. (cause: This job timed out after 15000 ms.)\u001b[0m"}
+{"timestamp":"2026-08-08T02:30:19.907Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] tokenrouter/92b8662d in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=error"}
+{"timestamp":"2026-08-08T02:30:19.909Z","level":"error","component":"app","message":"❌ tokenrouter [503]: [503]: Request dropped after exceeding the local rate-limit queue budget maxWaitMs (15000ms) for tok"}
+{"timestamp":"2026-08-08T02:30:19.927Z","level":"error","component":"app","message":"Request dropped after exceeding the local rate-limit queue budget maxWaitMs (15000ms) for tokenrouter/moonshotai/kimi-k3-free — this is OmniRoute's request queue (resilienceSettings.requestQueue.maxWaitMs), not an upstream timeout. Raise it in Settings → Resilience if this is queue saturation rather than a slow provider.\nError: Request dropped after exceeding the local rate-limit queue budget maxWaitMs (15000ms) for tokenrouter/moonshotai/kimi-k3-free — this is OmniRoute's request queue (resilienceSettings.requestQueue.maxWaitMs), not an upstream timeout. Raise it in Settings → Resilience if this is queue saturation rather than a slow provider.\n    at K (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_0foeli3._.js:1:69701)\n    at async D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_18pf97p._.js:30:37563\n    at async o (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_18pf97p._.js:30:36835)\n    at async n (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\open-sse_services_requestDedup_ts_11lgl7x._.js:1:483)\n    at async od (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_18pf97p._.js:30:42831)\n    at async Module.t6 [as handleChatCore] (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_18pf97p._.js:30:44472)\n    at async O (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_18pf97p._.js:30:79303)\n    at async eI (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_1u2fevo._.js:1:43785)\n    at async D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_187fx28._.js:1:5129\n    at async ei (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_187fx28._.js:63:61975)"}
+{"timestamp":"2026-08-08T02:30:19.929Z","level":"error","component":"app","message":"⨯ unhandledRejection:  Request dropped after exceeding the local rate-limit queue budget maxWaitMs (15000ms) for tokenrouter/moonshotai/kimi-k3-free — this is OmniRoute's request queue (resilienceSettings.requestQueue.maxWaitMs), not an upstream timeout. Raise it in Settings → Resilience if this is queue saturation rather than a slow provider.\nError: Request dropped after exceeding the local rate-limit queue budget maxWaitMs (15000ms) for tokenrouter/moonshotai/kimi-k3-free — this is OmniRoute's request queue (resilienceSettings.requestQueue.maxWaitMs), not an upstream timeout. Raise it in Settings → Resilience if this is queue saturation rather than a slow provider.\n    at K (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_0foeli3._.js:1:69701)\n    at async D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_18pf97p._.js:30:37563\n    at async o (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_18pf97p._.js:30:36835)\n    at async n (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\open-sse_services_requestDedup_ts_11lgl7x._.js:1:483)\n    at async od (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_18pf97p._.js:30:42831)\n    at async Module.t6 [as handleChatCore] (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_18pf97p._.js:30:44472)\n    at async O (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_18pf97p._.js:30:79303)\n    at async eI (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_1u2fevo._.js:1:43785)\n    at async D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_187fx28._.js:1:5129\n    at async ei (D:\\Projects\\OmniRoute\\resources\\app\\.build\\next\\server\\chunks\\_187fx28._.js:63:61975)"}
+{"level":40,"time":"2026-08-08T02:30:19.910Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account 92b8662d... unavailable (503), trying fallback"}
+{"level":40,"time":"2026-08-08T02:30:19.911Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"tokenrouter | all 1 active accounts rate limited (reset after 6s) | lastErrorCode=503.0, lastError=[503]: Request dropped after exceeding the local r"}
+{"level":40,"time":"2026-08-08T02:30:19.912Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"[tokenrouter/moonshotai/kimi-k3-free] [503]: Request dropped after exceeding the local rate-limit queue budget maxWaitMs (15000ms) for tokenrouter/moonshotai/kimi-k3-free — this is OmniRoute's request queue (resilienceSettings.requestQueue.maxWaitMs), not an upstream timeout. Raise it in Settings → Resilience if this is queue saturation rather than a slow provider. (cause: This job timed out after 15000 ms.) (reset after 6s)"}
+{"level":30,"time":"2026-08-08T02:30:19.913Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"Provider tokenrouter connection 92b8662d-8560-492b-bf00-69db59386b05 error (503) — marking for skip on remaining targets (#1731v2)"}
+{"level":40,"time":"2026-08-08T02:30:19.913Z","service":"omniroute","module":"sse","tag":"COMBO","status":503,"msg":"Model tokenrouter/moonshotai/kimi-k3-free failed, trying next"}
+{"level":30,"time":"2026-08-08T02:30:19.915Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:22b1e... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:30:19.916Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"Trying model 2/2: mistral/codestral-2508"}
+{"level":30,"time":"2026-08-08T02:30:19.916Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: mistral, Model: codestral-2508"}
+{"level":30,"time":"2026-08-08T02:30:19.917Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using mistral account: 5acf1d59..."}
+{"level":30,"time":"2026-08-08T02:30:19.923Z","service":"omniroute","module":"sse","tag":"CONTEXT","msg":"Attempting to resolve combo limits for comboName=CodingAgent"}
+{"level":30,"time":"2026-08-08T02:30:19.925Z","service":"omniroute","module":"sse","tag":"CONTEXT","msg":"Combo context limit: 128000 (source=combo-min)"}
+{"timestamp":"2026-08-08T02:30:20.509Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] mistral/5acf1d59 in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=success"}
+{"level":30,"time":"2026-08-08T02:30:20.511Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"Model mistral/codestral-2508 succeeded (62934ms, 0 fallbacks)"}
+{"timestamp":"2026-08-08T02:30:24.927Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/1 synced in 1554ms"}
+{"timestamp":"2026-08-08T02:30:57.963Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-08T02:30:57.969Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"level":30,"time":"2026-08-08T02:30:57.960Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | tokenrouter/moonshotai/kimi-k3-free | 1 msgs","msg":"📥 POST /v1/chat/completions | tokenrouter/moonshotai/kimi-k3-free | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:30:57.962Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: tokenrouter, Model: moonshotai/kimi-k3-free"}
+{"level":30,"time":"2026-08-08T02:30:57.962Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:99592... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:30:57.962Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using tokenrouter account: 92b8662d..."}
+{"level":30,"time":"2026-08-08T02:30:57.966Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | mistral/codestral-2508 | 1 msgs","msg":"📥 POST /v1/chat/completions | mistral/codestral-2508 | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:30:57.968Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: mistral, Model: codestral-2508"}
+{"level":30,"time":"2026-08-08T02:30:57.968Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:776a9... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:30:57.968Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using mistral account: 5acf1d59..."}
+{"timestamp":"2026-08-08T02:30:58.414Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] mistral/5acf1d59 in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=success"}
+{"timestamp":"2026-08-08T02:31:04.077Z","level":"info","component":"SpendWriter","message":"[SpendWriter] Flushed 1 cost entry across 1 key(s)"}
+{"timestamp":"2026-08-08T02:31:13.022Z","level":"info","component":"app","message":"⏰ [RATE-LIMIT] tokenrouter:92b8662d-8560-492b-bf00-69db59386b05 — job expired after 15s in queue, dropping"}
+{"timestamp":"2026-08-08T02:31:13.023Z","level":"info","component":"app","message":"🔄 [RATE-LIMIT] tokenrouter:92b8662d-8560-492b-bf00-69db59386b05 — recovering idle limiter after queue expiry"}
+{"timestamp":"2026-08-08T02:31:17.964Z","level":"info","component":"23:31:17","message":"[23:31:17] 🌊 [STREAM] TOKENROUTER | moonshotai/kimi-k3-free | 19998ms | disconnect: request_signal_aborted"}
+{"timestamp":"2026-08-08T02:31:17.967Z","level":"info","component":"23:31:17","message":"[23:31:17] 🌊 [STREAM] TOKENROUTER | moonshotai/kimi-k3-free | 20002ms | client_disconnect (post-abort)"}
+{"timestamp":"2026-08-08T02:31:17.973Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] tokenrouter/92b8662d in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=error"}
+{"timestamp":"2026-08-08T02:31:40.787Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T02:32:44.485Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-08T02:32:44.491Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-08T02:32:44.498Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-08T02:32:44.505Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-08T02:32:44.512Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"level":30,"time":"2026-08-08T02:32:44.481Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | tokenrouter/moonshotai/kimi-k3-free | 1 msgs","msg":"📥 POST /v1/chat/completions | tokenrouter/moonshotai/kimi-k3-free | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:32:44.483Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: tokenrouter, Model: moonshotai/kimi-k3-free"}
+{"level":30,"time":"2026-08-08T02:32:44.484Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:f0feb... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:32:44.484Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using tokenrouter account: 92b8662d..."}
+{"level":30,"time":"2026-08-08T02:32:44.489Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | mistral/codestral-2508 | 1 msgs","msg":"📥 POST /v1/chat/completions | mistral/codestral-2508 | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:32:44.490Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: mistral, Model: codestral-2508"}
+{"level":30,"time":"2026-08-08T02:32:44.490Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:cabcf... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:32:44.490Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using mistral account: 5acf1d59..."}
+{"level":30,"time":"2026-08-08T02:32:44.495Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | gemini/gemini-pro-latest | 1 msgs","msg":"📥 POST /v1/chat/completions | gemini/gemini-pro-latest | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:32:44.497Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: gemini, Model: gemini-pro-latest"}
+{"level":30,"time":"2026-08-08T02:32:44.497Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:50142... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:32:44.497Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using gemini account: 8f5c6041..."}
+{"level":30,"time":"2026-08-08T02:32:44.503Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | gemini/gemini-pro-latest | 1 msgs","msg":"📥 POST /v1/chat/completions | gemini/gemini-pro-latest | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:32:44.504Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: gemini, Model: gemini-pro-latest"}
+{"level":30,"time":"2026-08-08T02:32:44.505Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:fb993... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:32:44.505Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using gemini account: dd1584c3..."}
+{"level":30,"time":"2026-08-08T02:32:44.510Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | zai/glm-5.2 | 1 msgs","msg":"📥 POST /v1/chat/completions | zai/glm-5.2 | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:32:44.510Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: zai, Model: glm-5.2"}
+{"level":30,"time":"2026-08-08T02:32:44.511Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:74f94... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:32:44.511Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using zai account: 4ed6f979..."}
+{"timestamp":"2026-08-08T02:32:44.932Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] mistral/5acf1d59 in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=success"}
+{"timestamp":"2026-08-08T02:32:46.702Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] zai/4ed6f979 in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=success"}
+{"timestamp":"2026-08-08T02:32:47.610Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] tokenrouter/92b8662d in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=success"}
+{"timestamp":"2026-08-08T02:32:49.431Z","level":"info","component":"app","message":"\u001b[31m[ERROR] [429]: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3.1-pro\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3.1-pro\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-pro\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-pro\nPlease retry in 21.233111787s.\u001b[0m"}
+{"timestamp":"2026-08-08T02:32:49.435Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] gemini/dd1584c3 in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=error"}
+{"level":40,"time":"2026-08-08T02:32:49.433Z","service":"omniroute","module":"sse","tag":"EMERGENCY_FALLBACK","msg":"gemini/gemini-pro-latest -> nvidia/openai/gpt-oss-120b | reason=Budget error detected ('billing') → emergency fallback to nvidia/openai/gpt-oss-120b"}
+{"level":30,"time":"2026-08-08T02:32:49.435Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: nvidia, Model: openai/gpt-oss-120b"}
+{"level":40,"time":"2026-08-08T02:32:49.436Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for nvidia"}
+{"level":40,"time":"2026-08-08T02:32:49.436Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No active credentials for provider: nvidia"}
+{"level":40,"time":"2026-08-08T02:32:49.436Z","service":"omniroute","module":"sse","tag":"EMERGENCY_FALLBACK","msg":"Emergency fallback to nvidia/openai/gpt-oss-120b failed with status 404. Resuming original provider account fallback."}
+{"level":30,"time":"2026-08-08T02:32:49.437Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Model-only lockout for gemini:gemini-pro-latest — 429 rate_limited 22s (failureCount=1, connection stays active)"}
+{"level":40,"time":"2026-08-08T02:32:49.437Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account dd1584c3... unavailable (429), trying fallback"}
+{"level":40,"time":"2026-08-08T02:32:49.438Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"gemini | all 1 active accounts cooling down for model gemini-pro-latest (reset after 22s) | lastErrorCode=429.0, lastError=Model gemini-pro-latest rate_limited"}
+{"level":40,"time":"2026-08-08T02:32:49.438Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"[gemini/gemini-pro-latest] all credentials cooling down (reset after 22s)"}
+{"timestamp":"2026-08-08T02:32:50.085Z","level":"info","component":"app","message":"\u001b[31m[ERROR] [429]: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3.1-pro\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-pro\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-pro\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3.1-pro\nPlease retry in 20.57545638s.\u001b[0m"}
+{"timestamp":"2026-08-08T02:32:50.089Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] gemini/8f5c6041 in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=error"}
+{"level":40,"time":"2026-08-08T02:32:50.087Z","service":"omniroute","module":"sse","tag":"EMERGENCY_FALLBACK","msg":"gemini/gemini-pro-latest -> nvidia/openai/gpt-oss-120b | reason=Budget error detected ('billing') → emergency fallback to nvidia/openai/gpt-oss-120b"}
+{"level":30,"time":"2026-08-08T02:32:50.090Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: nvidia, Model: openai/gpt-oss-120b"}
+{"level":40,"time":"2026-08-08T02:32:50.091Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for nvidia"}
+{"level":40,"time":"2026-08-08T02:32:50.091Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No active credentials for provider: nvidia"}
+{"level":40,"time":"2026-08-08T02:32:50.091Z","service":"omniroute","module":"sse","tag":"EMERGENCY_FALLBACK","msg":"Emergency fallback to nvidia/openai/gpt-oss-120b failed with status 404. Resuming original provider account fallback."}
+{"level":30,"time":"2026-08-08T02:32:50.092Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Model-only lockout for gemini:gemini-pro-latest — 429 rate_limited 21s (failureCount=1, connection stays active)"}
+{"level":40,"time":"2026-08-08T02:32:50.092Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account 8f5c6041... unavailable (429), trying fallback"}
+{"level":40,"time":"2026-08-08T02:32:50.092Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"gemini | all 1 active accounts cooling down for model gemini-pro-latest (reset after 21s) | lastErrorCode=429.0, lastError=Model gemini-pro-latest rate_limited"}
+{"level":40,"time":"2026-08-08T02:32:50.092Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"[gemini/gemini-pro-latest] all credentials cooling down (reset after 21s)"}
+{"timestamp":"2026-08-08T02:33:04.093Z","level":"info","component":"SpendWriter","message":"[SpendWriter] Flushed 1 cost entry across 1 key(s)"}
+{"timestamp":"2026-08-08T02:34:02.823Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-08T02:34:02.831Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-08T02:34:02.839Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"level":30,"time":"2026-08-08T02:34:02.820Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | gemini/gemini-2.5-flash-lite | 1 msgs","msg":"📥 POST /v1/chat/completions | gemini/gemini-2.5-flash-lite | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:34:02.821Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: gemini, Model: gemini-2.5-flash-lite"}
+{"level":30,"time":"2026-08-08T02:34:02.822Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:54b67... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:34:02.822Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using gemini account: 8f5c6041..."}
+{"level":30,"time":"2026-08-08T02:34:02.827Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | gemini/gemini-2.5-flash-lite | 1 msgs","msg":"📥 POST /v1/chat/completions | gemini/gemini-2.5-flash-lite | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:34:02.829Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: gemini, Model: gemini-2.5-flash-lite"}
+{"level":30,"time":"2026-08-08T02:34:02.830Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:269fb... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:34:02.830Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using gemini account: dd1584c3..."}
+{"level":30,"time":"2026-08-08T02:34:02.837Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | zai/glm-4.7-flash | 1 msgs","msg":"📥 POST /v1/chat/completions | zai/glm-4.7-flash | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:34:02.838Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: zai, Model: glm-4.7-flash"}
+{"level":30,"time":"2026-08-08T02:34:02.838Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:82f8a... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:34:02.838Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using zai account: 4ed6f979..."}
+{"timestamp":"2026-08-08T02:34:03.152Z","level":"warn","component":"provider","message":"[provider] Node dd1584c3-fbe1-4205-84a3-1e1c3e6b8c37 model not found (404) for gemini-2.5-flash-lite - locking model for 120s (connection stays active)"}
+{"timestamp":"2026-08-08T02:34:03.153Z","level":"info","component":"app","message":"\u001b[31m[ERROR] [404]: This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\u001b[0m"}
+{"timestamp":"2026-08-08T02:34:03.157Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] gemini/dd1584c3 in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=error"}
+{"timestamp":"2026-08-08T02:34:03.159Z","level":"warn","component":"provider","message":"[provider] Node 8f5c6041-bb33-47fb-a40f-7409087c5553 model not found (404) for gemini-2.5-flash-lite - locking model for 120s (connection stays active)"}
+{"timestamp":"2026-08-08T02:34:03.160Z","level":"info","component":"app","message":"\u001b[31m[ERROR] [404]: This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\u001b[0m"}
+{"timestamp":"2026-08-08T02:34:03.164Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] gemini/8f5c6041 in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=error"}
+{"level":30,"time":"2026-08-08T02:34:03.158Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Model-only lockout for gemini:gemini-2.5-flash-lite — 404 not_found 3s (failureCount=1, connection stays active)"}
+{"level":40,"time":"2026-08-08T02:34:03.158Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account dd1584c3... unavailable (404), trying fallback"}
+{"level":40,"time":"2026-08-08T02:34:03.159Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"gemini | all 1 active accounts cooling down for model gemini-2.5-flash-lite (reset after 2m) | lastErrorCode=404.0, lastError=Model gemini-2.5-flash-lite not_found"}
+{"level":40,"time":"2026-08-08T02:34:03.159Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"[gemini/gemini-2.5-flash-lite] [404]: This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements. (reset after 2m)"}
+{"level":30,"time":"2026-08-08T02:34:03.165Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Model-only lockout for gemini:gemini-2.5-flash-lite — 404 not_found 3s (failureCount=1, connection stays active)"}
+{"level":40,"time":"2026-08-08T02:34:03.165Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account 8f5c6041... unavailable (404), trying fallback"}
+{"level":40,"time":"2026-08-08T02:34:03.165Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"gemini | all 1 active accounts cooling down for model gemini-2.5-flash-lite (reset after 2m) | lastErrorCode=404.0, lastError=Model gemini-2.5-flash-lite not_found"}
+{"level":40,"time":"2026-08-08T02:34:03.165Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"[gemini/gemini-2.5-flash-lite] [404]: This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements. (reset after 2m)"}
+{"timestamp":"2026-08-08T02:34:04.665Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] zai/4ed6f979 in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=success"}
+{"timestamp":"2026-08-08T02:35:14.915Z","level":"warn","component":"clientApiPolicy","message":"[clientApiPolicy] invalid bearer presented to /api/v1/chat/completions but REQUIRE_API_KEY=false — falling through to anonymous (key_id=key__KEY)"}
+{"level":30,"time":"2026-08-08T02:35:14.943Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | CodingAgent | 8 msgs","msg":"📥 POST /v1/chat/completions | CodingAgent | 8 msgs"}
+{"level":30,"time":"2026-08-08T02:35:14.946Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"Combo \"CodingAgent\" [priority] with 3 models"}
+{"level":30,"time":"2026-08-08T02:35:14.949Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"priority with nested resolution: 3 total targets"}
+{"level":30,"time":"2026-08-08T02:35:14.971Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:22b1e... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:35:14.972Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:22b1e... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:35:14.972Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:22b1e... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:35:14.972Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:22b1e... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:35:14.972Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"Trying model 1/3: mistral/codestral-2508"}
+{"level":30,"time":"2026-08-08T02:35:14.973Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: mistral, Model: codestral-2508"}
+{"level":30,"time":"2026-08-08T02:35:14.973Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using mistral account: 5acf1d59..."}
+{"level":30,"time":"2026-08-08T02:35:14.977Z","service":"omniroute","module":"sse","tag":"CONTEXT","msg":"Attempting to resolve combo limits for comboName=CodingAgent"}
+{"level":30,"time":"2026-08-08T02:35:14.978Z","service":"omniroute","module":"sse","tag":"CONTEXT","msg":"Combo context limit: 128000 (source=combo-min)"}
+{"level":30,"time":"2026-08-08T02:35:15.558Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"Model mistral/codestral-2508 succeeded (586ms, 0 fallbacks)"}
+{"timestamp":"2026-08-08T02:36:44.111Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T02:38:02.955Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-08T02:38:02.963Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"level":30,"time":"2026-08-08T02:38:02.953Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | opencode/deepseek-v4-flash-free | 1 msgs","msg":"📥 POST /v1/chat/completions | opencode/deepseek-v4-flash-free | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:38:02.954Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"opencode/deepseek-v4-flash-free → opencode-zen/deepseek-v4-flash-free"}
+{"level":30,"time":"2026-08-08T02:38:02.955Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using opencode-zen account: noauth..."}
+{"level":30,"time":"2026-08-08T02:38:02.960Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | theoldllm/deepseek_v4 | 1 msgs","msg":"📥 POST /v1/chat/completions | theoldllm/deepseek_v4 | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:38:02.962Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: theoldllm, Model: deepseek_v4"}
+{"level":30,"time":"2026-08-08T02:38:02.962Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using theoldllm account: noauth..."}
+{"timestamp":"2026-08-08T02:38:05.215Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] opencode-zen/noauth in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=success"}
+{"timestamp":"2026-08-08T02:38:06.075Z","level":"info","component":"app","message":"\u001b[31m[ERROR] [403]: The Old LLM is blocked by Vercel for this server egress IP. Configure a residential provider or global proxy for 'theoldllm' and retry.\u001b[0m"}
+{"timestamp":"2026-08-08T02:38:06.079Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] theoldllm/noauth in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=error"}
+{"level":50,"time":"2026-08-08T02:38:06.075Z","service":"omniroute","module":"sse","tag":"TOKEN_REFRESH","msg":"All 3 retry attempts failed for theoldllm"}
+{"level":40,"time":"2026-08-08T02:38:06.075Z","service":"omniroute","module":"sse","tag":"TOKEN","msg":"THEOLDLLM | refresh failed"}
+{"level":30,"time":"2026-08-08T02:38:06.079Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Model-only lockout for theoldllm:deepseek_v4 — 403 forbidden 5s (per-model quota provider, connection stays active)"}
+{"level":40,"time":"2026-08-08T02:38:06.079Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account noauth... unavailable (403), trying fallback"}
+{"level":40,"time":"2026-08-08T02:38:06.079Z","service":"omniroute","module":"sse","tag":"CHAT","provider":"theoldllm","model":"deepseek_v4","lastStatus":403,"msg":"Preserving last upstream error after credential exhaustion"}
+{"timestamp":"2026-08-08T02:38:40.531Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-08T02:38:40.538Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-08T02:38:40.546Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-08T02:38:40.552Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"level":30,"time":"2026-08-08T02:38:40.529Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | tokenrouter/moonshotai/kimi-k3-free | 1 msgs","msg":"📥 POST /v1/chat/completions | tokenrouter/moonshotai/kimi-k3-free | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:38:40.530Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: tokenrouter, Model: moonshotai/kimi-k3-free"}
+{"level":30,"time":"2026-08-08T02:38:40.531Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:bad06... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:38:40.531Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using tokenrouter account: 92b8662d..."}
+{"level":30,"time":"2026-08-08T02:38:40.535Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | mistral/codestral-2508 | 1 msgs","msg":"📥 POST /v1/chat/completions | mistral/codestral-2508 | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:38:40.536Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: mistral, Model: codestral-2508"}
+{"level":30,"time":"2026-08-08T02:38:40.537Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:163cf... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:38:40.537Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using mistral account: 5acf1d59..."}
+{"level":30,"time":"2026-08-08T02:38:40.542Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | zai/glm-5.2 | 1 msgs","msg":"📥 POST /v1/chat/completions | zai/glm-5.2 | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:38:40.543Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: zai, Model: glm-5.2"}
+{"level":30,"time":"2026-08-08T02:38:40.544Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:82962... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:38:40.544Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using zai account: 4ed6f979..."}
+{"level":30,"time":"2026-08-08T02:38:40.549Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | opencode/deepseek-v4-flash-free | 1 msgs","msg":"📥 POST /v1/chat/completions | opencode/deepseek-v4-flash-free | 1 msgs"}
+{"level":30,"time":"2026-08-08T02:38:40.550Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"opencode/deepseek-v4-flash-free → opencode-zen/deepseek-v4-flash-free"}
+{"level":30,"time":"2026-08-08T02:38:40.551Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using opencode-zen account: noauth..."}
+{"timestamp":"2026-08-08T02:38:40.960Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] mistral/5acf1d59 in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=success"}
+{"timestamp":"2026-08-08T02:38:42.238Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] opencode-zen/noauth in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=success"}
+{"timestamp":"2026-08-08T02:38:43.372Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] zai/4ed6f979 in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=success"}
+{"timestamp":"2026-08-08T02:38:49.949Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] tokenrouter/92b8662d in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=success"}
+{"timestamp":"2026-08-08T02:39:04.136Z","level":"info","component":"SpendWriter","message":"[SpendWriter] Flushed 1 cost entry across 1 key(s)"}
+{"timestamp":"2026-08-08T02:41:48.866Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T02:44:00.342Z","level":"warn","component":"clientApiPolicy","message":"[clientApiPolicy] invalid bearer presented to /api/v1/chat/completions but REQUIRE_API_KEY=false — falling through to anonymous (key_id=key__KEY)"}
+{"level":30,"time":"2026-08-08T02:44:00.362Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | CodingAgent | 10 msgs","msg":"📥 POST /v1/chat/completions | CodingAgent | 10 msgs"}
+{"level":30,"time":"2026-08-08T02:44:00.366Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"Combo \"CodingAgent\" [priority] with 4 models"}
+{"level":30,"time":"2026-08-08T02:44:00.370Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"priority with nested resolution: 4 total targets"}
+{"level":30,"time":"2026-08-08T02:44:00.386Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:22b1e... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:44:00.387Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:22b1e... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:44:00.387Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:22b1e... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:44:00.388Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:22b1e... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:44:00.388Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"Trying model 1/4: mistral/codestral-2508"}
+{"level":30,"time":"2026-08-08T02:44:00.388Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: mistral, Model: codestral-2508"}
+{"level":30,"time":"2026-08-08T02:44:00.389Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using mistral account: 5acf1d59..."}
+{"level":30,"time":"2026-08-08T02:44:00.394Z","service":"omniroute","module":"sse","tag":"CONTEXT","msg":"Attempting to resolve combo limits for comboName=CodingAgent"}
+{"level":30,"time":"2026-08-08T02:44:00.397Z","service":"omniroute","module":"sse","tag":"CONTEXT","msg":"Combo context limit: 128000 (source=combo-min)"}
+{"level":30,"time":"2026-08-08T02:44:01.067Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"Model mistral/codestral-2508 succeeded (680ms, 0 fallbacks)"}
+{"timestamp":"2026-08-08T02:44:01.199Z","level":"warn","component":"clientApiPolicy","message":"[clientApiPolicy] invalid bearer presented to /api/v1/chat/completions but REQUIRE_API_KEY=false — falling through to anonymous (key_id=key__KEY)"}
+{"level":30,"time":"2026-08-08T02:44:01.202Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | CodingAgent | 2 msgs","msg":"📥 POST /v1/chat/completions | CodingAgent | 2 msgs"}
+{"level":30,"time":"2026-08-08T02:44:01.204Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"Combo \"CodingAgent\" [priority] with 4 models"}
+{"level":30,"time":"2026-08-08T02:44:01.208Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"priority with nested resolution: 4 total targets"}
+{"level":30,"time":"2026-08-08T02:44:01.216Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:72ee6... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:44:01.216Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:72ee6... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:44:01.216Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:72ee6... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:44:01.218Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:72ee6... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:44:01.218Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"Trying model 1/4: tokenrouter/moonshotai/kimi-k3-free"}
+{"level":30,"time":"2026-08-08T02:44:01.219Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: tokenrouter, Model: moonshotai/kimi-k3-free"}
+{"level":30,"time":"2026-08-08T02:44:01.220Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using tokenrouter account: 92b8662d..."}
+{"level":30,"time":"2026-08-08T02:44:01.226Z","service":"omniroute","module":"sse","tag":"CONTEXT","msg":"Attempting to resolve combo limits for comboName=CodingAgent"}
+{"level":30,"time":"2026-08-08T02:44:01.228Z","service":"omniroute","module":"sse","tag":"CONTEXT","msg":"Combo context limit: 128000 (source=target)"}
+{"timestamp":"2026-08-08T02:44:06.890Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] tokenrouter/92b8662d in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=success"}
+{"level":30,"time":"2026-08-08T02:44:06.891Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"Model tokenrouter/moonshotai/kimi-k3-free succeeded (5675ms, 0 fallbacks)"}
+{"timestamp":"2026-08-08T02:44:07.778Z","level":"warn","component":"clientApiPolicy","message":"[clientApiPolicy] invalid bearer presented to /api/v1/chat/completions but REQUIRE_API_KEY=false — falling through to anonymous (key_id=key__KEY)"}
+{"level":30,"time":"2026-08-08T02:44:07.782Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | CodingAgent | 2 msgs","msg":"📥 POST /v1/chat/completions | CodingAgent | 2 msgs"}
+{"level":30,"time":"2026-08-08T02:44:07.785Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"Combo \"CodingAgent\" [priority] with 4 models"}
+{"level":30,"time":"2026-08-08T02:44:07.788Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"priority with nested resolution: 4 total targets"}
+{"level":30,"time":"2026-08-08T02:44:07.795Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:bd9e3... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:44:07.796Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:bd9e3... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:44:07.796Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:bd9e3... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:44:07.798Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:bd9e3... has no available affinity target"}
+{"level":30,"time":"2026-08-08T02:44:07.798Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"Trying model 1/4: tokenrouter/moonshotai/kimi-k3-free"}
+{"level":30,"time":"2026-08-08T02:44:07.799Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: tokenrouter, Model: moonshotai/kimi-k3-free"}
+{"level":30,"time":"2026-08-08T02:44:07.800Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using tokenrouter account: 92b8662d..."}
+{"level":30,"time":"2026-08-08T02:44:07.806Z","service":"omniroute","module":"sse","tag":"CONTEXT","msg":"Attempting to resolve combo limits for comboName=CodingAgent"}
+{"level":30,"time":"2026-08-08T02:44:07.808Z","service":"omniroute","module":"sse","tag":"CONTEXT","msg":"Combo context limit: 128000 (source=target)"}
+{"timestamp":"2026-08-08T02:44:11.802Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] tokenrouter/92b8662d in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=success"}
+{"level":30,"time":"2026-08-08T02:44:11.804Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"Model tokenrouter/moonshotai/kimi-k3-free succeeded (4008ms, 0 fallbacks)"}
+{"timestamp":"2026-08-08T02:46:52.075Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
