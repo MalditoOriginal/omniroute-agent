@@ -4577,3 +4577,156 @@
 {"timestamp":"2026-08-08T02:44:11.802Z","level":"info","component":"ProxyEgress","message":"[ProxyEgress] tokenrouter/92b8662d in=127.0.0.1 out=2804:7f0:7b43:da0f:d181:c7c2:73b7:3490 proxy=direct status=success"}
 {"level":30,"time":"2026-08-08T02:44:11.804Z","service":"omniroute","module":"sse","tag":"COMBO","msg":"Model tokenrouter/moonshotai/kimi-k3-free succeeded (4008ms, 0 fallbacks)"}
 {"timestamp":"2026-08-08T02:46:52.075Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T03:51:11.588Z","level":"info","component":"app","message":"🧹 [RATE-LIMIT] Evicting idle limiter: tokenrouter:92b8662d-8560-492b-bf00-69db59386b05 (inactive for 4020s)"}
+{"timestamp":"2026-08-08T03:51:11.642Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T03:51:14.101Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/1 synced in 2353ms"}
+{"timestamp":"2026-08-08T05:50:35.291Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T05:50:35.392Z","level":"info","component":"ReasoningCache","message":"[ReasoningCache] periodic cleanup removed 9 expired entries"}
+{"timestamp":"2026-08-08T05:50:37.276Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/1 synced in 1857ms"}
+{"timestamp":"2026-08-08T17:15:07.124Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T17:15:12.160Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/1 synced in 4732ms"}
+{"timestamp":"2026-08-08T17:20:13.078Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T17:25:15.557Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T17:30:18.481Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T17:35:25.672Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T17:40:28.636Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T17:45:31.085Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T17:50:33.679Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T17:55:36.750Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T18:00:40.187Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T18:05:43.635Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T18:10:46.674Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T18:15:53.567Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T18:20:56.396Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T18:25:08.973Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/1 synced in 1535ms"}
+{"timestamp":"2026-08-08T18:26:03.436Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T18:31:05.626Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T18:36:11.567Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T18:41:14.089Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T18:46:16.679Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T18:51:21.889Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T18:56:27.973Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T20:00:22.857Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-08T20:00:25.018Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/1 synced in 2092ms"}
+{"timestamp":"2026-08-08T21:59:48.222Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/1 synced in 1784ms"}
+{"timestamp":"2026-08-09T17:06:46.008Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 8/8 connections..."}
+{"timestamp":"2026-08-09T17:06:46.259Z","level":"info","component":"ModelSync","message":"[ModelSync] No connections with autoSync enabled — skipping cycle"}
+{"timestamp":"2026-08-09T17:06:48.896Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] ❌ zai/4ed6f979-4291-4855-bc58-2efb23d61885 — fetch failed [2887ms] (failure #1, next check in 600s)"}
+{"timestamp":"2026-08-09T17:06:51.149Z","level":"info","component":"ARENA_ELO_SYNC","message":"[ARENA_ELO_SYNC] synced 150 model intelligence entries from Arena leaderboards"}
+{"timestamp":"2026-08-09T17:06:51.152Z","level":"info","component":"ARENA_ELO_SYNC","message":"[ARENA_ELO_SYNC] Periodic sync complete: 150 entries"}
+{"timestamp":"2026-08-09T17:06:51.788Z","level":"info","component":"ProviderLimitsSync","message":"[ProviderLimitsSync] Cycle complete: 0/1 synced in 2931ms"}
+{"timestamp":"2026-08-09T17:13:09.996Z","level":"info","component":"ModelSync","message":"[ModelSync] Codex profile auto-sync skipped for cerebras: disabled"}
+{"timestamp":"2026-08-09T17:13:09.997Z","level":"info","component":"ModelSync","message":"[ModelSync] Claude profile auto-sync skipped for cerebras: disabled"}
+{"timestamp":"2026-08-09T17:13:10.008Z","level":"info","component":"ModelSync","message":"[ModelSync] Codex profile auto-sync skipped for cerebras: disabled"}
+{"timestamp":"2026-08-09T17:13:10.008Z","level":"info","component":"ModelSync","message":"[ModelSync] Claude profile auto-sync skipped for cerebras: disabled"}
+{"timestamp":"2026-08-09T17:15:28.786Z","level":"info","component":"ModelSync","message":"[ModelSync] Codex profile auto-sync skipped for kilo-gateway: disabled"}
+{"timestamp":"2026-08-09T17:15:28.786Z","level":"info","component":"ModelSync","message":"[ModelSync] Claude profile auto-sync skipped for kilo-gateway: disabled"}
+{"timestamp":"2026-08-09T17:15:28.929Z","level":"info","component":"ModelSync","message":"[ModelSync] Codex profile auto-sync skipped for kilo-gateway: disabled"}
+{"timestamp":"2026-08-09T17:15:28.930Z","level":"info","component":"ModelSync","message":"[ModelSync] Claude profile auto-sync skipped for kilo-gateway: disabled"}
+{"timestamp":"2026-08-09T17:16:39.660Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-09T17:16:39.667Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-09T17:16:39.674Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-09T17:16:39.680Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"level":30,"time":"2026-08-09T17:16:39.656Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | tokenrouter/moonshotai/kimi-k3-free | 1 msgs","msg":"📥 POST /v1/chat/completions | tokenrouter/moonshotai/kimi-k3-free | 1 msgs"}
+{"level":30,"time":"2026-08-09T17:16:39.658Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: tokenrouter, Model: moonshotai/kimi-k3-free"}
+{"level":30,"time":"2026-08-09T17:16:39.659Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:8f85e... has no available affinity target"}
+{"level":30,"time":"2026-08-09T17:16:39.659Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using tokenrouter account: 92b8662d..."}
+{"level":30,"time":"2026-08-09T17:16:39.664Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | zai/glm-5.2 | 1 msgs","msg":"📥 POST /v1/chat/completions | zai/glm-5.2 | 1 msgs"}
+{"level":30,"time":"2026-08-09T17:16:39.665Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: zai, Model: glm-5.2"}
+{"level":30,"time":"2026-08-09T17:16:39.666Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:135c3... has no available affinity target"}
+{"level":30,"time":"2026-08-09T17:16:39.666Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using zai account: 4ed6f979..."}
+{"level":30,"time":"2026-08-09T17:16:39.671Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | opencode/deepseek-v4-flash-free | 1 msgs","msg":"📥 POST /v1/chat/completions | opencode/deepseek-v4-flash-free | 1 msgs"}
+{"level":30,"time":"2026-08-09T17:16:39.672Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"opencode/deepseek-v4-flash-free → opencode-zen/deepseek-v4-flash-free"}
+{"level":30,"time":"2026-08-09T17:16:39.673Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using opencode-zen account: noauth..."}
+{"level":30,"time":"2026-08-09T17:16:39.678Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | mistral/codestral-2508 | 1 msgs","msg":"📥 POST /v1/chat/completions | mistral/codestral-2508 | 1 msgs"}
+{"level":30,"time":"2026-08-09T17:16:39.679Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: mistral, Model: codestral-2508"}
+{"level":30,"time":"2026-08-09T17:16:39.680Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:c9da8... has no available affinity target"}
+{"level":30,"time":"2026-08-09T17:16:39.680Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using mistral account: 5acf1d59..."}
+{"level":30,"time":"2026-08-09T17:16:42.319Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account 4ed6f979 error cleared"}
+{"timestamp":"2026-08-09T17:16:45.948Z","level":"info","component":"SpendWriter","message":"[SpendWriter] Flushed 1 cost entry across 1 key(s)"}
+{"timestamp":"2026-08-09T17:16:51.688Z","level":"info","component":"CredentialHealth","message":"[CredentialHealth] Testing 9/10 connections..."}
+{"timestamp":"2026-08-09T17:16:54.749Z","level":"info","component":"app","message":"⏰ [RATE-LIMIT] tokenrouter:92b8662d-8560-492b-bf00-69db59386b05 — job expired after 15s in queue, dropping"}
+{"timestamp":"2026-08-09T17:16:54.750Z","level":"info","component":"app","message":"🔄 [RATE-LIMIT] tokenrouter:92b8662d-8560-492b-bf00-69db59386b05 — recovering idle limiter after queue expiry"}
+{"timestamp":"2026-08-09T17:16:59.672Z","level":"info","component":"14:16:59","message":"[14:16:59] 🌊 [STREAM] TOKENROUTER | moonshotai/kimi-k3-free | 20010ms | disconnect: request_signal_aborted"}
+{"timestamp":"2026-08-09T17:16:59.674Z","level":"info","component":"14:16:59","message":"[14:16:59] 🌊 [STREAM] TOKENROUTER | moonshotai/kimi-k3-free | 20012ms | client_disconnect (post-abort)"}
+{"timestamp":"2026-08-09T17:18:09.949Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"level":30,"time":"2026-08-09T17:18:09.945Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | kilo-gateway/~anthropic/claude-fable-latest | 1 msgs","msg":"📥 POST /v1/chat/completions | kilo-gateway/~anthropic/claude-fable-latest | 1 msgs"}
+{"level":30,"time":"2026-08-09T17:18:09.948Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: kilo-gateway, Model: ~anthropic/claude-fable-latest"}
+{"level":30,"time":"2026-08-09T17:18:09.948Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:b5960... has no available affinity target"}
+{"level":30,"time":"2026-08-09T17:18:09.948Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using kilo-gateway account: c15701b1..."}
+{"timestamp":"2026-08-09T17:18:10.337Z","level":"warn","component":"provider","message":"[provider] Node c15701b1-076b-40d1-962d-d80366e24387 model-only quota exhausted (402) for ~anthropic/claude-fable-latest - 120s (cooldown_scope=model, ttl_source=inferred, connection stays active)"}
+{"timestamp":"2026-08-09T17:18:10.337Z","level":"info","component":"app","message":"\u001b[31m[ERROR] [402]: Add credits to continue, or switch to a free model\u001b[0m"}
+{"timestamp":"2026-08-09T17:18:10.343Z","level":"error","component":"app","message":"❌ kilo-gateway [402]: [402]: Add credits to continue, or switch to a free model"}
+{"level":50,"time":"2026-08-09T17:18:10.333Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"402 on connection c15701b1 - key primary marked invalid (insufficient balance)"}
+{"level":40,"time":"2026-08-09T17:18:10.339Z","service":"omniroute","module":"sse","tag":"EMERGENCY_FALLBACK","msg":"kilo-gateway/~anthropic/claude-fable-latest -> nvidia/openai/gpt-oss-120b | reason=HTTP 402 → emergency fallback to nvidia/openai/gpt-oss-120b"}
+{"level":30,"time":"2026-08-09T17:18:10.340Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: nvidia, Model: openai/gpt-oss-120b"}
+{"level":40,"time":"2026-08-09T17:18:10.342Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for nvidia"}
+{"level":40,"time":"2026-08-09T17:18:10.342Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No active credentials for provider: nvidia"}
+{"level":40,"time":"2026-08-09T17:18:10.342Z","service":"omniroute","module":"sse","tag":"EMERGENCY_FALLBACK","msg":"Emergency fallback to nvidia/openai/gpt-oss-120b failed with status 404. Resuming original provider account fallback."}
+{"level":40,"time":"2026-08-09T17:18:10.343Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account c15701b1... unavailable (402), trying fallback"}
+{"level":40,"time":"2026-08-09T17:18:10.344Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"kilo-gateway | all 1 active accounts cooling down for model ~anthropic/claude-fable-latest (reset after 2m) | lastErrorCode=402.0, lastError=[402]: Add credits to continue, or switch to a fre"}
+{"level":40,"time":"2026-08-09T17:18:10.344Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"[kilo-gateway/~anthropic/claude-fable-latest] [402]: Add credits to continue, or switch to a free model (reset after 2m)"}
+{"timestamp":"2026-08-09T17:18:48.990Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"level":30,"time":"2026-08-09T17:18:48.985Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | kilo-gateway/z-ai/glm-5v-turbo | 1 msgs","msg":"📥 POST /v1/chat/completions | kilo-gateway/z-ai/glm-5v-turbo | 1 msgs"}
+{"level":30,"time":"2026-08-09T17:18:48.988Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: kilo-gateway, Model: z-ai/glm-5v-turbo"}
+{"level":30,"time":"2026-08-09T17:18:48.989Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:01bf3... has no available affinity target"}
+{"level":30,"time":"2026-08-09T17:18:48.989Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using kilo-gateway account: c15701b1..."}
+{"timestamp":"2026-08-09T17:18:49.310Z","level":"warn","component":"provider","message":"[provider] Node c15701b1-076b-40d1-962d-d80366e24387 model-only quota exhausted (402) for z-ai/glm-5v-turbo - 120s (cooldown_scope=model, ttl_source=inferred, connection stays active)"}
+{"timestamp":"2026-08-09T17:18:49.311Z","level":"info","component":"app","message":"\u001b[31m[ERROR] [402]: Add credits to continue, or switch to a free model\u001b[0m"}
+{"level":50,"time":"2026-08-09T17:18:49.309Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"402 on connection c15701b1 - key primary marked invalid (insufficient balance)"}
+{"level":40,"time":"2026-08-09T17:18:49.313Z","service":"omniroute","module":"sse","tag":"EMERGENCY_FALLBACK","msg":"kilo-gateway/z-ai/glm-5v-turbo -> nvidia/openai/gpt-oss-120b | reason=HTTP 402 → emergency fallback to nvidia/openai/gpt-oss-120b"}
+{"level":30,"time":"2026-08-09T17:18:49.314Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: nvidia, Model: openai/gpt-oss-120b"}
+{"level":40,"time":"2026-08-09T17:18:49.321Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for nvidia"}
+{"level":40,"time":"2026-08-09T17:18:49.321Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No active credentials for provider: nvidia"}
+{"level":40,"time":"2026-08-09T17:18:49.321Z","service":"omniroute","module":"sse","tag":"EMERGENCY_FALLBACK","msg":"Emergency fallback to nvidia/openai/gpt-oss-120b failed with status 404. Resuming original provider account fallback."}
+{"level":30,"time":"2026-08-09T17:18:49.322Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"c15701b1 terminal status=credits_exhausted, skipping cooldown overwrite"}
+{"level":40,"time":"2026-08-09T17:18:49.322Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account c15701b1... unavailable (402), trying fallback"}
+{"level":40,"time":"2026-08-09T17:18:49.322Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"kilo-gateway | all 1 active accounts cooling down for model z-ai/glm-5v-turbo (reset after 2m) | lastErrorCode=402.0, lastError=[402]: Add credits to continue, or switch to a fre"}
+{"level":40,"time":"2026-08-09T17:18:49.322Z","service":"omniroute","module":"sse","tag":"CHAT","msg":"[kilo-gateway/z-ai/glm-5v-turbo] [402]: Add credits to continue, or switch to a free model (reset after 2m)"}
+{"timestamp":"2026-08-09T17:19:43.250Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-09T17:19:43.255Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-09T17:19:43.262Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-09T17:19:43.270Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"level":30,"time":"2026-08-09T17:19:43.248Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | tokenrouter/moonshotai/kimi-k3-free | 1 msgs","msg":"📥 POST /v1/chat/completions | tokenrouter/moonshotai/kimi-k3-free | 1 msgs"}
+{"level":30,"time":"2026-08-09T17:19:43.249Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: tokenrouter, Model: moonshotai/kimi-k3-free"}
+{"level":30,"time":"2026-08-09T17:19:43.250Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:bbb1c... has no available affinity target"}
+{"level":30,"time":"2026-08-09T17:19:43.250Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using tokenrouter account: 92b8662d..."}
+{"level":30,"time":"2026-08-09T17:19:43.253Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | zai/glm-5.2 | 1 msgs","msg":"📥 POST /v1/chat/completions | zai/glm-5.2 | 1 msgs"}
+{"level":30,"time":"2026-08-09T17:19:43.253Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: zai, Model: glm-5.2"}
+{"level":30,"time":"2026-08-09T17:19:43.255Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:d7041... has no available affinity target"}
+{"level":30,"time":"2026-08-09T17:19:43.255Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using zai account: 4ed6f979..."}
+{"level":30,"time":"2026-08-09T17:19:43.259Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | opencode/deepseek-v4-flash-free | 1 msgs","msg":"📥 POST /v1/chat/completions | opencode/deepseek-v4-flash-free | 1 msgs"}
+{"level":30,"time":"2026-08-09T17:19:43.260Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"opencode/deepseek-v4-flash-free → opencode-zen/deepseek-v4-flash-free"}
+{"level":30,"time":"2026-08-09T17:19:43.260Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using opencode-zen account: noauth..."}
+{"level":30,"time":"2026-08-09T17:19:43.266Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | mistral/codestral-2508 | 1 msgs","msg":"📥 POST /v1/chat/completions | mistral/codestral-2508 | 1 msgs"}
+{"level":30,"time":"2026-08-09T17:19:43.268Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: mistral, Model: codestral-2508"}
+{"level":30,"time":"2026-08-09T17:19:43.269Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:701d3... has no available affinity target"}
+{"level":30,"time":"2026-08-09T17:19:43.269Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using mistral account: 5acf1d59..."}
+{"timestamp":"2026-08-09T17:19:45.979Z","level":"info","component":"SpendWriter","message":"[SpendWriter] Flushed 1 cost entry across 1 key(s)"}
+{"timestamp":"2026-08-09T17:19:58.318Z","level":"info","component":"app","message":"⏰ [RATE-LIMIT] tokenrouter:92b8662d-8560-492b-bf00-69db59386b05 — job expired after 15s in queue, dropping"}
+{"timestamp":"2026-08-09T17:19:58.319Z","level":"info","component":"app","message":"🔄 [RATE-LIMIT] tokenrouter:92b8662d-8560-492b-bf00-69db59386b05 — recovering idle limiter after queue expiry"}
+{"timestamp":"2026-08-09T17:20:03.260Z","level":"info","component":"14:20:03","message":"[14:20:03] 🌊 [STREAM] TOKENROUTER | moonshotai/kimi-k3-free | 20008ms | disconnect: request_signal_aborted"}
+{"timestamp":"2026-08-09T17:20:03.265Z","level":"info","component":"14:20:03","message":"[14:20:03] 🌊 [STREAM] TOKENROUTER | moonshotai/kimi-k3-free | 20013ms | client_disconnect (post-abort)"}
+{"timestamp":"2026-08-09T17:21:17.457Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"timestamp":"2026-08-09T17:21:17.467Z","level":"info","component":"INFO","message":"[INFO] [SKILLS_INJECTION] skills.injection.skipped {\"apiKeyId\":\"5f47df68-5634-45cf-babb-f4d1a2501614\",\"reason\":\"no_enabled_skills\"}"}
+{"level":30,"time":"2026-08-09T17:21:17.455Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | cerebras/gpt-oss-120b | 1 msgs","msg":"📥 POST /v1/chat/completions | cerebras/gpt-oss-120b | 1 msgs"}
+{"level":30,"time":"2026-08-09T17:21:17.456Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: cerebras, Model: gpt-oss-120b"}
+{"level":30,"time":"2026-08-09T17:21:17.457Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:b7e25... has no available affinity target"}
+{"level":30,"time":"2026-08-09T17:21:17.457Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using cerebras account: edb2ccd4..."}
+{"level":30,"time":"2026-08-09T17:21:17.462Z","service":"omniroute","module":"sse","tag":"HTTP","method":"POST","path":"/v1/chat/completions | openrouter/auto | 1 msgs","msg":"📥 POST /v1/chat/completions | openrouter/auto | 1 msgs"}
+{"level":30,"time":"2026-08-09T17:21:17.465Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: openrouter, Model: auto"}
+{"level":30,"time":"2026-08-09T17:21:17.466Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"session_key=input:sha256:c5518... has no available affinity target"}
+{"level":30,"time":"2026-08-09T17:21:17.466Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Using openrouter account: cc673b94..."}
+{"level":50,"time":"2026-08-09T17:21:18.158Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"402 on connection edb2ccd4 - key primary marked invalid (insufficient balance)"}
+{"timestamp":"2026-08-09T17:21:18.163Z","level":"warn","component":"provider","message":"[provider] Node edb2ccd4-bbdb-4069-a4eb-8d03faf00f6d exhausted quota (402)"}
+{"timestamp":"2026-08-09T17:21:18.164Z","level":"info","component":"app","message":"\u001b[31m[ERROR] [402]: Payment required to access this resource. Visit your billing tab.\u001b[0m"}
+{"level":40,"time":"2026-08-09T17:21:18.165Z","service":"omniroute","module":"sse","tag":"EMERGENCY_FALLBACK","msg":"cerebras/gpt-oss-120b -> nvidia/openai/gpt-oss-120b | reason=HTTP 402 → emergency fallback to nvidia/openai/gpt-oss-120b"}
+{"level":30,"time":"2026-08-09T17:21:18.166Z","service":"omniroute","module":"sse","tag":"ROUTING","msg":"Provider: nvidia, Model: openai/gpt-oss-120b"}
+{"level":40,"time":"2026-08-09T17:21:18.168Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No credentials for nvidia"}
+{"level":40,"time":"2026-08-09T17:21:18.168Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"No active credentials for provider: nvidia"}
+{"level":40,"time":"2026-08-09T17:21:18.168Z","service":"omniroute","module":"sse","tag":"EMERGENCY_FALLBACK","msg":"Emergency fallback to nvidia/openai/gpt-oss-120b failed with status 404. Resuming original provider account fallback."}
+{"level":30,"time":"2026-08-09T17:21:18.168Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"edb2ccd4 terminal status=credits_exhausted, skipping cooldown overwrite"}
+{"level":40,"time":"2026-08-09T17:21:18.168Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"Account edb2ccd4... unavailable (402), trying fallback"}
+{"level":40,"time":"2026-08-09T17:21:18.169Z","service":"omniroute","module":"sse","tag":"AUTH","msg":"cerebras | all 1 accounts unavailable"}
+{"level":40,"time":"2026-08-09T17:21:18.169Z","service":"omniroute","module":"sse","tag":"CHAT","provider":"cerebras","model":"gpt-oss-120b","lastStatus":402,"msg":"Preserving last upstream error after credential exhaustion"}
+{"timestamp":"2026-08-09T17:21:45.985Z","level":"info","component":"SpendWriter","message":"[SpendWriter] Flushed 1 cost entry across 1 key(s)"}
