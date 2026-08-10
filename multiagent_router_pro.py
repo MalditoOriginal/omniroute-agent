@@ -1036,6 +1036,7 @@ class AgentOrchestrator:
         return f"{https_url}/pull/new/{current_branch}"
      
     def handle_evolution_pipeline(self, user_prompt: str) -> str:
+        # Branch Manager is active
         """Пайплайн автономной самомодификации с системой Branch Manager."""
         print(f"\n🧬 [ЭВОЛЮЦИЯ] Запуск пайплайна самомодификации...")
 
