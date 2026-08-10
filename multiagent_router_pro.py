@@ -928,13 +928,22 @@ class AgentOrchestrator:
             raise
 
     def push_evolution_branch(self):
-        """Отправка ветки evolve-feature в remote origin."""
-        self.logger.info("BranchManager: пуш ветки evolve-feature в origin")
+        """Отправляет текущую ветку в remote origin."""
         try:
-            result = subprocess.run(["git", "push", "origin", "evolve-feature"], check=True, capture_output=True, text=True)
-            self.logger.info(f"BranchManager: ветка отправлена: {result.stdout.strip()}")
+            # Получаем имя текущей ветки
+            current_branch_result = subprocess.run(["git", "rev-parse", "--abbrev-ref", "HEAD"], capture_output=True, text=True)
+            current_branch = current_branch_result.stdout.strip()
+            
+            self.logger.info(f"Branch Manager: пуш ветки '{current_branch}' в origin")
+            
+            # Используем -u для установки upstream (обязательно для новых веток)
+            result = subprocess.run(
+                ["git", "push", "-u", "origin", current_branch],
+                check=True, capture_output=True, text=True
+            )
+            self.logger.info(f"Branch Manager: ветка отправлена: {result.stdout.strip()}")
         except subprocess.CalledProcessError as e:
-            self.logger.error(f"BranchManager: ошибка при пуше ветки: {e.stderr.strip()}")
+            self.logger.error(f"Branch Manager: ошибка при пуше ветки: {e.stderr.strip()}")
             raise
 
     def generate_pr_link(self):
