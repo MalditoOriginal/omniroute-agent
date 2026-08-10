@@ -73,6 +73,12 @@ AGENTS: Dict[str, Dict[str, str]] = {
         "combo": "ProdCoding",
         "task": "Анализ кода и написание строгого ТЗ для самомодификации",
         "engine": "chat"
+    },
+    "arbiter": {
+        "name": "ArbiterAgent",
+        "combo": "ProdCoding", # Самая умная модель для оценки
+        "task": "Анализ предложений и выбор лучшего решения",
+        "engine": "chat"
     }
 }
 
@@ -217,6 +223,10 @@ class AgentOrchestrator:
         if prompt_lower.startswith(("/evolve", "!evolve")):
             self.logger.info(f"Найдено совпадение по правилам. Целевой агент: evolution | Совпадение: /evolve")
             return "evolution", "Автономная самомодификация кода (Консилиум)"
+        if prompt_lower.startswith(("/consilium", "!consilium")):
+            return "consilium", "Мультиагентный консилиум (Генерация -> Оценка -> Кодинг)"
+        if prompt_lower.startswith(("/exec", "!exec")):
+            return "os_exec", "Выполнение команды в ОС (Sandboxed)"
         if prompt_lower.startswith(("/prod", "!prod")):
             self.logger.info(f"Найдено совпадение по правилам. Целевой агент: prod_coding | Совпадение: /prod")
             return "prod_coding", "Принудительный вызов тяжелого кодера (Cloud.ru)"
@@ -496,6 +506,89 @@ class AgentOrchestrator:
 
         return f"=== ЭТАП 1 (Логи ОС) ===\n{term_out}\n\n=== ЭТАП 2 (Прод-Кодер) ===\n{coding_out}"
         
+    def handle_os_exec(self, user_prompt: str) -> str:
+        """Путь 3: Безопасное выполнение команд ОС с таймаутом"""
+        # Извлекаем команду (убираем /exec)
+        command = re.sub(r'^(/exec|!exec)\s*', '', user_prompt, flags=re.IGNORECASE).strip()
+        if not command:
+            return "❌ [OS Exec] Команда не указана. Пример: /exec ping 8.8.8.8"
+        
+        print(f"\n⚙️ [OS Exec] Запуск команды: {command}")
+        
+        # Разбиваем команду для безопасности (без shell=True)
+        try:
+            # Используем shlex для корректного парсинга аргументов
+            import shlex
+            args = shlex.split(command)
+            
+            # Жесткий таймаут 15 секунд, чтобы агент не повесил систему
+            result = subprocess.run(
+                args, 
+                capture_output=True, 
+                text=True, 
+                timeout=15, 
+                encoding="utf-8", 
+                errors="replace"
+            )
+            
+            output = f"--- STDOUT ---\n{result.stdout}\n"
+            if result.stderr:
+                output += f"--- STDERR ---\n{result.stderr}\n"
+            output += f"--- EXIT CODE: {result.returncode} ---"
+            
+            print(output)
+            self.memory["logs"].append({"command": command, "output": output})
+            self._save_memory()
+            return f"✅ Команда выполнена. Код возврата: {result.returncode}"
+            
+        except subprocess.TimeoutExpired:
+            return "🚨 [OS Exec] Превышен лимит времени (15 сек). Процесс убит."
+        except Exception as e:
+            return f"🚨 [OS Exec] Ошибка выполнения: {e}"
+
+    def handle_consilium_pipeline(self, user_prompt: str) -> str:
+        """Путь 4: Мультиагентный консилиум"""
+        print(f"\n🧠 [КОНСИЛИУМ] Запуск дебатов агентов...")
+        
+        clean_prompt = user_prompt.replace("/consilium", "").replace("!consilium", "").strip()
+        proposals = {}
+        
+        # ЭТАП 1: Генерация предложений разными агентами
+        agents_to_consult = ["prod_coding", "coding", "architect"]
+        
+        for agent_key in agents_to_consult:
+            agent = AGENTS[agent_key]
+            print(f"\n💬 [{agent['name']}] генерирует предложение...")
+            prompt = (
+                f"Предложи архитектурное решение для следующей задачи. Не пиши готовый код, опиши только подход.\n"
+                f"ЗАДАЧА: {clean_prompt}"
+            )
+            # Используем тихий режим
+            response = self._execute_native_chat(agent["combo"], prompt, stream_output=False)
+            proposals[agent_key] = response
+            print(f"✅ [{agent['name']}] ответ готов.")
+        
+        # ЭТАП 2: Агент-Арбитр выбирает лучшее
+        print(f"\n⚖️ [ArbiterAgent] Анализирует предложения и выбирает лучшее...")
+        arbiter_prompt = (
+            "Ты — Главный Арбитр. Три агента предложили решения задачи. Твоя задача — проанализировать их, "
+            "выбрать самое эффективное и безопасное, и написать единое финальное ТЗ для кодера.\n\n"
+        )
+        for agent_key, prop in proposals.items():
+            arbiter_prompt += f"ПРЕДЛОЖЕНИЕ ОТ {agent_key.upper()}:\n{prop}\n\n---\n\n"
+        
+        arbiter_prompt += f"НАПИШИ ФИНАЛЬНОЕ ТЗ НА ОСНОВЕ ЛУЧШЕГО ПОДХОДА:"
+        
+        final_tz = self._execute_native_chat(AGENTS["arbiter"]["combo"], arbiter_prompt, stream_output=False)
+        print(f"📝 [Финальное ТЗ Арбитра]:\n{final_tz[:500]}...\n")
+        
+        # ЭТАП 3: Кодер внедряет ТЗ
+        print(f"=== ЭТАП 3: КОДЕР (Aider применяет ТЗ Арбитра) ===")
+        coder_prompt = f"Следуй этому техническому заданию строго. Файл для правки: multiagent_router_pro.py.\n\nТЗ ОТ АРБИТРА:\n{final_tz}"
+        coder_result = self._execute_aider(AGENTS["prod_coding"]["combo"], coder_prompt)
+        
+        return f"🧠 Консилиум завершен.\nУчаствовало агентов: {len(agents_to_consult)}.\nРезультат кодера: {coder_result}"
+        
     def handle_evolution_pipeline(self, user_prompt: str) -> str:
         print(f"\n🧬 [ЭВОЛЮЦИЯ] Запуск пайплайна самомодификации...")
         
@@ -609,10 +702,15 @@ def main():
                     final_result = app.handle_complex_debug(user_prompt)
                 elif agent_key == "evolution":
                     final_result = app.handle_evolution_pipeline(user_prompt)
+                elif agent_key == "consilium":  # НОВОЕ
+                    final_result = app.handle_consilium_pipeline(user_prompt)
+                elif agent_key == "os_exec":    # НОВОЕ
+                    final_result = app.handle_os_exec(user_prompt)
                 else:
                     final_result = app.call_agent(agent_key, user_prompt)
                     
                 print("\n✅ [Итог операции]")
+                # ... (остальное)
                 print("-" * 60)
                 print(final_result)
                 print("-" * 60)
