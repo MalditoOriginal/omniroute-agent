@@ -604,22 +604,22 @@ class AgentOrchestrator:
                         except Exception:
                             pass
                 print("\n" + "-" * 60)
+                # ИЗМЕНЕНИЕ ЗДЕСЬ: Возвращаем сам текст, а не сообщение об успехе!
+                return full_response
             else:
                 data = response.json()
                 full_response = data["choices"][0]["message"]["content"]
 
             self.memory["finance_insights"].append({"prompt": prompt, "insight": full_response})
             self._save_memory()
-            
-            if stream_output:
-                return "✅ Аналитический отчет успешно сформирован."
+
             return full_response
         except Exception as e:
             if stream_output:
                 print("\n" + "-" * 60)
             self.logger.error(f"Системная ошибка чат-движка: {e}")
             return f"🚨 Системная ошибка чат-движка: {e}"
-
+            
     def _execute_aider(self, combo_name: str, prompt: str) -> str:
         import threading
         import queue
@@ -1081,7 +1081,7 @@ class AgentOrchestrator:
             f"Не пиши сам код, пиши только пошаговое ТЗ для другого агента."
         )
 
-        arch_result = self._execute_native_chat(AGENTS["architect"]["combo"], arch_prompt, stream_output=False)
+        arch_result = self._execute_native_chat(AGENTS["architect"]["combo"], arch_prompt, stream_output=True)
         print(f"📝 [ТЗ Архитектора]:\n{arch_result[:1000]}...\n")
 
         # --- ЭТАП 1.5: BRANCH MANAGER (Создание изолированной ветки эволюции) ---
