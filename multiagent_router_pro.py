@@ -496,25 +496,20 @@ class AgentOrchestrator:
         return f"=== ЭТАП 1 (Логи ОС) ===\n{term_out}\n\n=== ЭТАП 2 (Прод-Кодер) ===\n{coding_out}"
         
     def handle_evolution_pipeline(self, user_prompt: str) -> str:
-        self.logger.info(f"Запущен процесс эволюции. Входящий запрос на изменение: {user_prompt}")
         print(f"\n🧬 [ЭВОЛЮЦИЯ] Запуск пайплайна самомодификации...")
         
         files = re.findall(r'\b[\w\-./\\]+\.(?:py|js|json|txt|md|html|css|java|c|cpp|ts)\b', user_prompt)
         target_file = files[0] if files else "multiagent_router_pro.py"
         
         if not Path(target_file).exists():
-            msg = f"❌ [Ошибка] Целевой файл {target_file} не найден. Эволюция отменена."
-            self.logger.error(msg)
-            return msg
+            return f"❌ [Ошибка] Целевой файл {target_file} не найден. Эволюция отменена."
 
         # --- ЭТАП 1: АРХИТЕКТОР ---
         print(f"\n=== ЭТАП 1: АРХИТЕКТОР (Анализ {target_file}) ===")
         try:
             current_code = Path(target_file).read_text(encoding="utf-8")
         except Exception as e:
-            msg = f"❌ Не удалось прочитать {target_file}: {e}"
-            self.logger.error(msg)
-            return msg
+            return f"❌ Не удалось прочитать {target_file}: {e}"
 
         ev_memory = self._load_evolution_memory()
         ev_history = "\n\nПРЕДЫДУЩИЕ УСПЕШНЫЕ ЭВОЛЮЦИИ (не повторяй их):\n" + "\n".join([f"- {m}" for m in ev_memory[-5:]]) if ev_memory else ""
@@ -530,52 +525,55 @@ class AgentOrchestrator:
         )
         
         arch_result = self._execute_native_chat(AGENTS["architect"]["combo"], arch_prompt, stream_output=False)
-        self.logger.info(f"ArchitectAgent сгенерировал ТЗ. Объем: {len(arch_result)} символов.")
         print(f"📝 [ТЗ Архитектора]:\n{arch_result[:1000]}...\n")
         
         # --- ЭТАП 2: КОДЕР (AIDER) ---
-        self.logger.warning(f"Начало патчинга файла {target_file}")
         print(f"=== ЭТАП 2: КОДЕР (Aider применяет ТЗ к {target_file}) ===")
         coder_prompt = f"Следуй этому техническому заданию строго. Файл для правки: {target_file}.\n\nТЗ ОТ АРХИТЕКТОРА:\n{arch_result}"
         coder_result = self._execute_aider(AGENTS["prod_coding"]["combo"], coder_prompt)
-        self.logger.info("Изменения успешно применены. Файл перезаписан.")
         print(f"🛠️ [Результат Кодера]: {coder_result}\n")
 
         # --- ЭТАП 3: ТЕСТИРОВЩИК (ПРОВЕРКА ИМПОРТА И СИНТАКСИСА) ---
         print(f"=== ЭТАП 3: ТЕСТИРОВЩИК (Проверка импорта и синтаксиса) ===")
         module_name = Path(target_file).stem
-        # Проверяем реальным импортом: это ловит не только синтаксис, но и отсутствие нужных зависимостей/классов
         test_cmd = [sys.executable, "-c", f"import {module_name}"]
         
         try:
             test_result = subprocess.run(test_cmd, capture_output=True, text=True, timeout=30)
             if test_result.returncode == 0:
                 print("✅ [Тестировщик] Импорт и синтаксис корректны. Код жив.")
-                self.logger.info("Эволюция: тест импорта пройден успешно.")
                 
                 # Сохраняем успешную эволюцию в память
                 ev_memory.append(f"Запрос: {user_prompt}\nТЗ: {arch_result[:200]}")
                 self._save_evolution_memory(ev_memory)
                 
-                return "🧬 Эволюция успешно завершена. Изменения применены, закоммичены и проверены."
+                # --- ЭТАП 5: СИНХРОНИЗАТОР (GIT PUSH) ---
+                print(f"=== ЭТАП 4: СИНХРОНИЗАТОР (Отправка в GitHub) ===")
+                push_cmd = ["git", "push"]
+                push_result = subprocess.run(push_cmd, capture_output=True, text=True, cwd=os.getcwd())
+                
+                if push_result.returncode == 0:
+                    print("🚀 [Синхронизатор] Изменения успешно отправлены в GitHub.")
+                    return "🧬 ЭВОЛЮЦИЯ УСПЕШНА: Код изменен, протестирован, закоммичен и отправлен в GitHub."
+                else:
+                    print("⚠️ [Синхронизатор] Не удалось сделать git push (возможно, нет интернета или ключей).")
+                    print(f"Ошибка: {push_result.stderr}")
+                    return "🧬 Эволюция успешна локально, но отправка в GitHub не удалась. Проверь ключи SSH/токены."
+
             else:
-                # --- ЭТАП 4: СТРАЖ (ОТКАТ) ---
+                # --- ЭТАП СТРАЖ (ОТКАТ) ---
                 print("🚨 [Тестировщик] ОБНАРУЖЕНА ОШИБКА ИМПОРТА/СИНТАКСИСА!")
                 print(f"Ошибка:\n{test_result.stderr}")
-                self.logger.error(f"Ошибка импорта/синтаксиса после эволюции:\n{test_result.stderr}")
                 print("⏪ [Страж] Запускаю откат последнего коммита (git reset --hard HEAD~1)...")
                 
                 rollback_cmd = ["git", "reset", "--hard", "HEAD~1"]
                 rollback_result = subprocess.run(rollback_cmd, capture_output=True, text=True, cwd=os.getcwd())
                 
                 if rollback_result.returncode == 0:
-                    self.logger.info("Откат изменений (git reset) выполнен успешно.")
                     return "🛡️ Эволюция провалена: Aider сломал код. Страж успешно откатил изменения к рабочему состоянию."
                 else:
-                    self.logger.critical(f"Откат не удался:\n{rollback_result.stderr}")
                     return f"🚨 КРИТИЧЕСКАЯ ОШИБКА: Код сломан, и откат не удался!\n{rollback_result.stderr}"
         except Exception as e:
-            self.logger.error(f"Сбой на этапе тестирования эволюции: {e}")
             return f"🚨 Сбой на этапе тестирования: {e}"
 
 def main():
