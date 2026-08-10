@@ -13,6 +13,7 @@ import json
 import time
 import base64
 import logging
+import datetime
 import requests
 import subprocess
 from pathlib import Path
@@ -623,4 +624,6 @@ def main():
             break
 
 if __name__ == "__main__":
+    current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"Скрипт запущен: {current_time}")
     main()
