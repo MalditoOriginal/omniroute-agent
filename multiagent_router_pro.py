@@ -621,6 +621,9 @@ class AgentOrchestrator:
             return f"🚨 Системная ошибка чат-движка: {e}"
 
     def _execute_aider(self, combo_name: str, prompt: str) -> str:
+        import threading
+        import queue
+        
         os.environ["OPENAI_API_BASE"] = OMNIROUTE_BASE
         os.environ["OPENAI_BASE_URL"] = OMNIROUTE_BASE
 
@@ -631,7 +634,7 @@ class AgentOrchestrator:
             "--model", f"openai/{combo_name}",
             "--message", prompt,
             "--yes-always",                 
-            "--no-stream",                  
+            # УБРАЛИ "--no-stream", чтобы видеть мысли модели
             "--no-pretty",                  
             "--no-show-model-warnings",     
             "--no-check-update",            
@@ -648,47 +651,78 @@ class AgentOrchestrator:
             print("⚠️ [Aider] В запросе не указаны файлы. Aider будет работать как чат-бот.")
 
         try:
-            print("⏳ [Aider] Агент начал работу (Git-контроль активен)...")
+            print("⏳ [Aider] Агент начал работу (Стриминг + Idle Timer активен)...")
             
             env = os.environ.copy()
             env["PYTHONUTF8"] = "1"
             env["PYTHONIOENCODING"] = "utf-8"
 
-            result = subprocess.run(
+            # Запускаем процесс
+            process = subprocess.Popen(
                 cmd,
                 shell=False,
-                timeout=180, 
-                capture_output=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
                 text=True,
                 encoding="utf-8",
                 errors="replace",
                 env=env,                
                 stdin=subprocess.DEVNULL 
             )
+
+            # Очередь для неблокирующего чтения
+            q = queue.Queue()
+            def enqueue_output():
+                for line in iter(process.stdout.readline, ''):
+                    q.put(line)
+                process.stdout.close()
+
+            # Поток для чтения вывода
+            t = threading.Thread(target=enqueue_output, daemon=True)
+            t.start()
+
+            output = ""
+            last_activity_time = time.time()
+            IDLE_TIMEOUT = 120  # 2 минуты тишины = disconnect
+
+            while True:
+                try:
+                    # Читаем строку с таймаутом 1 секунда
+                    line = q.get(timeout=1.0)
+                    if line:
+                        output += line
+                        print(line, end="")  # Стримим в консоль/UI
+                        last_activity_time = time.time()  # Обновляем время активности
+                except queue.Empty:
+                    # Если вывода нет, проверяем, не завис ли процесс
+                    if process.poll() is not None:
+                        break  # Процесс завершился
+                    
+                    # Проверяем Idle Timeout
+                    idle_time = time.time() - last_activity_time
+                    if idle_time > IDLE_TIMEOUT:
+                        process.kill()
+                        print("\n🚨 [Idle Timeout] Aider замолчал более чем на 2 минуты. Похоже на disconnect.")
+                        self.logger.error("Aider disconnect (Idle Timeout 120 сек).")
+                        return "🚨 Ошибка: Disconnect (нет данных 120 сек)."
             
-            output = (result.stdout or "") + "\n" + (result.stderr or "")
+            process.wait()  # Дожидаемся завершения
+
             if len(output) > 4000:
                 output = output[:4000] + "\n... [Вывод обрезан] ..."
                 
-            print(output.strip())
             print("-" * 60)
 
-            if result.returncode == 0:
+            if process.returncode == 0:
                 if "commit" in output.lower():
                     return "✅ Aider успешно изменил код и сделал Git commit."
                 return "✅ Aider успешно завершил работу над кодом."
-            return f"❌ Агент разработки завершился с кодом ошибки: {result.returncode}"
+            return f"❌ Агент разработки завершился с кодом ошибки: {process.returncode}"
             
-        except subprocess.TimeoutExpired as e:
-            out = (e.stdout or "") + "\n" + (e.stderr or "")
-            print("🚨 [Таймаут] Aider завис. Лог до зависания:")
-            print(out.strip() if out else "(Лог пуст)")
-            self.logger.error("Таймаут субпроцесса Aider (180 сек).")
-            return "🚨 Ошибка: Превышен лимит времени (180 сек)."
         except Exception as e:
-            self.logger.error(f"Системный сбой субпроцесса Aider: {e}")
+            self.logger.error(f"Системный сбой субпроцесса Aider: {e}", exc_info=True)
             return f"🚨 Системный сбой субпроцесса Aider: {e}"
-
+            
     def handle_complex_debug(self, user_prompt: str) -> str:
         self.logger.info(f"Запущен процесс complex_debug. Входящий запрос: {user_prompt}")
         print(f"\n⚡ [Оркестратор] Запуск пайплайна отладки для: '{user_prompt[:50]}...'")
@@ -743,7 +777,93 @@ class AgentOrchestrator:
         except Exception as e:
             return f"🚨 [OS Exec] Ошибка выполнения: {e}"
 
-    def handle_consilium_pipeline(self, user_prompt: str) -> str:
+    def handle_evolution_pipeline(self, user_prompt: str) -> str:
+        """Путь 4: Автономная самомодификация кода (Эволюция)"""
+        print(f"\n🧬 [ЭВОЛЮЦИЯ] Запуск пайплайна самомодификации...")
+
+        # Определяем целевой файл (по умолчанию multiagent_router_pro.py)
+        target_file = "multiagent_router_pro.py"
+        match = re.search(r'\b[\w\-./\\]+\.(?:py|js|json|txt|md|html|css|java|c|cpp|ts)\b', user_prompt)
+        if match:
+            target_file = match.group(0)
+
+        ev_memory = self._load_evolution_memory()
+
+        # --- ЭТАП 1: АРХИТЕКТОР ---
+        print(f"=== ЭТАП 1: АРХИТЕКТОР (Анализ {target_file}) ===")
+        arch_prompt = (
+            f"Прочитай файл {target_file}. Проанализируй историю предыдущих эволюций: {ev_memory[-5:]}. "
+            f"Напиши строгое ТЗ для Aider, чтобы выполнить задачу: {user_prompt}. "
+            f"ТЗ должно содержать конкретные имена методов и ожидаемую логику."
+        )
+        arch_result = self._execute_native_chat(AGENTS["architect"]["combo"], arch_prompt, stream_output=False)
+        print(f"📝 [ТЗ Архитектора]:\n{arch_result[:1000]}...\n")
+
+        # --- ЭТАП 2: КОДЕР (AIDER) ---
+        print(f"=== ЭТАП 2: КОДЕР (Aider применяет ТЗ к {target_file}) ===")
+
+        # Branch Manager: создаём новую ветку перед запуском Aider
+        try:
+            self.create_evolution_branch()
+        except Exception as branch_err:
+            return f"🚨 Ошибка Branch Manager на этапе создания ветки: {branch_err}"
+
+        coder_prompt = f"Следуй этому техническому заданию строго. Файл для правки: {target_file}.\n\nТЗ ОТ АРХИТЕКТОРА:\n{arch_result}"
+        coder_result = self._execute_aider(AGENTS["prod_coding"]["combo"], coder_prompt)
+        print(f"🛠️ [Результат Кодера]: {coder_result}\n")
+
+        # ЗАЩИТА ОТ ПУСТЫШЕК: Если Aider завис или выдал ошибку, прерываем пайплайн
+        if "🚨" in coder_result or "ошибка" in coder_result.lower():
+            print("🚨 [Страж] Кодер не смог завершить работу (таймаут или сбой). Откат изменений...")
+            subprocess.run(["git", "reset", "--hard", "HEAD~1"], capture_output=True, text=True)
+            subprocess.run(["git", "checkout", "main"], capture_output=True, text=True) # Возвращаемся в main
+            return "🧬 Эволюция прервана: Агент-Кодер не справился с задачей за отведенное время."
+
+        # --- ЭТАП 3: ТЕСТИРОВЩИК (ЗАПУСК PYTEST) ---
+        print(f"=== ЭТАП 3: ТЕСТИРОВЩИК (Запуск юнит-тестов pytest) ===")
+        if not Path("test_core.py").exists():
+            print("⚠️ [Тестировщик] Файл test_core.py не найден. Пропуск тестов.")
+            return "🧬 Эволюция прошла без тестов (test_core.py отсутствует)."
+
+        test_cmd = [sys.executable, "-m", "pytest", "test_core.py", "-v"]
+
+        try:
+            test_result = subprocess.run(test_cmd, capture_output=True, text=True, timeout=60)
+            print(test_result.stdout)
+            if test_result.returncode == 0:
+                print("✅ [Тестировщик] Все юнит-тесты пройдены. Код логически стабилен.")
+
+                ev_memory.append(f"Запрос: {user_prompt}\nТЗ: {arch_result[:200]}")
+                self._save_evolution_memory(ev_memory)
+
+                # --- ЭТАП 4: СИНХРОНИЗАТОР (Отправка ветки в GitHub) ---
+                print(f"=== ЭТАП 4: СИНХРОНИЗАТОР (Отправка ветки evolve-feature в GitHub) ===")
+                try:
+                    self.push_evolution_branch()
+                    print("🚀 [Синхронизатор] Ветка evolve-feature успешно отправлена в GitHub.")
+                    
+                    pr_link = self.generate_pr_link()
+                    print(f"🔗 Pull Request для ветки evolve-feature: {pr_link}")
+                    
+                    # Возвращаемся в ветку main, чтобы продолжить работу
+                    subprocess.run(["git", "checkout", "main"], capture_output=True, text=True)
+                    
+                    return f"🧬 ЭВОЛЮЦИЯ УСПЕШНА: Код изменен, тесты пройдены, ветка отправлена в GitHub.\nСсылка на PR: {pr_link}"
+                except Exception as e:
+                    print("⚠️ [Синхронизатор] Не удалось отправить ветку evolve-feature.")
+                    return "🧬 Эволюция и тесты успешны локально, но отправка в GitHub не удалась."
+            else:
+                # --- ЭТАП СТРАЖ (ОТКАТ) ---
+                print("🚨 [Тестировщик] ТЕСТЫ УПАЛИ! Aider сломал логику.")
+                print("⏪ [Страж] Запускаю откат последнего коммита (git reset --hard HEAD~1)...")
+                subprocess.run(["git", "reset", "--hard", "HEAD~1"], capture_output=True, text=True)
+                subprocess.run(["git", "checkout", "main"], capture_output=True, text=True)
+                return "🛡️ Эволюция провалена: Aider сломал тесты. Страж успешно откатил изменения."
+        except subprocess.TimeoutExpired:
+            print("⏪ [Страж] Тесты зависли. Откат последнего коммита...")
+            subprocess.run(["git", "reset", "--hard", "HEAD~1"], capture_output=True, text=True)
+            subprocess.run(["git", "checkout", "main"], capture_output=True, text=True)
+            return "🛡️ Эволюция провалена: Тесты зависли. Страж откатил изменения."
         """Путь 4: Мультиагентный консилиум"""
         print(f"\n🧠 [КОНСИЛИУМ] Запуск дебатов агентов...")
         
@@ -767,14 +887,23 @@ class AgentOrchestrator:
         
         # ЭТАП 2: Агент-Арбитр выбирает лучшее
         print(f"\n⚖️ [ArbiterAgent] Анализирует предложения и выбирает лучшее...")
-        arbiter_prompt = (
-            "Ты — Главный Арбитр. Три агента предложили решения задачи. Твоя задача — проанализировать их, "
-            "выбрать самое эффективное и безопасное, и написать единое финальное ТЗ для кодера.\n\n"
-        )
+        arbiter_prompt = "ПРЕДЛОЖЕНИЯ АГЕНТОВ:\n\n"
         for agent_key, prop in proposals.items():
             arbiter_prompt += f"ПРЕДЛОЖЕНИЕ ОТ {agent_key.upper()}:\n{prop}\n\n---\n\n"
         
-        arbiter_prompt += f"НАПИШИ ФИНАЛЬНОЕ ТЗ НА ОСНОВЕ ЛУЧШЕГО ПОДХОДА:"
+        arbiter_prompt += """
+Ты — Агент-Арбитр. Твоя задача — составить строгое и конкретное Техническое Задание (ТЗ) для агента-кодера (Aider).
+На основе предложений агентов выше, напиши ТЗ в формате списка действий (Action Items).
+
+ПРАВИЛА:
+1. Запрещено писать введения, цели и абстрактные рассуждения.
+2. Указывай конкретные имена функций, классов и переменных, которые нужно изменить.
+3. Формат ТЗ:
+   - ФАЙЛ: <имя файла>
+   - ФУНКЦИЯ/КЛАСС: <имя>
+   - ДЕЙСТВИЕ: <добавить/изменить/удалить>
+   - КОД: <ожидаемая логика или snippet>
+"""
         
         final_tz = self._execute_native_chat(AGENTS["arbiter"]["combo"], arbiter_prompt, stream_output=False)
         print(f"📝 [Финальное ТЗ Арбитра]:\n{final_tz[:500]}...\n")
@@ -785,7 +914,57 @@ class AgentOrchestrator:
         coder_result = self._execute_aider(AGENTS["prod_coding"]["combo"], coder_prompt)
         
         return f"🧠 Консилиум завершен.\nУчаствовало агентов: {len(agents_to_consult)}.\nРезультат кодера: {coder_result}"
+     
+        # ===== Branch Manager (Новые методы) =====
+    def create_evolution_branch(self):
+        """Создание (или пересоздание) ветки evolve-feature перед запуском Aider."""
+        self.logger.info("BranchManager: создание/пересоздание ветки evolve-feature")
+        print("🌿 [BranchManager] Создание ветки evolve-feature...")
+        try:
+            subprocess.run(["git", "checkout", "-B", "evolve-feature"], check=True, capture_output=True, text=True)
+            self.logger.info("BranchManager: ветка evolve-feature успешно создана/пересоздана")
+        except subprocess.CalledProcessError as e:
+            self.logger.error(f"BranchManager: ошибка при создании ветки: {e.stderr.strip()}")
+            raise
+
+    def push_evolution_branch(self):
+        """Отправка ветки evolve-feature в remote origin."""
+        self.logger.info("BranchManager: пуш ветки evolve-feature в origin")
+        try:
+            result = subprocess.run(["git", "push", "origin", "evolve-feature"], check=True, capture_output=True, text=True)
+            self.logger.info(f"BranchManager: ветка отправлена: {result.stdout.strip()}")
+        except subprocess.CalledProcessError as e:
+            self.logger.error(f"BranchManager: ошибка при пуше ветки: {e.stderr.strip()}")
+            raise
+
+    def generate_pr_link(self):
+        """Генерация ссылки на Pull Request для GitHub/GitLab."""
+        try:
+            result = subprocess.run(["git", "config", "--get", "remote.origin.url"], capture_output=True, text=True, check=True)
+            remote_url = result.stdout.strip()
+        except Exception:
+            return "Не удалось определить remote URL. Создайте Pull Request вручную."
+
+        if not remote_url:
+            return "Не удалось определить remote URL. Создайте Pull Request вручную."
+
+        # Преобразуем SSH (git@...) в HTTPS
+        if remote_url.startswith("git@"):
+            https_url = remote_url.replace(":", "/").replace("git@", "https://").replace(".git", "")
+        elif remote_url.startswith("https://"):
+            https_url = remote_url.replace(".git", "")
+        else:
+            return f"Создайте Pull Request вручную: {remote_url}"
+
+        # Определяем хостинг
+        if "gitlab" in https_url.lower():
+            return f"{https_url}/-/merge_requests/new?merge_request[source_branch]=evolve-feature"
+
+        # По умолчанию считаем, что это GitHub
+        return f"{https_url}/pull/new/evolve-feature"
         
+
+     
     def handle_evolution_pipeline(self, user_prompt: str) -> str:
         print(f"\n🧬 [ЭВОЛЮЦИЯ] Запуск пайплайна самомодификации...")
         
