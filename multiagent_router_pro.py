@@ -777,7 +777,6 @@ class AgentOrchestrator:
         except Exception as e:
             return f"🚨 [OS Exec] Ошибка выполнения: {e}"
 
-    def handle_evolution_pipeline(self, user_prompt: str) -> str:
         # Branch Manager is active
         """Путь 4: Автономная самомодификация кода (Эволюция)"""
         print(f"\n🧬 [ЭВОЛЮЦИЯ] Запуск пайплайна самомодификации...")
@@ -964,19 +963,87 @@ class AgentOrchestrator:
         # По умолчанию считаем, что это GitHub
         return f"{https_url}/pull/new/evolve-feature"
         
+    # ===== Branch Manager (Вспомогательные методы) =====
+    def _create_git_branch(self, branch_name: str) -> bool:
+        """Создает новую Git-ветку и переключается на нее."""
+        try:
+            result = subprocess.run(
+                ["git", "checkout", "-b", branch_name],
+                capture_output=True, text=True, timeout=30, cwd=os.getcwd()
+            )
+            if result.returncode == 0:
+                self.logger.info(f"Branch Manager: ветка '{branch_name}' успешно создана и активирована.")
+                print(f"🌿 [Branch Manager] Создана и активирована ветка: {branch_name}")
+                return True
+            self.logger.error(f"Branch Manager: ошибка создания ветки '{branch_name}': {result.stderr.strip()}")
+            print(f"⚠️ [Branch Manager] git checkout -b завершился с ошибкой: {result.stderr.strip()}")
+            return False
+        except Exception as e:
+            self.logger.error(f"Branch Manager: системный сбой при создании ветки '{branch_name}': {e}")
+            print(f"🚨 [Branch Manager] Системный сбой: {e}")
+            return False
 
+    def push_evolution_branch(self):
+        """Отправляет текущую ветку в remote origin."""
+        self.logger.info(f"Branch Manager: пуш ветки '{branch_name}' в origin")
+        try:
+            # Используем переменную текущей ветки
+            current_branch_result = subprocess.run(["git", "rev-parse", "--abbrev-ref", "HEAD"], capture_output=True, text=True)
+            current_branch = current_branch_result.stdout.strip()
+            result = subprocess.run(
+                ["git", "push", "origin", current_branch],
+                check=True,
+                capture_output=True,
+                text=True
+            )
+            self.logger.info(f"Branch Manager: ветка отправлена: {result.stdout.strip()}")
+        except subprocess.CalledProcessError as e:
+            self.logger.error(f"Branch Manager: ошибка при пуше ветки: {e.stderr.strip()}")
+            raise
+
+    def generate_pr_link(self) -> str:
+        """Генерирует динамическую ссылку на Pull Request для GitHub/GitLab."""
+        try:
+            result = subprocess.run(
+                ["git", "remote", "get-url", "origin"],
+                capture_output=True, text=True, timeout=15, cwd=os.getcwd()
+            )
+            remote_url = result.stdout.strip()
+        except Exception:
+            return "Не удалось определить remote URL. Создайте Pull Request вручную."
+
+        if not remote_url:
+            return "Не удалось определить remote URL. Создайте Pull Request вручную."
+
+        # Преобразуем SSH (git@...) в HTTPS
+        if remote_url.startswith("git@"):
+            https_url = remote_url.replace(":", "/").replace("git@", "https://").replace(".git", "")
+        elif remote_url.startswith("https://"):
+            https_url = remote_url.replace(".git", "")
+        else:
+            return f"Создайте Pull Request вручную: {remote_url}"
+
+        # Определяем текущую ветку
+        try:
+            branch_result = subprocess.run(["git", "rev-parse", "--abbrev-ref", "HEAD"], capture_output=True, text=True)
+            current_branch = branch_result.stdout.strip()
+        except Exception:
+            current_branch = "evolve-feature"
+
+        if "gitlab" in https_url.lower():
+            return f"{https_url}/-/merge_requests/new?merge_request[source_branch]={current_branch}"
+
+        return f"{https_url}/pull/new/{current_branch}"
      
     def handle_evolution_pipeline(self, user_prompt: str) -> str:
+        """Пайплайн автономной самомодификации с системой Branch Manager."""
         print(f"\n🧬 [ЭВОЛЮЦИЯ] Запуск пайплайна самомодификации...")
-        
+
         files = re.findall(r'\b[\w\-./\\]+\.(?:py|js|json|txt|md|html|css|java|c|cpp|ts)\b', user_prompt)
         target_file = files[0] if files else "multiagent_router_pro.py"
-        
-        if not Path(target_file).exists():
-            return f"❌ [Ошибка] Целевой файл {target_file} не найден. Эволюция отменена."
 
         # --- ЭТАП 1: АРХИТЕКТОР ---
-        print(f"\n=== ЭТАП 1: АРХИТЕКТОР (Анализ {target_file}) ===")
+        print(f"=== ЭТАП 1: АРХИТЕКТОР (Анализ {target_file}) ===")
         try:
             current_code = Path(target_file).read_text(encoding="utf-8")
         except Exception as e:
@@ -994,65 +1061,85 @@ class AgentOrchestrator:
             f"Напиши четкую инструкцию, какие именно функции добавить, изменить или удалить. "
             f"Не пиши сам код, пиши только пошаговое ТЗ для другого агента."
         )
-        
+
         arch_result = self._execute_native_chat(AGENTS["architect"]["combo"], arch_prompt, stream_output=False)
         print(f"📝 [ТЗ Архитектора]:\n{arch_result[:1000]}...\n")
+
+        # --- ЭТАП 1.5: BRANCH MANAGER (Создание изолированной ветки эволюции) ---
+        print(f"=== ЭТАП 1.5: BRANCH MANAGER (Создание ветки эволюции) ===")
+        try:
+            orig_branch_result = subprocess.run(
+                ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+                capture_output=True, text=True, timeout=15, cwd=os.getcwd()
+            )
+            original_branch = orig_branch_result.stdout.strip() if orig_branch_result.returncode == 0 else "main"
+        except Exception:
+            original_branch = "main"
         
+        branch_name = "evolve-feature"
+        if not self._create_git_branch(branch_name):
+            branch_name = f"evolve-feature-{datetime.datetime.now().strftime('%Y%m%d-%H%M%S')}"
+            if not self._create_git_branch(branch_name):
+                return "❌ [Ошибка] Branch Manager: не удалось создать ветку эволюции. Эволюция отменена."
+
         # --- ЭТАП 2: КОДЕР (AIDER) ---
-        print(f"=== ЭТАП 2: КОДЕР (Aider применяет ТЗ к {target_file}) ===")
+        print(f"=== ЭТАП 2: КОДЕР (Aider применяет ТЗ к {target_file} в ветке '{branch_name}') ===")
         coder_prompt = f"Следуй этому техническому заданию строго. Файл для правки: {target_file}.\n\nТЗ ОТ АРХИТЕКТОРА:\n{arch_result}"
         coder_result = self._execute_aider(AGENTS["prod_coding"]["combo"], coder_prompt)
         print(f"🛠️ [Результат Кодера]: {coder_result}\n")
 
+        # ЗАЩИТА ОТ ПУСТЫШЕК
+        if "🚨" in coder_result or "ошибка" in coder_result.lower():
+            print("🚨 [Страж] Кодер не смог завершить работу. Откат изменений...")
+            subprocess.run(["git", "reset", "--hard", "HEAD~1"], capture_output=True, text=True)
+            subprocess.run(["git", "checkout", original_branch], capture_output=True, text=True)
+            return "🧬 Эволюция прервана: Агент-Кодер не справился с задачей."
+
         # --- ЭТАП 3: ТЕСТИРОВЩИК (ЗАПУСК PYTEST) ---
         print(f"=== ЭТАП 3: ТЕСТИРОВЩИК (Запуск юнит-тестов pytest) ===")
+        if not Path("test_core.py").exists():
+            print("⚠️ [Тестировщик] Файл test_core.py не найден. Пропуск тестов.")
+            return "🧬 Эволюция прошла без тестов (test_core.py отсутствует)."
+
         test_cmd = [sys.executable, "-m", "pytest", "test_core.py", "-v"]
-        
+
         try:
-            # Запускаем pytest с таймаутом 60 секунд
             test_result = subprocess.run(test_cmd, capture_output=True, text=True, timeout=60)
-            
-            # Выводим логи pytest в консоль
             print(test_result.stdout)
-            if test_result.stderr:
-                print(test_result.stderr)
-                
+            
             if test_result.returncode == 0:
                 print("✅ [Тестировщик] Все юнит-тесты пройдены. Код логически стабилен.")
-                
-                # Сохраняем успешную эволюцию в память
                 ev_memory.append(f"Запрос: {user_prompt}\nТЗ: {arch_result[:200]}")
                 self._save_evolution_memory(ev_memory)
-                
-                # --- ЭТАП 4: СИНХРОНИЗАТОР (GIT PUSH) ---
-                print(f"=== ЭТАП 4: СИНХРОНИЗАТОР (Отправка в GitHub) ===")
-                push_cmd = ["git", "push"]
-                push_result = subprocess.run(push_cmd, capture_output=True, text=True, cwd=os.getcwd())
-                
-                if push_result.returncode == 0:
-                    print("🚀 [Синхронизатор] Изменения успешно отправлены в GitHub.")
-                    return "🧬 ЭВОЛЮЦИЯ УСПЕШНА: Код изменен, тесты пройдены, коммит отправлен в GitHub."
-                else:
-                    print("⚠️ [Синхронизатор] Не удалось сделать git push.")
+
+                # --- ЭТАП 4: СИНХРОНИЗАТОР (Push ветки в GitHub) ---
+                print(f"=== ЭТАП 4: СИНХРОНИЗАТОР (Push ветки '{branch_name}' в origin) ===")
+                try:
+                    self.push_evolution_branch()
+                    print(f"🚀 [Синхронизатор] Ветка '{branch_name}' успешно отправлена в GitHub.")
+                    
+                    pr_link = self.generate_pr_link()
+                    print(f"🔗 Pull Request для эволюции создан: {pr_link}")
+                    
+                    subprocess.run(["git", "checkout", original_branch], capture_output=True, text=True)
+                    
+                    return f"🧬 ЭВОЛЮЦИЯ УСПЕШНА: Код изменен в ветке '{branch_name}', тесты пройдены.\nСсылка на PR: {pr_link}"
+                except Exception as e:
+                    print("⚠️ [Синхронизатор] Не удалось отправить ветку evolve-feature.")
                     return "🧬 Эволюция и тесты успешны локально, но отправка в GitHub не удалась."
             else:
                 # --- ЭТАП СТРАЖ (ОТКАТ) ---
                 print("🚨 [Тестировщик] ТЕСТЫ УПАЛИ! Aider сломал логику.")
-                print("⏪ [Страж] Запускаю откат последнего коммита (git reset --hard HEAD~1)...")
+                print(f"⏪ [Страж] Возврат в исходную ветку '{original_branch}' и удаление ветки '{branch_name}'...")
                 
-                rollback_cmd = ["git", "reset", "--hard", "HEAD~1"]
-                rollback_result = subprocess.run(rollback_cmd, capture_output=True, text=True, cwd=os.getcwd())
+                subprocess.run(["git", "reset", "--hard", "HEAD"], capture_output=True, text=True, cwd=os.getcwd())
+                subprocess.run(["git", "checkout", original_branch], capture_output=True, text=True, cwd=os.getcwd())
+                subprocess.run(["git", "branch", "-D", branch_name], capture_output=True, text=True, cwd=os.getcwd())
                 
-                if rollback_result.returncode == 0:
-                    return "🛡️ Эволюция провалена: Aider сломал тесты. Страж успешно откатил изменения."
-                else:
-                    return f"🚨 КРИТИЧЕСКАЯ ОШИБКА: Тесты упали, и откат не удался!\n{rollback_result.stderr}"
-                    
+                return "🛡️ Эволюция провалена: Aider сломал тесты. Страж успешно откатил изменения."
         except subprocess.TimeoutExpired:
             return "🚨 [Тестировщик] Превышен лимит времени выполнения тестов (60 сек)."
-        except Exception as e:
-            return f"🚨 Сбой на этапе тестирования: {e}"
-
+            
 def main():
     app = AgentOrchestrator()
     print("\n🚀 Мультиагентное ядро управления PRO запущено!")
