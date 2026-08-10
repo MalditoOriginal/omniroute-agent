@@ -581,7 +581,7 @@ class AgentOrchestrator:
 
         full_response = ""
         try:
-            response = requests.post(url, headers=headers, json=payload, stream=stream_output, timeout=60)
+            response = requests.post(url, headers=headers, json=payload, stream=stream_output, timeout=180)
             if response.status_code != 200:
                 err_msg = f"❌ Ошибка API OmniRoute: Код {response.status_code}\n{response.text}"
                 self.logger.error(f"Ошибка API OmniRoute (chat). Код: {response.status_code}")
@@ -824,46 +824,52 @@ class AgentOrchestrator:
         coder_result = self._execute_aider(AGENTS["prod_coding"]["combo"], coder_prompt)
         print(f"🛠️ [Результат Кодера]: {coder_result}\n")
 
-        # --- ЭТАП 3: ТЕСТИРОВЩИК (ПРОВЕРКА ИМПОРТА И СИНТАКСИСА) ---
-        print(f"=== ЭТАП 3: ТЕСТИРОВЩИК (Проверка импорта и синтаксиса) ===")
-        module_name = Path(target_file).stem
-        test_cmd = [sys.executable, "-c", f"import {module_name}"]
+        # --- ЭТАП 3: ТЕСТИРОВЩИК (ЗАПУСК PYTEST) ---
+        print(f"=== ЭТАП 3: ТЕСТИРОВЩИК (Запуск юнит-тестов pytest) ===")
+        test_cmd = [sys.executable, "-m", "pytest", "test_core.py", "-v"]
         
         try:
-            test_result = subprocess.run(test_cmd, capture_output=True, text=True, timeout=30)
+            # Запускаем pytest с таймаутом 60 секунд
+            test_result = subprocess.run(test_cmd, capture_output=True, text=True, timeout=60)
+            
+            # Выводим логи pytest в консоль
+            print(test_result.stdout)
+            if test_result.stderr:
+                print(test_result.stderr)
+                
             if test_result.returncode == 0:
-                print("✅ [Тестировщик] Импорт и синтаксис корректны. Код жив.")
+                print("✅ [Тестировщик] Все юнит-тесты пройдены. Код логически стабилен.")
                 
                 # Сохраняем успешную эволюцию в память
                 ev_memory.append(f"Запрос: {user_prompt}\nТЗ: {arch_result[:200]}")
                 self._save_evolution_memory(ev_memory)
                 
-                # --- ЭТАП 5: СИНХРОНИЗАТОР (GIT PUSH) ---
+                # --- ЭТАП 4: СИНХРОНИЗАТОР (GIT PUSH) ---
                 print(f"=== ЭТАП 4: СИНХРОНИЗАТОР (Отправка в GitHub) ===")
                 push_cmd = ["git", "push"]
                 push_result = subprocess.run(push_cmd, capture_output=True, text=True, cwd=os.getcwd())
                 
                 if push_result.returncode == 0:
                     print("🚀 [Синхронизатор] Изменения успешно отправлены в GitHub.")
-                    return "🧬 ЭВОЛЮЦИЯ УСПЕШНА: Код изменен, протестирован, закоммичен и отправлен в GitHub."
+                    return "🧬 ЭВОЛЮЦИЯ УСПЕШНА: Код изменен, тесты пройдены, коммит отправлен в GitHub."
                 else:
-                    print("⚠️ [Синхронизатор] Не удалось сделать git push (возможно, нет интернета или ключей).")
-                    print(f"Ошибка: {push_result.stderr}")
-                    return "🧬 Эволюция успешна локально, но отправка в GitHub не удалась. Проверь ключи SSH/токены."
-
+                    print("⚠️ [Синхронизатор] Не удалось сделать git push.")
+                    return "🧬 Эволюция и тесты успешны локально, но отправка в GitHub не удалась."
             else:
                 # --- ЭТАП СТРАЖ (ОТКАТ) ---
-                print("🚨 [Тестировщик] ОБНАРУЖЕНА ОШИБКА ИМПОРТА/СИНТАКСИСА!")
-                print(f"Ошибка:\n{test_result.stderr}")
+                print("🚨 [Тестировщик] ТЕСТЫ УПАЛИ! Aider сломал логику.")
                 print("⏪ [Страж] Запускаю откат последнего коммита (git reset --hard HEAD~1)...")
                 
                 rollback_cmd = ["git", "reset", "--hard", "HEAD~1"]
                 rollback_result = subprocess.run(rollback_cmd, capture_output=True, text=True, cwd=os.getcwd())
                 
                 if rollback_result.returncode == 0:
-                    return "🛡️ Эволюция провалена: Aider сломал код. Страж успешно откатил изменения к рабочему состоянию."
+                    return "🛡️ Эволюция провалена: Aider сломал тесты. Страж успешно откатил изменения."
                 else:
-                    return f"🚨 КРИТИЧЕСКАЯ ОШИБКА: Код сломан, и откат не удался!\n{rollback_result.stderr}"
+                    return f"🚨 КРИТИЧЕСКАЯ ОШИБКА: Тесты упали, и откат не удался!\n{rollback_result.stderr}"
+                    
+        except subprocess.TimeoutExpired:
+            return "🚨 [Тестировщик] Превышен лимит времени выполнения тестов (60 сек)."
         except Exception as e:
             return f"🚨 Сбой на этапе тестирования: {e}"
 
