@@ -536,6 +536,9 @@ class AgentOrchestrator:
             return f"🚨 Системная ошибка при вызове агента: {e}"
 
     def _execute_native_chat(self, combo_name: str, prompt: str, stream_output: bool = True) -> str:
+        import threading
+        import queue
+        
         url = f"{OMNIROUTE_BASE}/chat/completions"
         headers = {
             "Authorization": f"Bearer {os.getenv('OPENAI_API_KEY')}",
@@ -581,39 +584,80 @@ class AgentOrchestrator:
 
         full_response = ""
         try:
-            response = requests.post(url, headers=headers, json=payload, stream=stream_output, timeout=180)
-            if response.status_code != 200:
-                err_msg = f"❌ Ошибка API OmniRoute: Код {response.status_code}\n{response.text}"
-                self.logger.error(f"Ошибка API OmniRoute (chat). Код: {response.status_code}")
-                return err_msg
-
             if stream_output:
-                for line in response.iter_lines():
-                    if line:
-                        decoded_line = line.decode("utf-8").strip()
-                        if decoded_line.startswith("data: "):
-                            decoded_line = decoded_line[6:]
-                        if decoded_line == "[DONE]":
-                            break
-                        try:
-                            chunk = json.loads(decoded_line)
-                            content = chunk["choices"][0]["delta"].get("content", "")
-                            if content:
-                                print(content, end="", flush=True)
-                                full_response += content
-                        except Exception:
-                            pass
+                # Используем поток и очередь для неблокирующего чтения и умного таймаута
+                q = queue.Queue()
+                
+                def stream_reader():
+                    try:
+                        response = requests.post(url, headers=headers, json=payload, stream=True, timeout=(10, 120))
+                        if response.status_code != 200:
+                            q.put(f"❌ Ошибка API OmniRoute: Код {response.status_code}\n{response.text}")
+                            return
+                        for line in response.iter_lines():
+                            if line:
+                                decoded_line = line.decode("utf-8").strip()
+                                if decoded_line.startswith("data: "):
+                                    decoded_line = decoded_line[6:]
+                                if decoded_line == "[DONE]":
+                                    break
+                                try:
+                                    chunk = json.loads(decoded_line)
+                                    content = chunk["choices"][0]["delta"].get("content", "")
+                                    if content:
+                                        q.put(content)
+                                except Exception:
+                                    pass
+                    except Exception as e:
+                        q.put(e)
+                    finally:
+                        q.put(None) # Сигнал завершения потока
+
+                t = threading.Thread(target=stream_reader, daemon=True)
+                t.start()
+                
+                last_activity_time = time.time()
+                IDLE_TIMEOUT = 120  # 2 минуты тишины = disconnect
+
+                while True:
+                    try:
+                        item = q.get(timeout=1.0)
+                        if item is None:
+                            break # Поток завершен
+                        if isinstance(item, Exception):
+                            raise item
+                        if isinstance(item, str) and item.startswith("❌ Ошибка API"):
+                            return item
+                            
+                        print(item, end="", flush=True)
+                        full_response += item
+                        last_activity_time = time.time() # Обновляем время активности
+                    except queue.Empty:
+                        # Если вывода нет, проверяем Idle Timeout
+                        if time.time() - last_activity_time > IDLE_TIMEOUT:
+                            print("\n🚨 [Idle Timeout] Модель замолчала более чем на 2 минуты. Отключаюсь.")
+                            return "🚨 Ошибка: Модель не отвечает (Idle Timeout)."
+                
                 print("\n" + "-" * 60)
-                # ИЗМЕНЕНИЕ ЗДЕСЬ: Возвращаем сам текст, а не сообщение об успехе!
+                
+                self.memory["finance_insights"].append({"prompt": prompt, "insight": full_response})
+                self._save_memory()
                 return full_response
+                
             else:
+                # Без стриминга - жесткий таймаут на весь запрос (10 минут)
+                response = requests.post(url, headers=headers, json=payload, timeout=600)
+                if response.status_code != 200:
+                    err_msg = f"❌ Ошибка API OmniRoute: Код {response.status_code}\n{response.text}"
+                    self.logger.error(f"Ошибка API OmniRoute (chat). Код: {response.status_code}")
+                    return err_msg
                 data = response.json()
                 full_response = data["choices"][0]["message"]["content"]
 
-            self.memory["finance_insights"].append({"prompt": prompt, "insight": full_response})
-            self._save_memory()
-
-            return full_response
+                self.memory["finance_insights"].append({"prompt": prompt, "insight": full_response})
+                self._save_memory()
+                return full_response
+                
         except Exception as e:
             if stream_output:
                 print("\n" + "-" * 60)
