@@ -1125,7 +1125,7 @@ class AgentOrchestrator:
             f"Не пиши сам код, пиши только пошаговое ТЗ для другого агента."
         )
 
-        arch_result = self._execute_native_chat(AGENTS["architect"]["combo"], arch_prompt, stream_output=True)
+        arch_result = self._execute_native_chat(AGENTS["architect"]["combo"], arch_prompt, stream_output=False)
         print(f"📝 [ТЗ Архитектора]:\n{arch_result[:1000]}...\n")
 
         # --- ЭТАП 1.5: BRANCH MANAGER (Создание изолированной ветки эволюции) ---
