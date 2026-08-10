@@ -778,6 +778,7 @@ class AgentOrchestrator:
             return f"🚨 [OS Exec] Ошибка выполнения: {e}"
 
     def handle_evolution_pipeline(self, user_prompt: str) -> str:
+        # Branch Manager is active
         """Путь 4: Автономная самомодификация кода (Эволюция)"""
         print(f"\n🧬 [ЭВОЛЮЦИЯ] Запуск пайплайна самомодификации...")
 
