@@ -1188,7 +1188,7 @@ class AgentOrchestrator:
                     
                     return f"🧬 ЭВОЛЮЦИЯ УСПЕШНА: Код изменен в ветке '{branch_name}', тесты пройдены.\nСсылка на PR: {pr_link}"
                 except Exception as e:
-                    print("⚠️ [Синхронизатор] Не удалось отправить ветку evolve-feature.")
+                    print(f"⚠️ [Синхронизатор] Не удалось отправить ветку evolve-feature.")
                     return "🧬 Эволюция и тесты успешны локально, но отправка в GitHub не удалась."
             else:
                 # --- ЭТАП СТРАЖ (ОТКАТ) ---
