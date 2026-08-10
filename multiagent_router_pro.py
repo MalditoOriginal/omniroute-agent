@@ -640,7 +640,7 @@ class AgentOrchestrator:
             "--no-check-update",            
             "--auto-commits",               
             "--dirty-commits",              
-            "--edit-format", "whole",       
+            "--edit-format", "diff",
             "--exit"                        
         ]
         
