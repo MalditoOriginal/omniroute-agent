@@ -835,6 +835,15 @@ class AgentOrchestrator:
 
                 ev_memory.append(f"Запрос: {user_prompt}\nТЗ: {arch_result[:200]}")
                 self._save_evolution_memory(ev_memory)
+                
+                # --- ЭТАП 3.5: ДОКУМЕНТАТОР (Обновление README и docstrings) ---
+                print(f"=== ЭТАП 3.5: ДОКУМЕНТАТОР (Обновление документации) ===")
+                doc_prompt = (
+                    f"Обновите файл README.md, добавив описание новой функциональности: {user_prompt}. "
+                    f"Также добавьте docstrings к измененным методам в файле {target_file}."
+                )
+                doc_result = self._execute_aider(AGENTS["prod_coding"]["combo"], doc_prompt)
+                print(f"📝 [Результат Документатора]: {doc_result}\n")
 
                 # --- ЭТАП 4: СИНХРОНИЗАТОР (Отправка ветки в GitHub) ---
                 print(f"=== ЭТАП 4: СИНХРОНИЗАТОР (Отправка ветки evolve-feature в GitHub) ===")
