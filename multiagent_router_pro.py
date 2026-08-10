@@ -983,7 +983,7 @@ class AgentOrchestrator:
             print(f"🚨 [Branch Manager] Системный сбой: {e}")
             return False
 
-    def push_evolution_branch(self):
+    def push_evolution_branch(self, branch_name: str):
         """Отправляет текущую ветку в remote origin."""
         self.logger.info(f"Branch Manager: пуш ветки '{branch_name}' в origin")
         try:
