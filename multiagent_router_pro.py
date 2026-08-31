@@ -5,7 +5,7 @@ multiagent_router_pro.py
 Мультиагентная система маршрутизации на базе OmniRoute и Aider.
 Версия: routing-rules + normalizer + LLM fallback router + Evolution Pipeline + Semantic Cache.
 """
-
+from discovery_agent import DiscoveryAgent
 import re
 import os
 import sys
@@ -321,6 +321,10 @@ class AgentOrchestrator:
         self.routing_rules = self._load_routing_rules()
         self.cache_manager = CacheManager(self.logger)
         self._check_environment()
+		self.discovery_agent = DiscoveryAgent(
+            github_repo_url="https://github.com/diegosouzapw/OmniRoute.git",
+            local_path=r"D:\Projects\OmniRoute"
+        )
 
     def _setup_logging(self):
         self.logger = logging.getLogger("RouterLogger")
@@ -1107,10 +1111,15 @@ class AgentOrchestrator:
 
         # --- ЭТАП 1: АРХИТЕКТОР ---
         print(f"=== ЭТАП 1: АРХИТЕКТОР (Анализ {target_file}) ===")
+        
+        # Запрос к Агенту-Исследователю за актуальной базой знаний
+        knowledge_base = self.discovery_agent.gather_knowledge()
+        
         try:
             current_code = Path(target_file).read_text(encoding="utf-8")
         except Exception as e:
             return f"❌ Не удалось прочитать {target_file}: {e}"
+
 
         ev_memory = self._load_evolution_memory()
         ev_history = "\n\nПРЕДЫДУЩИЕ УСПЕШНЫЕ ЭВОЛЮЦИИ (не повторяй их):\n" + "\n".join([f"- {m}" for m in ev_memory[-5:]]) if ev_memory else ""
