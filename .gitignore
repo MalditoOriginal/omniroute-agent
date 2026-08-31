@@ -16,3 +16,12 @@ shared_memory.json
 # Переменные окружения (если будете использовать файл .env)
 .env
 .aider*
+
+omniroute - backup/
+storage.sqlite
+storage.sqlite-shm
+storage.sqlite-wal
+server.env
+call_logs
+db_backups
+logs

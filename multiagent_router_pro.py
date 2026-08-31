@@ -321,7 +321,7 @@ class AgentOrchestrator:
         self.routing_rules = self._load_routing_rules()
         self.cache_manager = CacheManager(self.logger)
         self._check_environment()
-		self.discovery_agent = DiscoveryAgent(
+        self.discovery_agent = DiscoveryAgent(
             github_repo_url="https://github.com/diegosouzapw/OmniRoute.git",
             local_path=r"D:\Projects\OmniRoute"
         )
@@ -415,7 +415,7 @@ class AgentOrchestrator:
         if prompt_lower.startswith(("/evolve", "!evolve")):
             self.logger.info(f"Найдено совпадение по правилам. Целевой агент: evolution | Совпадение: /evolve")
             return "evolution", "Автономная самомодификация кода (Консилиум)"
-		if prompt_lower.startswith(("/manage_omniroute", "!manage_omniroute")):
+        if prompt_lower.startswith(("/manage_omniroute", "!manage_omniroute")):
             self.logger.info(f"Найдено совпадение по правилам. Целевой агент: manage_omniroute")
             return "manage_omniroute", "Автономная настройка шлюза OmniRoute"
         if prompt_lower.startswith(("/consilium", "!consilium")):
