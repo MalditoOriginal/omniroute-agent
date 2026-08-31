@@ -415,6 +415,9 @@ class AgentOrchestrator:
         if prompt_lower.startswith(("/evolve", "!evolve")):
             self.logger.info(f"Найдено совпадение по правилам. Целевой агент: evolution | Совпадение: /evolve")
             return "evolution", "Автономная самомодификация кода (Консилиум)"
+		if prompt_lower.startswith(("/manage_omniroute", "!manage_omniroute")):
+            self.logger.info(f"Найдено совпадение по правилам. Целевой агент: manage_omniroute")
+            return "manage_omniroute", "Автономная настройка шлюза OmniRoute"
         if prompt_lower.startswith(("/consilium", "!consilium")):
             return "consilium", "Мультиагентный консилиум (Генерация -> Оценка -> Кодинг)"
         if prompt_lower.startswith(("/exec", "!exec")):
@@ -1101,6 +1104,56 @@ class AgentOrchestrator:
 
         return f"{https_url}/pull/new/{current_branch}"
      
+    def handle_omniroute_management(self, user_prompt: str) -> str:
+        """Вектор Outward: Автономная настройка конфигурации локального OmniRoute."""
+        print(f"\n⚙️ [OMNIROUTE MANAGER] Запуск управления шлюзом...")
+        
+        clean_prompt = user_prompt.replace("/manage_omniroute", "").replace("!manage_omniroute", "").strip()
+        
+        # 1. Сбор знаний (RAG)
+        print("=== ЭТАП 1: СБОР ЗНАНИЙ (Discovery Agent) ===")
+        knowledge_base = self.discovery_agent.gather_knowledge()
+        
+        # 2. Архитектор (Анализ конфигов)
+        print("=== ЭТАП 2: АРХИТЕКТОР (Анализ возможностей) ===")
+        arch_prompt = (
+            f"Ты — ИИ-Архитектор. Проанализируй базу знаний OmniRoute и запрос пользователя. "
+            f"Напиши СТРОГОЕ ТЗ для Aider, указав ТОЧНЫЙ ПУТЬ к файлу (например, D:\\Projects\\OmniRoute\\config.yaml), который нужно изменить. "
+            f"Учти текущие настройки, чтобы не сломать рабочую систему.\n\n"
+            f"БАЗА ЗНАНИЙ OMNIROUTE:\n{knowledge_base[:4000]}\n\n"
+            f"ЗАПРОС ПОЛЬЗОВАТЕЛЯ:\n{clean_prompt}\n\n"
+            f"Напиши пошаговое ТЗ для Aider."
+        )
+        arch_result = self._execute_native_chat(AGENTS["architect"]["combo"], arch_prompt, stream_output=False)
+        print(f"📝 [ТЗ Архитектора]:\n{arch_result[:1000]}...\n")
+        
+        # 3. Кодер (Aider применяет изменения)
+        print("=== ЭТАП 3: КОДЕР (Изменение конфигов OmniRoute) ===")
+        coder_prompt = f"Следуй этому техническому заданию строго. Внеси изменения в указанные файлы.\n\nТЗ ОТ АРХИТЕКТОРА:\n{arch_result}"
+        coder_result = self._execute_aider(AGENTS["prod_coding"]["combo"], coder_prompt)
+        print(f"🛠️ [Результат Кодера]: {coder_result}\n")
+        
+        if "🚨" in coder_result:
+            return "🚫 Настройка OmniRoute прервана: Кодер не справился."
+            
+        # 4. Healthcheck (Проверка работоспособности шлюза)
+        print("=== ЭТАП 4: HEALTHCHECK (Проверка порта 20128) ===")
+        try:
+            import requests
+            # Даем шлюзу 3 секунды на перезагрузку конфигов (если он это делает автоматически)
+            time.sleep(3)
+            response = requests.get("http://localhost:20128/v1/models", timeout=5)
+            if response.status_code == 200:
+                print("✅ [Healthcheck] OmniRoute жив и отвечает на порту 20128!")
+                return "✅ OMNIROUTE MANAGER: Настройки успешно применены. Шлюз работает корректно."
+            else:
+                print(f"⚠️ [Healthcheck] OmniRoute ответил с кодом {response.status_code}.")
+                return f"⚠️ OMNIROUTE MANAGER: Изменения внесены, но шлюз ответил ошибкой {response.status_code}."
+        except Exception as e:
+            print(f"🚨 [Healthcheck] OmniRoute не отвечает! Критическая ошибка: {e}")
+            self.logger.critical(f"OmniRoute упал после настройки: {e}")
+            return "🚨 OMNIROUTE MANAGER: КРИТИЧЕСКАЯ ОШИБКА! OmniRoute не отвечает. Срочно проверьте конфиги вручную!"	 
+	 
     def handle_evolution_pipeline(self, user_prompt: str) -> str:
         # Branch Manager is active
         """Пайплайн автономной самомодификации с системой Branch Manager."""
@@ -1244,10 +1297,12 @@ def main():
                     final_result = app.handle_complex_debug(user_prompt)
                 elif agent_key == "evolution":
                     final_result = app.handle_evolution_pipeline(user_prompt)
-                elif agent_key == "consilium":  # НОВОЕ
+                elif agent_key == "consilium":
                     final_result = app.handle_consilium_pipeline(user_prompt)
-                elif agent_key == "os_exec":    # НОВОЕ
+                elif agent_key == "os_exec":
                     final_result = app.handle_os_exec(user_prompt)
+                elif agent_key == "manage_omniroute": # НОВОЕ
+                    final_result = app.handle_omniroute_management(user_prompt)
                 else:
                     final_result = app.call_agent(agent_key, user_prompt)
                     
