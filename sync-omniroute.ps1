@@ -1,27 +1,30 @@
-Write-Host "Starting OmniRoute sync to GitHub..." -ForegroundColor Cyan
+# 1. Удаляем базу SQLite и бэкапы из индекса Git (они останутся на диске, но Git перестанет их видеть)
+git rm -r --cached "omniroute - backup" 2>$null
+git rm -r --cached "omniroute-backup" 2>$null
+git rm -r --cached ".tmp.driveupload" 2>$null
+git rm -r --cached "storage.sqlite" "storage.sqlite-shm" "storage.sqlite-wal" 2>$null
 
- $projectPath = "D:\OmniRoute-Agent"
- $backupPath = "$projectPath\omniroute-backup"
- $sourcePath = "$env:APPDATA\omniroute"
+# 2. Записываем в .gitignore, чтобы Git больше НИКОГДА не трогал эти файлы
+ $gitignore = "
+# OmniRoute Databases & Backups
+storage.sqlite
+storage.sqlite-shm
+storage.sqlite-wal
+omniroute-backup/
+omniroute - backup/
+server.env
+call_logs/
+db_backups/
+logs/
 
-# 1. Clean old backup
-if (Test-Path $backupPath) {
-    Remove-Item -Path $backupPath -Recurse -Force
-}
+# Temp files
+.tmp.driveupload/
+"
+Add-Content -Path .gitignore -Value $gitignore
 
-# 2. Copy fresh settings
-if (Test-Path $sourcePath) {
-    Copy-Item -Path $sourcePath -Destination $backupPath -Recurse -Force
-    Write-Host "[OK] Settings copied." -ForegroundColor Green
-} else {
-    Write-Host "[ERROR] OmniRoute settings folder not found!" -ForegroundColor Red
-    exit
-}
+# 3. Коммитим это очищение
+git add -A
+git commit -m "fix: massive cleanup of tmp files and omniroute databases from git"
 
-# 3. Push to GitHub
-Set-Location $projectPath
-git add -f omniroute-backup/
-git commit -m "Auto-Sync: OmniRoute settings update $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
-git push
-
-Write-Host "Sync complete! Backup pushed to GitHub." -ForegroundColor Green	
+# 4. Пушим в главную ветку
+git push origin main

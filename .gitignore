@@ -25,3 +25,18 @@ server.env
 call_logs
 db_backups
 logs
+
+# OmniRoute Databases & Backups
+storage.sqlite
+storage.sqlite-shm
+storage.sqlite-wal
+omniroute-backup/
+omniroute - backup/
+server.env
+call_logs/
+db_backups/
+logs/
+
+# Temp files
+.tmp.driveupload/
+
