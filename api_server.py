@@ -268,7 +268,7 @@ HTML = """
                 }
                 if(!msg) return;
                 ws.send(msg);
-                logs.innerHTML += "<span style='color: #58a6ff;'>&gt; " + msg + "</span>\\n";
+                logs.textContent += "> " + msg + "\n";
                 document.getElementById('msg').value = '';
             }
 
