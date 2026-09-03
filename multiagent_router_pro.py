@@ -7,6 +7,7 @@ multiagent_router_pro.py
 """
 from cache_manager import CacheManager
 from discovery_agent import DiscoveryAgent
+from experience_store import ExperienceStore
 import re
 import os
 import sys
@@ -159,6 +160,7 @@ class AgentOrchestrator:
             github_repo_url="https://github.com/diegosouzapw/OmniRoute.git",
             local_path=r"D:\Projects\OmniRoute"
         )
+        self.experience_store = ExperienceStore()
 
     def _setup_logging(self):
         self.logger = logging.getLogger("RouterLogger")
@@ -1023,10 +1025,21 @@ class AgentOrchestrator:
         ev_memory = self._load_evolution_memory()
         ev_history = "\n\nПРЕДЫДУЩИЕ УСПЕШНЫЕ ЭВОЛЮЦИИ (не повторяй их):\n" + "\n".join([f"- {m}" for m in ev_memory[-5:]]) if ev_memory else ""
 
+        # --- RETRIEVAL: Поиск релевантного опыта в векторной базе ---
+        past_experiences = self.experience_store.query_experience(query_text=user_prompt, n_results=3)
+        exp_context = ""
+        relevant_exps = [exp for exp in past_experiences if exp.get("distance", 1.0) < 0.3]
+        if relevant_exps:
+            exp_context = "\n\nВнимание: в базе опыта найдены похожие прошлые задачи. Учти эти данные при написании ТЗ:\n"
+            for exp in relevant_exps:
+                exp_context += f"- Документ: {exp['document']}\n  Метаданные: {exp['metadata']}\n"
+            self.logger.info(f"Найдено {len(relevant_exps)} релевантных записей опыта для эволюции.")
+
         arch_prompt = (
             f"Ты — Главный Архитектор ИИ-систем. Твоя задача — проанализировать код и запрос пользователя, "
             f"затем написать СТРОГОЕ ТЕХНИЧЕСКОЕ ЗАДАНИЕ для агента-кодера.\n"
-            f"{ev_history}\n\n"
+            f"{ev_history}\n"
+            f"{exp_context}\n\n"
             f"ЗАПРОС ПОЛЬЗОВАТЕЛЯ:\n{user_prompt}\n\n"
             f"ТЕКУЩИЙ КОД ФАЙЛА {target_file}:\n```\n{current_code[:4000]}\n```\n\n"
             f"Напиши четкую инструкцию, какие именно функции добавить, изменить или удалить. "
@@ -1083,6 +1096,16 @@ class AgentOrchestrator:
                 ev_memory.append(f"Запрос: {user_prompt}\nТЗ: {arch_result[:200]}")
                 self._save_evolution_memory(ev_memory)
 
+                # --- STORAGE: Сохранение успешного опыта в векторную базу ---
+                exp_id = f"exp_{int(time.time())}"
+                self.experience_store.add_experience(
+                    id=exp_id,
+                    prompt=user_prompt,
+                    evolution_code=arch_result,
+                    status="success",
+                    metadata={"target_file": target_file, "branch": branch_name}
+                )
+
                 # --- ЭТАП 4: СИНХРОНИЗАТОР (Push ветки в GitHub) ---
                 print(f"=== ЭТАП 4: СИНХРОНИЗАТОР (Push ветки '{branch_name}' в origin) ===")
                 try:
@@ -1106,6 +1129,16 @@ class AgentOrchestrator:
                 subprocess.run(["git", "reset", "--hard", "HEAD"], capture_output=True, text=True, cwd=os.getcwd())
                 subprocess.run(["git", "checkout", original_branch], capture_output=True, text=True, cwd=os.getcwd())
                 subprocess.run(["git", "branch", "-D", branch_name], capture_output=True, text=True, cwd=os.getcwd())
+
+                # --- STORAGE: Сохранение провального опыта (чтобы не повторять) ---
+                exp_id = f"exp_{int(time.time())}"
+                self.experience_store.add_experience(
+                    id=exp_id,
+                    prompt=user_prompt,
+                    evolution_code=arch_result,
+                    status="failed",
+                    metadata={"target_file": target_file, "error": "tests_failed"}
+                )
                 
                 return "🛡️ Эволюция провалена: Aider сломал тесты. Страж успешно откатил изменения."
         except subprocess.TimeoutExpired:

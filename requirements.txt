@@ -4,3 +4,5 @@ numpy>=1.20
 aider-ai>=1.0
 python-telegram-bot>=20.3
 python-dotenv>=1.0.0
+chromadb
+sentence-transformers
