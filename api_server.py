@@ -129,27 +129,21 @@ HTML = """
                 width: 10px;
             }
             #logs::-webkit-scrollbar-track {
-                background: #161b22;
+                background: #0d1117;
             }
             #logs::-webkit-scrollbar-thumb {
                 background: #30363d;
                 border-radius: 5px;
             }
-            #logs::-webkit-scrollbar-thumb:hover {
-                background: #484f58;
-            }
             .controls {
                 display: flex;
-                gap: 10px;
+                gap: 12px;
                 position: sticky;
                 bottom: 0;
                 background: #0d1117;
-                backdrop-filter: blur(5px);
-                padding: 16px 0;
-                margin: 0 -16px -16px -16px;
-                padding: 16px;
+                padding-top: 12px;
             }
-            input {
+            #msg-input {
                 flex-grow: 1;
                 padding: 10px 12px;
                 background: #21262d;
@@ -158,77 +152,102 @@ HTML = """
                 border-radius: 6px;
                 font-size: 14px;
                 font-family: inherit;
-                transition: border-color 0.2s ease, box-shadow 0.2s ease;
+                transition: border-color 0.2s ease;
             }
-            input:focus {
-                border-color: #238636;
-                box-shadow: 0 0 0 3px rgba(35, 134, 54, 0.3);
+            #msg-input:focus {
+                border-color: #58a6ff;
                 outline: none;
             }
-            button {
-                padding: 10px 20px;
-                background: linear-gradient(to bottom, #238636, #2ea043);
-                color: #ffffff;
-                font-weight: bold;
-                border: 1px solid rgba(240,246,252,0.1);
+            .btn {
                 border-radius: 6px;
+                padding: 10px 20px;
                 cursor: pointer;
+                border: none;
+                font-weight: bold;
                 font-size: 14px;
                 font-family: inherit;
-                transition: filter 0.2s ease;
             }
-            button:hover {
-                filter: brightness(1.1);
+            .btn-send {
+                background: linear-gradient(to bottom, #238636, #2ea043);
+                color: #ffffff;
             }
             .btn-clear {
                 background: #21262d;
-                color: #c9d1d9;
                 border: 1px solid #30363d;
-                font-weight: normal;
-                transition: border-color 0.2s ease, box-shadow 0.2s ease;
-            }
-            .btn-clear:hover {
-                border-color: #8b949e;
-                filter: none;
+                color: #c9d1d9;
             }
         </style>
     </head>
     <body>
         <div class="status-bar">
-            <div class="status-info">Провайдер: <span id="provider">--</span> | Модель: <span id="model">--</span></div>
-            <div class="status-mode"><span class="indicator-thinking" id="thinking-dot"></span> <span id="thinking-text">IDLE</span></div>
+            <div class="status-info"><span id="status-provider">Provider: --</span> | <span id="status-model">Model: --</span></div>
+            <div class="status-mode"><span class="indicator-thinking" id="thinking-indicator"></span> THINKING MODE</div>
         </div>
         <div class="sidebar">
-            <h3>Файлы проекта</h3>
+            <h3>Project Files</h3>
             <ul id="file-list" style="padding: 0; margin: 0;"></ul>
         </div>
         <div class="main-content">
-            <h2>🚀 Multiagent Router PRO (Web UI)</h2>
+            <h2>Multiagent Router PRO</h2>
             <div id="logs"></div>
             <div class="controls">
-                <input type="text" id="msg" autofocus placeholder="Введите запрос...">
-                <button onclick="send()">Send</button>
-                <button class="btn-clear" onclick="clearLogs()">Clear</button>
+                <input type="text" id="msg-input" placeholder="Введите команду..." autocomplete="off">
+                <button class="btn btn-send" onclick="send()">Send</button>
+                <button class="btn btn-clear" onclick="clearLogs()">Clear</button>
             </div>
         </div>
         <script>
-            const ws = new WebSocket("ws://" + location.host + "/ws");
-            const logs = document.getElementById('logs');
+            let ws;
+
+            function initWebSocket() {
+                ws = new WebSocket("ws://" + location.host + "/ws");
+                ws.onmessage = function(event) {
+                    const text = event.data;
+                    const logs = document.getElementById('logs');
+                    logs.textContent += text + "\\n";
+                    logs.scrollTo({ top: logs.scrollHeight, behavior: 'smooth' });
+                };
+            }
+
+            function clearLogs() {
+                document.getElementById('logs').textContent = '';
+            }
+
+            function send() {
+                const msgInput = document.getElementById('msg-input');
+                const msg = msgInput.value;
+                if(!msg) return;
+                ws.send(msg);
+                msgInput.value = '';
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+                initWebSocket();
+                loadFileList();
+
+                const msgInput = document.getElementById('msg-input');
+                msgInput.addEventListener('keydown', function(event) {
+                    if (event.key === "Enter") {
+                        event.preventDefault();
+                        send();
+                    }
+                });
+            });
 
             async function loadFileList() {
                 try {
                     const response = await fetch('/files');
                     if (!response.ok) return;
-                    const data = await response.json();
+                    const files = await response.json();
                     const fileList = document.getElementById('file-list');
                     if (!fileList) return;
                     fileList.innerHTML = '';
-                    data.files.forEach(file => {
+                    files.forEach(file => {
                         const li = document.createElement('li');
                         li.className = 'file-item';
                         li.textContent = file;
                         li.onclick = () => {
-                            document.getElementById('msg').value = '/exec python ' + file;
+                            document.getElementById('msg-input').value = '/exec python ' + file;
                             send();
                         };
                         fileList.appendChild(li);
@@ -237,53 +256,14 @@ HTML = """
                     console.error('Failed to load file list:', error);
                 }
             }
-
-            ws.onmessage = function(event) {
-                const text = event.data;
-                // Parse status markers
-                if (text.includes('Provider:') && text.includes('Model:')) {
-                    const providerMatch = text.match(/Provider:\\s*(\\S+)/);
-                    const modelMatch = text.match(/Model:\\s*(\\S+)/);
-                    if (providerMatch) document.getElementById('provider').textContent = providerMatch[1];
-                    if (modelMatch) document.getElementById('model').textContent = modelMatch[1];
-                }
-                if (text.includes('[THINKING]') || text.includes('Анализирую...')) {
-                    document.getElementById('thinking-dot').classList.add('active');
-                    document.getElementById('thinking-text').textContent = 'THINKING...';
-                }
-                if (text.includes('[DONE]') || text.includes('Завершено')) {
-                    document.getElementById('thinking-dot').classList.remove('active');
-                    document.getElementById('thinking-text').textContent = 'IDLE';
-                }
-                logs.textContent += text + "\\n";
-                logs.scrollTo({ top: logs.scrollHeight, behavior: 'smooth' });
-            };
-
-            function clearLogs() {
-                document.getElementById('logs').textContent = '';
-            }
-
-            function send() {
-                const msg = document.getElementById('msg').value;
-                if (msg.toLowerCase() === 'clear' || msg.toLowerCase() === '/clear') {
-                    clearLogs();
-                    document.getElementById('msg').value = '';
-                    return;
-                }
-                if(!msg) return;
-                ws.send(msg);
-                logs.textContent += "> " + msg + "\n";
-                document.getElementById('msg').value = '';
-            }
-
-            document.getElementById('msg').addEventListener('keypress', function (e) { if (e.key === 'Enter') send(); });
-
-            // Initialize file list on load
-            document.addEventListener('DOMContentLoaded', loadFileList);
         </script>
     </body>
 </html>
 """
+
+@app.get("/", response_class=HTMLResponse)
+async def get():
+    return HTML
 
 @app.get("/files")
 async def get_py_files():
@@ -294,11 +274,7 @@ async def get_py_files():
         and not f.startswith(".")
         and f != "api_server.py"
     ]
-    return {"files": files}
-
-@app.get("/")
-async def get():
-    return HTMLResponse(HTML)
+    return files
 
 class QueueStreamer:
     def __init__(self, q, original_stdout):
@@ -307,10 +283,8 @@ class QueueStreamer:
         
     def write(self, data):
         if data.strip():
-            # 1. Пишем в обычную консоль (терминал)
             self.original_stdout.write(data)
             self.original_stdout.flush()
-            # 2. Кладем в очередь для Web UI
             self.q.put(data)
             
     def flush(self):
@@ -325,7 +299,6 @@ async def websocket_endpoint(websocket: WebSocket):
             if data.lower() in ["exit", "quit"]: break
 
             q = queue.Queue()
-            # Сохраняем настоящий stdout до начала перехвата
             original_stdout = sys.stdout
             streamer = QueueStreamer(q, original_stdout)
 
@@ -339,18 +312,15 @@ async def websocket_endpoint(websocket: WebSocket):
                     elif agent_key == "os_exec": orchestrator.handle_os_exec(data)
                     else: orchestrator.call_agent(agent_key, data)
                 except Exception as e:
-                    # При ошибке тоже пишем в консоль и UI
                     err_msg = f"CRITICAL ERROR in thread: {e}"
                     sys.stdout.write(err_msg)
                 finally:
                     sys.stdout = original_stdout
-                    q.put(None) # Сигнал о завершении потока
+                    q.put(None)
 
-            # Запускаем ядро в отдельном потоке, чтобы не блокировать WebSocket
             thread = threading.Thread(target=run_agent_task)
             thread.start()
 
-            # Асинхронно читаем из очереди и отправляем в браузер
             while True:
                 try:
                     item = await asyncio.to_thread(q.get, timeout=0.1)
