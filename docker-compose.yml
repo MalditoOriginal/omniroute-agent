@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  router:
+    build: .
+    ports: ["8000:8000"]
+    volumes: [./:/app]
+    environment: [OPENAI_API_KEY, PYTHONUNBUFFERED=1]
