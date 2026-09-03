@@ -949,7 +949,8 @@ class AgentOrchestrator:
         knowledge_base = self.discovery_agent.gather_knowledge()
         
         # 2. Чтение текущего конфига напрямую (без Aider!)
-        config_path = Path("D:/Projects/OmniRoute/config.yaml")
+        config_dir = os.getenv("OMNIROUTE_DIR", r"D:\Projects\OmniRoute")
+        config_path = Path(config_dir) / "config.yaml"
         if not config_path.exists():
             return f"❌ Файл {config_path} не найден."
         current_config = config_path.read_text(encoding="utf-8")
