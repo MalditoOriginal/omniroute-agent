@@ -921,7 +921,7 @@ class AgentOrchestrator:
         return f"{https_url}/pull/new/{current_branch}"
      
     def handle_omniroute_management(self, user_prompt: str) -> str:
-        """Вектор Outward: Автономная настройка конфигурации локального OmniRoute."""
+        """Вектор Outward: Прямая инъекция в конфигурацию локального OmniRoute."""
         print(f"\n⚙️ [OMNIROUTE MANAGER] Запуск управления шлюзом...")
         
         clean_prompt = user_prompt.replace("/manage_omniroute", "").replace("!manage_omniroute", "").strip()
@@ -930,47 +930,54 @@ class AgentOrchestrator:
         print("=== ЭТАП 1: СБОР ЗНАНИЙ (Discovery Agent) ===")
         knowledge_base = self.discovery_agent.gather_knowledge()
         
-        # 2. Архитектор (Анализ конфигов)
-        print("=== ЭТАП 2: АРХИТЕКТОР (Анализ возможностей) ===")
-
+        # 2. Чтение текущего конфига напрямую (без Aider!)
+        config_path = Path("D:/Projects/OmniRoute/config.yaml")
+        if not config_path.exists():
+            return f"❌ Файл {config_path} не найден."
+        current_config = config_path.read_text(encoding="utf-8")
+        
+        # 3. Архитектор генерирует НОВЫЙ конфиг
+        print("=== ЭТАП 2: АРХИТЕКТОР (Генерация нового конфига) ===")
         arch_prompt = (
-            f"Ты — ИИ-Архитектор. Проанализируй базу знаний OmniRoute и запрос пользователя. "
-            f"Напиши СТРОГОЕ ТЗ для Aider, указав ТОЧНЫЙ ПУТЬ к файлу (например, D:\\Projects\\OmniRoute\\config.yaml), который нужно изменить. "
-            f"Учти текущие настройки, чтобы не сломать рабочую систему.\n\n"
-            f"БАЗА ЗНАНИЙ OMNIROUTE:\n{knowledge_base[:4000]}\n\n"
-            f"ЗАПРОС ПОЛЬЗОВАТЕЛЯ:\n{clean_prompt}\n\n"
-            f"Напиши пошаговое ТЗ для Aider.\n"
-            f"При указании файлов для модификации ОБЯЗАТЕЛЬНО используй только абсолютные пути (например, D:\\Projects\\OmniRoute\\config.yaml или /home/user/project/file.py). Запрещено использовать относительные пути или просто имена файлов. ТЗ должно содержать полные пути."
+            f"Ты — ИИ-Архитектор OmniRoute. Вот текущий config.yaml:\n```yaml\n{current_config}\n```\n"
+            f"База знаний:\n{knowledge_base[:2000]}\n\n"
+            f"ЗАПРОС ПОЛЬЗОВАТЕЛЯ: {clean_prompt}\n"
+            f"Верни ПОЛНЫЙ обновленный config.yaml с учетом запроса. Не пиши комментариев, верни только валидный YAML."
         )
-        arch_result = self._execute_native_chat(AGENTS["architect"]["combo"], arch_prompt, stream_output=False)
-        print(f"📝 [ТЗ Архитектора]:\n{arch_result[:1000]}...\n")
+        new_config = self._execute_native_chat(AGENTS["architect"]["combo"], arch_prompt, stream_output=False)
         
-        # 3. Кодер (Aider применяет изменения)
-        print("=== ЭТАП 3: КОДЕР (Изменение конфигов OmniRoute) ===")
-        coder_prompt = f"Следуй этому техническому заданию строго. Внеси изменения в указанные файлы.\nПеред началом работы проверь, что пути к файлам в ТЗ являются абсолютными. Если путь относительный или некорректный — немедленно прерви выполнение и верни ошибку валидации.\n\nТЗ ОТ АРХИТЕКТОРА:\n{arch_result}"
-        coder_result = self._execute_aider(AGENTS["prod_coding"]["combo"], coder_prompt)
-        print(f"🛠️ [Результат Кодера]: {coder_result}\n")
-        
-        if "🚨" in coder_result:
-            return "🚫 Настройка OmniRoute прервана: Кодер не справился."
+        # Очистка от markdown блоков (если модель их добавила)
+        if "```yaml" in new_config:
+            new_config = new_config.split("```yaml")[1].split("```")[0].strip()
             
-        # 4. Healthcheck (Проверка работоспособности шлюза)
+        print(f"📝 [Новый конфиг сгенерирован]\n")
+        
+        # 4. Песочница: Бэкап и запись
+        print("=== ЭТАП 3: ПЕСОЧНИЦА (Запись конфига) ===")
+        backup_path = config_path.with_suffix(".yaml.bak")
+        backup_path.write_text(current_config, encoding="utf-8")
+        config_path.write_text(new_config, encoding="utf-8")
+        print(f"💾 Бэкап создан: {backup_path.name}")
+        print(f"📝 Файл {config_path.name} обновлен.")
+        
+        # 5. Healthcheck
         print("=== ЭТАП 4: HEALTHCHECK (Проверка порта 20128) ===")
         try:
             import requests
-            # Даем шлюзу 3 секунды на перезагрузку конфигов (если он это делает автоматически)
             time.sleep(3)
             response = requests.get("http://localhost:20128/v1/models", timeout=5)
             if response.status_code == 200:
                 print("✅ [Healthcheck] OmniRoute жив и отвечает на порту 20128!")
                 return "✅ OMNIROUTE MANAGER: Настройки успешно применены. Шлюз работает корректно."
             else:
-                print(f"⚠️ [Healthcheck] OmniRoute ответил с кодом {response.status_code}.")
-                return f"⚠️ OMNIROUTE MANAGER: Изменения внесены, но шлюз ответил ошибкой {response.status_code}."
+                # Откат при ошибке
+                config_path.write_text(current_config, encoding="utf-8")
+                print(f"🚨 [Healthcheck] OmniRoute упал (код {response.status_code}). Откат конфига...")
+                return "🚨 OMNIROUTE MANAGER: Шлюз упал. Конфиг автоматически откатан."
         except Exception as e:
-            print(f"🚨 [Healthcheck] OmniRoute не отвечает! Критическая ошибка: {e}")
-            self.logger.critical(f"OmniRoute упал после настройки: {e}")
-            return "🚨 OMNIROUTE MANAGER: КРИТИЧЕСКАЯ ОШИБКА! OmniRoute не отвечает. Срочно проверьте конфиги вручную!"	 
+            config_path.write_text(current_config, encoding="utf-8")
+            print(f"🚨 [Healthcheck] OmniRoute не отвечает! Откат конфига... Ошибка: {e}")
+            return "🚨 OMNIROUTE MANAGER: КРИТИЧЕСКАЯ ОШИБКА! Конфиг автоматически откатан."
 	 
     def handle_evolution_pipeline(self, user_prompt: str) -> str:
         # Branch Manager is active
