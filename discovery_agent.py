@@ -1,3 +1,4 @@
+import os
 import subprocess
 from pathlib import Path
 
@@ -8,7 +9,7 @@ class DiscoveryAgent:
     """
     def __init__(self, github_repo_url: str = None, local_path: str = None):
         self.github_repo_url = github_repo_url
-        self.local_path = local_path
+        self.local_path = local_path or os.getenv("OMNIROUTE_DIR", r"D:\Projects\OmniRoute")
         self.cache_dir = Path(".knowledge_cache")
 
     def discover_local_omniroute(self) -> str:
