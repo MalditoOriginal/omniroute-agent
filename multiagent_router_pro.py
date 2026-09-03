@@ -19,14 +19,32 @@ import requests
 import subprocess
 import random
 import uuid
+import shutil
+import signal
 from pathlib import Path
 from typing import Dict, Any, Tuple, Optional, List
 
-SHARED_MEMORY_FILE = Path("shared_memory.json")
-ROUTING_RULES_FILE = Path("routing_rules.json")
-EVOLUTION_MEMORY_FILE = Path("evolution_memory.json")
-OMNIROUTE_BASE = "http://localhost:20128/v1"
-LOG_FILE = Path("router.log")
+# Базовая директория данных (для Docker volume mounting)
+DATA_DIR = Path(os.environ.get("ROUTER_DATA_DIR", "."))
+
+SHARED_MEMORY_FILE = Path(os.environ.get("SHARED_MEMORY_FILE", DATA_DIR / "shared_memory.json"))
+ROUTING_RULES_FILE = Path(os.environ.get("ROUTING_RULES_FILE", DATA_DIR / "routing_rules.json"))
+EVOLUTION_MEMORY_FILE = Path(os.environ.get("EVOLUTION_MEMORY_FILE", DATA_DIR / "evolution_memory.json"))
+OMNIROUTE_BASE = os.environ.get("OMNIROUTE_BASE", "http://localhost:20128/v1")
+LOG_FILE = Path(os.environ.get("LOG_FILE", DATA_DIR / "router.log"))
+
+def ensure_data_dir() -> None:
+    """Создает рабочую директорию для данных, если она не существует (Docker-compatible)."""
+    try:
+        DATA_DIR.mkdir(parents=True, exist_ok=True)
+    except PermissionError as e:
+        print(f"⚠️ [Предупреждение] Не удалось создать директорию данных {DATA_DIR}: {e}", file=sys.stderr)
+
+def handle_shutdown(signum, frame):
+    """Обработчик сигналов завершения работы для graceful shutdown (Docker-compatible)."""
+    print("\n👋 Получен сигнал завершения работы. Останавливаемся...")
+    logging.getLogger("RouterLogger").info("Получен сигнал завершения работы. Останавливаемся...")
+    sys.exit(0)
 
 AGENTS: Dict[str, Dict[str, str]] = {
     "terminal": {
@@ -1091,6 +1109,9 @@ class AgentOrchestrator:
             return "🚨 [Тестировщик] Превышен лимит времени выполнения тестов (60 сек)."
             
 def main():
+    ensure_data_dir()
+    signal.signal(signal.SIGINT, handle_shutdown)
+    signal.signal(signal.SIGTERM, handle_shutdown)
     app = AgentOrchestrator()
     print("\n🚀 Мультиагентное ядро управления PRO запущено!")
     print("=========================================================")
