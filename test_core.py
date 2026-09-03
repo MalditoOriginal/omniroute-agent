@@ -62,17 +62,20 @@ def test_route_keywords(orchestrator):
 # ТЕСТ 4: Проверка регулярки извлечения файлов
 # ==========================================
 def test_file_extraction_regex():
-    # Та самая регулярка из _execute_aider и handle_evolution_pipeline
-    regex = r'\b[\w\-./\\]+\.(?:py|js|json|txt|md|html|css|java|c|cpp|ts)\b'
-    
-    text1 = "исправь опечатку в скрипте main.py"
-    assert re.findall(regex, text1) == ["main.py"]
-    
-    text2 = "обнови стили в index.css и логику в app.js"
-    assert re.findall(regex, text2) == ["index.css", "app.js"]
-    
+    # Обновленная регулярка из _execute_aider (теперь требует абсолютные пути или пути от корня)
+    regex = r'(?<!\S)(?:(?:[a-zA-Z]:[\\/])|/)?[\w\-./\\]+\.(?:py|js|json|txt|md|html|css|java|c|cpp|ts|yaml|yml|env|toml)\b'
+
+    text1 = "исправь опечатку в скрипте D:\\Projects\\main.py"
+    assert re.findall(regex, text1) == ["D:\\Projects\\main.py"]
+
+    text2 = "обнови стили в /home/user/index.css и логику в /var/www/app.js"
+    assert re.findall(regex, text2) == ["/home/user/index.css", "/var/www/app.js"]
+
     text3 = "просто текст без файлов"
     assert re.findall(regex, text3) == []
+
+    text4 = "проверь конфиг C:/Users/Test/file.json"
+    assert re.findall(regex, text4) == ["C:/Users/Test/file.json"]
 
 # ==========================================
 # ТЕСТ 5: Проверка словаря AGENTS

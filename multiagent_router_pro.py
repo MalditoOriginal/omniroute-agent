@@ -494,7 +494,7 @@ class AgentOrchestrator:
         os.environ["OPENAI_API_BASE"] = OMNIROUTE_BASE
         os.environ["OPENAI_BASE_URL"] = OMNIROUTE_BASE
 
-        files = re.findall(r'\b[\w\-./\\]+\.(?:py|js|json|txt|md|html|css|java|c|cpp|ts)\b', prompt)
+        files = re.findall(r'(?<!\S)(?:(?:[a-zA-Z]:[\\/])|/)?[\w\-./\\]+\.(?:py|js|json|txt|md|html|css|java|c|cpp|ts|yaml|yml|env|toml)\b', prompt)
         
         cmd = [
             "aider",
@@ -932,20 +932,22 @@ class AgentOrchestrator:
         
         # 2. Архитектор (Анализ конфигов)
         print("=== ЭТАП 2: АРХИТЕКТОР (Анализ возможностей) ===")
+
         arch_prompt = (
             f"Ты — ИИ-Архитектор. Проанализируй базу знаний OmniRoute и запрос пользователя. "
             f"Напиши СТРОГОЕ ТЗ для Aider, указав ТОЧНЫЙ ПУТЬ к файлу (например, D:\\Projects\\OmniRoute\\config.yaml), который нужно изменить. "
             f"Учти текущие настройки, чтобы не сломать рабочую систему.\n\n"
             f"БАЗА ЗНАНИЙ OMNIROUTE:\n{knowledge_base[:4000]}\n\n"
             f"ЗАПРОС ПОЛЬЗОВАТЕЛЯ:\n{clean_prompt}\n\n"
-            f"Напиши пошаговое ТЗ для Aider."
+            f"Напиши пошаговое ТЗ для Aider.\n"
+            f"При указании файлов для модификации ОБЯЗАТЕЛЬНО используй только абсолютные пути (например, D:\\Projects\\OmniRoute\\config.yaml или /home/user/project/file.py). Запрещено использовать относительные пути или просто имена файлов. ТЗ должно содержать полные пути."
         )
         arch_result = self._execute_native_chat(AGENTS["architect"]["combo"], arch_prompt, stream_output=False)
         print(f"📝 [ТЗ Архитектора]:\n{arch_result[:1000]}...\n")
         
         # 3. Кодер (Aider применяет изменения)
         print("=== ЭТАП 3: КОДЕР (Изменение конфигов OmniRoute) ===")
-        coder_prompt = f"Следуй этому техническому заданию строго. Внеси изменения в указанные файлы.\n\nТЗ ОТ АРХИТЕКТОРА:\n{arch_result}"
+        coder_prompt = f"Следуй этому техническому заданию строго. Внеси изменения в указанные файлы.\nПеред началом работы проверь, что пути к файлам в ТЗ являются абсолютными. Если путь относительный или некорректный — немедленно прерви выполнение и верни ошибку валидации.\n\nТЗ ОТ АРХИТЕКТОРА:\n{arch_result}"
         coder_result = self._execute_aider(AGENTS["prod_coding"]["combo"], coder_prompt)
         print(f"🛠️ [Результат Кодера]: {coder_result}\n")
         
