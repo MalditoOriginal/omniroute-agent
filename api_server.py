@@ -1,4 +1,5 @@
 import asyncio
+import os
 import queue
 import threading
 import sys
@@ -25,11 +26,82 @@ HTML = """
                 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             }
             body {
-                display: flex;
-                flex-direction: column;
+                display: grid;
+                grid-template-columns: 250px 1fr;
+                grid-template-rows: auto 1fr auto;
                 height: 100vh;
+                box-sizing: border-box;
+            }
+            .status-bar {
+                grid-column: 1 / -1;
+                background: #161b22;
+                border-bottom: 1px solid #30363d;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 40px;
+                padding: 8px 16px;
+                font-size: 13px;
+                color: #8b949e;
+                box-sizing: border-box;
+            }
+            .status-mode {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            .indicator-thinking {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: #484f58;
+            }
+            .indicator-thinking.active {
+                background: #2ea043;
+                animation: pulse 1.5s infinite;
+            }
+            @keyframes pulse {
+                0% { opacity: 1; }
+                50% { opacity: 0.4; }
+                100% { opacity: 1; }
+            }
+            .sidebar {
+                grid-column: 1;
+                grid-row: 2 / 4;
+                background: #161b22;
+                border-right: 1px solid #30363d;
+                overflow-y: auto;
                 padding: 16px;
                 box-sizing: border-box;
+            }
+            .sidebar h3 {
+                color: #f0f6fc;
+                margin: 0 0 12px 0;
+                font-size: 1rem;
+                font-weight: 600;
+            }
+            .file-item {
+                list-style: none;
+                padding: 8px 12px;
+                border-radius: 6px;
+                cursor: pointer;
+                font-family: monospace;
+                font-size: 13px;
+                color: #c9d1d9;
+                transition: background 0.2s ease;
+            }
+            .file-item:hover {
+                background: #21262d;
+            }
+            .main-content {
+                grid-column: 2;
+                grid-row: 2 / 4;
+                display: flex;
+                flex-direction: column;
+                padding: 16px;
+                box-sizing: border-box;
+                overflow: hidden;
             }
             h2 {
                 color: #f0f6fc;
@@ -122,23 +194,71 @@ HTML = """
         </style>
     </head>
     <body>
-        <h2>🚀 Multiagent Router PRO (Web UI)</h2>
-        <div id="logs"></div>
-        <div class="controls">
-            <input type="text" id="msg" autofocus placeholder="Введите запрос...">
-            <button onclick="send()">Send</button>
-            <button class="btn-clear" onclick="clearLogs()">Clear</button>
+        <div class="status-bar">
+            <div class="status-info">Провайдер: <span id="provider">--</span> | Модель: <span id="model">--</span></div>
+            <div class="status-mode"><span class="indicator-thinking" id="thinking-dot"></span> <span id="thinking-text">IDLE</span></div>
+        </div>
+        <div class="sidebar">
+            <h3>Файлы проекта</h3>
+            <ul id="file-list" style="padding: 0; margin: 0;"></ul>
+        </div>
+        <div class="main-content">
+            <h2>🚀 Multiagent Router PRO (Web UI)</h2>
+            <div id="logs"></div>
+            <div class="controls">
+                <input type="text" id="msg" autofocus placeholder="Введите запрос...">
+                <button onclick="send()">Send</button>
+                <button class="btn-clear" onclick="clearLogs()">Clear</button>
+            </div>
         </div>
         <script>
             const ws = new WebSocket("ws://" + location.host + "/ws");
             const logs = document.getElementById('logs');
+
+            function loadFileList() {
+                fetch('/files')
+                    .then(res => res.json())
+                    .then(data => {
+                        const fileList = document.getElementById('file-list');
+                        fileList.innerHTML = '';
+                        data.files.forEach(file => {
+                            const li = document.createElement('li');
+                            li.className = 'file-item';
+                            li.textContent = file;
+                            li.onclick = () => {
+                                document.getElementById('msg').value = '/exec python ' + file;
+                                send();
+                            };
+                            fileList.appendChild(li);
+                        });
+                    });
+            }
+
             ws.onmessage = function(event) {
-                logs.textContent += event.data + "\\n";
+                const text = event.data;
+                // Parse status markers
+                if (text.includes('Provider:') && text.includes('Model:')) {
+                    const providerMatch = text.match(/Provider:\\s*(\\S+)/);
+                    const modelMatch = text.match(/Model:\\s*(\\S+)/);
+                    if (providerMatch) document.getElementById('provider').textContent = providerMatch[1];
+                    if (modelMatch) document.getElementById('model').textContent = modelMatch[1];
+                }
+                if (text.includes('[THINKING]') || text.includes('Анализирую...')) {
+                    document.getElementById('thinking-dot').classList.add('active');
+                    document.getElementById('thinking-text').textContent = 'THINKING...';
+                }
+                if (text.includes('[DONE]') || text.includes('Завершено')) {
+                    document.getElementById('thinking-dot').classList.remove('active');
+                    document.getElementById('thinking-text').textContent = 'IDLE';
+                }
+                logs.textContent += text + "\\n";
                 logs.scrollTo({ top: logs.scrollHeight, behavior: 'smooth' });
             };
+
             function clearLogs() {
                 document.getElementById('logs').textContent = '';
             }
+
             function send() {
                 const msg = document.getElementById('msg').value;
                 if (msg.toLowerCase() === 'clear' || msg.toLowerCase() === '/clear') {
@@ -151,11 +271,26 @@ HTML = """
                 logs.innerHTML += "<span style='color: #58a6ff;'>&gt; " + msg + "</span>\\n";
                 document.getElementById('msg').value = '';
             }
+
             document.getElementById('msg').addEventListener('keypress', function (e) { if (e.key === 'Enter') send(); });
+
+            // Initialize file list on load
+            loadFileList();
         </script>
     </body>
 </html>
 """
+
+@app.get("/files")
+async def get_py_files():
+    files = [
+        f for f in os.listdir(".")
+        if f.endswith(".py")
+        and not f.startswith("__pycache__")
+        and not f.startswith(".")
+        and f != "api_server.py"
+    ]
+    return {"files": files}
 
 @app.get("/")
 async def get():
