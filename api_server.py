@@ -215,23 +215,27 @@ HTML = """
             const ws = new WebSocket("ws://" + location.host + "/ws");
             const logs = document.getElementById('logs');
 
-            function loadFileList() {
-                fetch('/files')
-                    .then(res => res.json())
-                    .then(data => {
-                        const fileList = document.getElementById('file-list');
-                        fileList.innerHTML = '';
-                        data.files.forEach(file => {
-                            const li = document.createElement('li');
-                            li.className = 'file-item';
-                            li.textContent = file;
-                            li.onclick = () => {
-                                document.getElementById('msg').value = '/exec python ' + file;
-                                send();
-                            };
-                            fileList.appendChild(li);
-                        });
+            async function loadFileList() {
+                try {
+                    const response = await fetch('/files');
+                    if (!response.ok) return;
+                    const data = await response.json();
+                    const fileList = document.getElementById('file-list');
+                    if (!fileList) return;
+                    fileList.innerHTML = '';
+                    data.files.forEach(file => {
+                        const li = document.createElement('li');
+                        li.className = 'file-item';
+                        li.textContent = file;
+                        li.onclick = () => {
+                            document.getElementById('msg').value = '/exec python ' + file;
+                            send();
+                        };
+                        fileList.appendChild(li);
                     });
+                } catch (error) {
+                    console.error('Failed to load file list:', error);
+                }
             }
 
             ws.onmessage = function(event) {
@@ -275,7 +279,7 @@ HTML = """
             document.getElementById('msg').addEventListener('keypress', function (e) { if (e.key === 'Enter') send(); });
 
             // Initialize file list on load
-            loadFileList();
+            document.addEventListener('DOMContentLoaded', loadFileList);
         </script>
     </body>
 </html>
