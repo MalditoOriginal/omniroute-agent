@@ -17,6 +17,9 @@ shared_memory.json
 .env
 .aider*
 
+# Telegram Bot Logs
+telegram_bot.log
+
 omniroute - backup/
 storage.sqlite
 storage.sqlite-shm

@@ -1014,6 +1014,8 @@ class AgentOrchestrator:
         
         try:
             current_code = Path(target_file).read_text(encoding="utf-8")
+        except FileNotFoundError:
+            current_code = "(Файл не существует, его нужно создать с нуля)"
         except Exception as e:
             return f"❌ Не удалось прочитать {target_file}: {e}"
 
