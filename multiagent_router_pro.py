@@ -894,7 +894,7 @@ class AgentOrchestrator:
             current_branch_result = subprocess.run(["git", "rev-parse", "--abbrev-ref", "HEAD"], capture_output=True, text=True)
             current_branch = current_branch_result.stdout.strip()
             result = subprocess.run(
-                ["git", "push", "origin", current_branch],
+                ["git", "push", "-u", "origin", current_branch],
                 check=True,
                 capture_output=True,
                 text=True
