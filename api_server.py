@@ -20,6 +20,7 @@ HTML = """
             #logs { white-space: pre-wrap; background: #000; color: #0f0; padding: 15px; height: 60vh; overflow-y: auto; border-radius: 5px; border: 1px solid #333; }
             input { width: 80%; padding: 10px; background: #333; color: #fff; border: none; border-radius: 5px; }
             button { padding: 10px 20px; background: #007acc; color: #fff; border: none; border-radius: 5px; cursor: pointer; }
+            .btn-clear { background: #555; }
         </style>
     </head>
     <body>
@@ -28,12 +29,21 @@ HTML = """
         <br>
         <input type="text" id="msg" autofocus placeholder="Введите запрос (например: /evolve ... или /consilium ...)">
         <button onclick="send()">Send</button>
+        <button class="btn-clear" onclick="clearLogs()">Clear</button>
         <script>
             const ws = new WebSocket("ws://localhost:8000/ws");
             const logs = document.getElementById('logs');
             ws.onmessage = function(event) { logs.textContent += event.data + "\\n"; logs.scrollTop = logs.scrollHeight; };
+            function clearLogs() {
+                document.getElementById('logs').textContent = '';
+            }
             function send() {
                 const msg = document.getElementById('msg').value;
+                if (msg.toLowerCase() === 'clear' || msg.toLowerCase() === '/clear') {
+                    clearLogs();
+                    document.getElementById('msg').value = '';
+                    return;
+                }
                 if(!msg) return;
                 ws.send(msg);
                 logs.textContent += "\\n> " + msg + "\\n";
